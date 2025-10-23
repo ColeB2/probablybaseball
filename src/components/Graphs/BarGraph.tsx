@@ -2,16 +2,8 @@
 import * as d3 from "d3";
 import { JSX } from "react";
 import { flipAnchor } from "./helper";
+import { BarLabelRotationAngle, Margins, RotationAngle } from "./types";
 
-interface Margins {
-    marginTop?: number;
-    marginRight?: number;
-    marginBottom?: number;
-    marginLeft?: number;
-}
-
-type RotationAngle = -90 | -45 | 0 | 45 | 90;
-type BarLabelRotationAngle = -90 | 0 | 90;
 
 interface BarGraphProps extends Margins {
     data: number[];
@@ -22,9 +14,8 @@ interface BarGraphProps extends Margins {
     width?: number;
     height?: number;
     barColor?: string;
-    showValues?: boolean;
     xLabels?: string[];
-    labelColor?: string;
+    xLabelColor?: string;
     rotateLabels?: RotationAngle;
 }
 
@@ -41,9 +32,8 @@ export default function BarGraph({
     marginBottom = 30,
     marginLeft = 40,
     barColor = "steelblue",
-    showValues = true,
     xLabels = [],
-    labelColor = "white",
+    xLabelColor = "white",
     rotateLabels = 0,
 }: BarGraphProps): JSX.Element {
     // --- X scale (band for categories) ---
@@ -54,6 +44,7 @@ export default function BarGraph({
         .padding(0.1);
 
     // --- Y scale (linear for values) ---
+    // const extent = d3.extent(data) as [number, number]; // we know data isn't empty
     const maxValue = d3.max(data) ?? 0;
     const y = d3
         .scaleLinear()
@@ -133,30 +124,31 @@ export default function BarGraph({
 
                     const axisSelection = d3.select(node).call(axis);
 
+                    axisSelection.selectAll("text").attr("fill", xLabelColor)
+
                     // Optionally rotate labels if configured
                     const angle = rotateLabels ?? 0;
                     if (angle !== 0) {
                         const text = axisSelection.selectAll("text");
-
                         if (angle === -45 || angle === 45) {
                             text
-                            .attr("transform", `rotate(${angle})`)
-                            .attr("text-anchor", angle === -45 ? "end" : "start")
-                            .attr("dx", angle === -45 ? "-0.6em" : "0.6em")
-                            .attr("dy", "0.4em");
+                                .attr("transform", `rotate(${angle})`)
+                                .attr("text-anchor", angle === -45 ? "end" : "start")
+                                .attr("dx", angle === -45 ? "-0.6em" : "0.6em")
+                                .attr("dy", "0.4em");
                         } 
                         else if (angle === -90 || angle === 90) {
                             text
-                            .attr("transform", `rotate(${angle})`)
-                            .attr("text-anchor", angle === -90 ? "end" : "start")
-                            .attr("dx", angle === -90 ? "-1em" : "1em")
-                            .attr("dy", "-0.7em");
+                                .attr("transform", `rotate(${angle})`)
+                                .attr("text-anchor", angle === -90 ? "end" : "start")
+                                .attr("dx", angle === -90 ? "-1em" : "1em")
+                                .attr("dy", "-0.7em");
                         } 
                         else {
                             // fallback for custom arbitrary angles
                             text
-                            .attr("transform", `rotate(${angle})`)
-                            .attr("text-anchor", "middle");
+                                .attr("transform", `rotate(${angle})`)
+                                .attr("text-anchor", "middle");
                         }
                     }
                 }}

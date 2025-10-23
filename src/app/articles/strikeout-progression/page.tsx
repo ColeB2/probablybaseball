@@ -1,6 +1,6 @@
 'use client';
-import BarChart from "@/components/Graphs/BarChart";
 import BarGraph from "@/components/Graphs/BarGraph";
+import LinePlot from "@/components/Graphs/Lineplot";
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,12 @@ interface CSVRow {
     nameFirst: string;
     nameLast: string;
     fullName: string;
+}
 
+interface CSVRow2 {
+    yearID: string; //number;
+    playerID: string;
+    SO: string; //number;
 }
 
 
@@ -20,6 +25,11 @@ export default function ArticlePage() {
     const [data, setData] = useState<number[]>([]);
     const [barLabels, setBarLabels] = useState<string[]>([]);
     const [xLabels, setXLabels] = useState<string[]>([]);
+
+    //graph 2 potentially be its own component
+    const [data2, setData2] = useState<number[]>([]);
+    const [barLabels2, setBarLabels2] = useState<string[]>([]);
+    const [xLabels2, setXLabels2] = useState<string[]>([]);
 
     useEffect(() => {
         d3.csv("/data/highest_so_per_season.csv", (row: d3.DSVRowString): CSVRow => ({
@@ -40,6 +50,26 @@ export default function ArticlePage() {
             setData(numbers);
             setBarLabels(playerLabels);
             setXLabels(xLabels);
+        });
+    }, []);
+
+    //Graph 2
+    useEffect(() => {
+        d3.csv("/data/highest_so_per_season_record.csv", (row: d3.DSVRowString): CSVRow2 => ({
+            yearID: row.yearID,
+            playerID: row.playerID,
+            SO: row.SO,
+        })).then((csvData: CSVRow2[]) => {
+            const numbers = csvData.map(row => Number(row.SO));
+            const xLabels = csvData.map(row => row.yearID);
+            const playerLabels = csvData.map(row => 
+                row.playerID 
+                + " - " 
+                + row.SO.replace(".0", "") );
+
+            setData2(numbers);
+            setBarLabels2(playerLabels);
+            setXLabels2(xLabels);
         });
     }, []);
 
@@ -86,11 +116,49 @@ export default function ArticlePage() {
                                 marginLeft={35}
                                 marginBottom={100}
                                 xLabels={xLabels}
+                                // xLabelColor="black"
                                 rotateLabels={45}
                             />
                         </div>
                     }
                     {/* <BarGraph data={myData}/> */}
+
+                    {/* Line Plot */}
+                    {data.length !== 0
+                    &&
+                        <div className="overflow-x-auto">
+                            <LinePlot
+                                data={data}
+                                width={Math.max(640, data.length * 20)} //dynamic width
+                                dataPointCircles={false}
+                                marginLeft={35}
+                                xLabels={xLabels}
+                                xLabelTickSteps={1}
+                                rotateLabels={45}
+                                marginBottom={35}
+                                
+                            />
+                        </div>
+                    }
+
+                    {/* Graph 2 */}
+                    {data.length !== 0 
+                    && <div className="overflow-x-auto">
+                            <BarGraph
+                                data={data2}
+                                barLabels={barLabels2}
+                                barLabelRotation={-90} // 0 or +/-90
+                                // width={640}
+                                width={Math.max(640, data.length * 20)} //dynamic width
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={100}
+                                xLabels={xLabels2}
+                                // xLabelColor="black"
+                                rotateLabels={45}
+                            />
+                        </div>
+                    }
                     
 
                     

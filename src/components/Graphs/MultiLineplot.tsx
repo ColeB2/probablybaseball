@@ -6,16 +6,16 @@ import { flipAnchor } from "./helper";
 
 
 
-interface LinePlotProps extends Margins {
-    data: number[];
+interface MultiLinePlotProps extends Margins {
+    data: number[][];
     showDataLabels?: boolean;
-    dataLabels?: string[];
+    dataLabels?: string[][];
     dataLabelRotation?: DataLabelRotationAngle;
     dataLabelFontSize?: number;
     dataLabelColor?: string;
     width?: number;
     height?: number;
-    lineColor?: string;
+    lineColors?: string[];
     dataPointCircles?: boolean;
     xLabels?: string[];
     xLabelTickSteps?: number;
@@ -23,10 +23,10 @@ interface LinePlotProps extends Margins {
     rotateLabels?: RotationAngle;
 }
 
-export default function LinePlot({
+export default function MultiLinePlot({
     data,
     showDataLabels = true,
-    dataLabels = [],
+    dataLabels = [[]],
     dataLabelRotation = 0,
     dataLabelFontSize = 10,
     dataLabelColor = 'white',
@@ -36,22 +36,23 @@ export default function LinePlot({
     marginRight = 20,
     marginBottom = 20,
     marginLeft = 20,
-    lineColor = "white",
+    lineColors = ["white"],
     dataPointCircles = true,
     xLabels = [],
     xLabelTickSteps = 1, // defaults to every year
     xLabelColor = "white",
     rotateLabels = 0,
-}: LinePlotProps): JSX.Element {
+}: MultiLinePlotProps): JSX.Element {
     const padding = 0;
     // domain -1, to give space off the y axis/x=0
     const x = d3
         .scaleLinear<number>()
-        .domain([-1, data.length - 1])
+        .domain([-1, data[0].length - 1])
         .range([marginLeft + padding, width - marginRight - padding]);
 
     // const extent = d3.extent(data) as [number, number]; // we know data isn't empty
-    const maxValue = d3.max(data) ?? 0;
+    // data[0] --> first supplied data as to handle scaling
+    const maxValue = d3.max(data.flat()) ?? 0;
     const y = d3
         .scaleLinear()
         .domain([0, maxValue])
@@ -62,70 +63,85 @@ export default function LinePlot({
     const line = d3
         .line<number>()
         .x((_, i) => x(i))
-        .y((d) => y(d));
+        .y((d) => y(d))
 
     return (
         <svg width={width} height={height}>
             {/* Line connecting all data points */}
-            <path
-                fill="none"
-                stroke={lineColor}
-                strokeWidth={1.0}
-                d={line(data) ?? ""}
-            />
+            <g>
+                {data.map((series, i) => (
+                    <path
+                        key={i}
+                        fill="none"
+                        stroke={lineColors[i] ?? "white"}
+                        strokeWidth={1.0}
+                        d={line(series) ?? ""}
+                    />
+                ))}
+            </g>
+
+            
 
             {/* Circles on the data points */}
-            {dataPointCircles
-            &&  <g fill="white" stroke="currentColor" strokeWidth={1.5}>
-                    {data.map((d, i) => (
-                        <circle key={i} cx={x(i)} cy={y(d)} r={2.5} />
-                    ))}
+            {dataPointCircles && (
+                <g fill="white" stroke="currentColor" strokeWidth={1.5}>
+                    {data.map((series, si) =>
+                    series.map((d, i) => (
+                        <circle key={`${si}-${i}`} cx={x(i)} cy={y(d)} r={2.5} />
+                    ))
+                    )}
                 </g>
-            }
+            )}
+
             {/* Labels -> number values from data */}
+            {/* also need to add ability to turn off values. */}
             { showDataLabels && (
                 <g className="bar-labels">
-                    {data.map((d, i) => {
-                        const labelText = dataLabels ? dataLabels[i] ?? d : d
-                        const textWidth = (dataLabelFontSize ?? 10) * 0.6 * String(labelText).length
-                        // const xPos = x(i)! + x.bandwidth() / 2;
-                        const xPos = x(i);
-                        const baseY = y(d);
-                        const offset = 5; // base gap between bar and label
-                        // const barHeight = y(0) - y(d)
-                        const rotation = dataLabelRotation ?? 0;
-                        const settings: Record<number, { anchor: "start" | "middle" | "end"; dy: string }> = {
-                            0: { anchor: "middle", dy: "-0.2em" },
-                            90: { anchor: "end", dy: "0.35em" },
-                            [-90]: { anchor: "start", dy: "0.35em" }
-                        };
-                        const { anchor, dy } = settings[rotation] ?? settings[0]
+                    {data.map((series, si) =>
+                        series.map((d,i) => {
+                            if (dataLabels.length === 0) {return;}
+                            // const labelText = dataLabels ? dataLabels[i] ?? d : d
+                            const labelText = dataLabels?.[si]?.[i] ?? d.toString();
+                            const textWidth = (dataLabelFontSize ?? 10) * 0.6 * String(labelText).length
+                            // const xPos = x(i)! + x.bandwidth() / 2;
+                            const xPos = x(i);
+                            const baseY = y(d);
+                            const offset = 5; // base gap between bar and label
+                            // const barHeight = y(0) - y(d)
+                            const rotation = dataLabelRotation ?? 0;
+                            const settings: Record<number, { anchor: "start" | "middle" | "end"; dy: string }> = {
+                                0: { anchor: "middle", dy: "-0.2em" },
+                                90: { anchor: "end", dy: "0.35em" },
+                                [-90]: { anchor: "start", dy: "0.35em" }
+                            };
+                            const { anchor, dy } = settings[rotation] ?? settings[0]
 
-                        // Default placement (above bar)
-                        const textY = baseY - offset;
-                        // Change values for above text that goes above the graph
-                        const textAboveGraph = textY < textWidth;
-                        const yPos = textAboveGraph ? textY + 10 : textY
-                        const fillColor = textAboveGraph ? "white" : (dataLabelColor ?? "black");
-                        const textAnchor = textAboveGraph ? flipAnchor(anchor) : anchor;
+                            // Default placement (above bar)
+                            const textY = baseY - offset;
+                            // Change values for above text that goes above the graph
+                            const textAboveGraph = textY < textWidth;
+                            const yPos = textAboveGraph ? textY + 10 : textY
+                            const fillColor = textAboveGraph ? "white" : (dataLabelColor ?? "black");
+                            const textAnchor = textAboveGraph ? flipAnchor(anchor) : anchor;
 
-                        
-                        return (
-                            <text
-                                key={i}
-                                // x={xPos}
-                                x={xPos}
-                                y={yPos}
-                                dy={dy}
-                                transform={`rotate(${rotation}, ${xPos}, ${yPos})`}
-                                textAnchor={textAnchor}
-                                fontSize={dataLabelFontSize ?? 10}
-                                fill={fillColor}
-                            >
-                                {labelText}
-                            </text>
-                        );
-                    })}
+                            
+                            return (
+                                <text
+                                    key={i}
+                                    // x={xPos}
+                                    x={xPos}
+                                    y={yPos}
+                                    dy={dy}
+                                    transform={`rotate(${rotation}, ${xPos}, ${yPos})`}
+                                    textAnchor={textAnchor}
+                                    fontSize={dataLabelFontSize ?? 10}
+                                    fill={fillColor}
+                                >
+                                    {labelText}
+                                </text>
+                            );
+                        })
+                    )}
                 </g>
             )}
 
@@ -137,7 +153,8 @@ export default function LinePlot({
 
 
                     // Display all x values
-                    const years = data.map((_,i) => i)
+                    //mapping years with data[0] data
+                    const years = data[0].map((_,i) => i)
                     const step = xLabelTickSteps;
                     const tickIndices = years.filter((_, i) => i % step === 0);
 

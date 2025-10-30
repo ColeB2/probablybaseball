@@ -21,6 +21,8 @@ interface LinePlotProps extends Margins {
     xLabelTickSteps?: number;
     xLabelColor?: string;
     rotateLabels?: RotationAngle;
+    minValue?: number;
+    maxValue?: number;
 }
 
 export default function LinePlot({
@@ -42,6 +44,8 @@ export default function LinePlot({
     xLabelTickSteps = 1, // defaults to every year
     xLabelColor = "white",
     rotateLabels = 0,
+    minValue,
+    maxValue, 
 }: LinePlotProps): JSX.Element {
     const padding = 0;
     // domain -1, to give space off the y axis/x=0
@@ -51,10 +55,11 @@ export default function LinePlot({
         .range([marginLeft + padding, width - marginRight - padding]);
 
     // const extent = d3.extent(data) as [number, number]; // we know data isn't empty
-    const maxValue = d3.max(data) ?? 0;
+    const minVal = minValue ?? d3.min(data) ?? 0;
+    const maxVal = maxValue ?? d3.max(data) ?? 0;
     const y = d3
         .scaleLinear()
-        .domain([0, maxValue])
+        .domain([minVal, maxVal])
         .nice()
         .range([height - marginBottom, marginTop]);
 

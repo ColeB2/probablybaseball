@@ -1,4 +1,4 @@
-import ArticleList from "@/components/Articles.tsx/Articles";
+import ArticleList from "@/components/Articles/Articles";
 import { articles } from "./articlesData";
 
 // src/app/articles/page.tsx

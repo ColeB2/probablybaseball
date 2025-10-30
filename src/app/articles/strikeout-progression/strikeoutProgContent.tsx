@@ -160,7 +160,7 @@ export default function StrikeoutProgContent() {
             xLabels: xLabels2.slice(133),
         },
     ]
-    // return (<></>); // to hide all the data until published
+    return (<></>); // to hide all the data until published
     return (
         <>
             <section className="mb-12">

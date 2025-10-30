@@ -495,6 +495,10 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             }
+            <p className="w-full pt-8 text-center text-sm text-gray-500"
+            >
+                Data courtesy of the <a href="https://sabr.org/lahman-database/">Lahman Baseball Database</a>
+            </p>
     </>
     );
 }

@@ -57,6 +57,19 @@ export default function ArticlePage() {
                             feat would set the stage for baseballs biggest, glorious and most prestigous title, The strikeout king.
                         </p>
                     </section>
+                    <div id="toc">
+                    <h2 className='text-lg'>Table of Contents</h2>
+                        <ul className='mx-6 text-md mb-12'>
+                            <li><a href="#chapter1">Chapter 1 - The Pre Modern Era</a></li>
+                            <li><a href="#chapter2">Chapter 2 - The Deadball Era </a></li>
+                            <li><a href="#chapter3">Chapter 3 - The Live Ball Era and The Golden Age</a></li>
+                            <li><a href="#chapter4">Chapter 4 - The Integration Era</a></li>
+                            <li><a href="#chapter5">Chapter 5 - The &quot;Expansion&quot; Era</a></li>
+                            <li><a href="#chapter6">Chapter 6 - The Modern Game - Three True Outcomes</a></li>
+                            <li><a href="#epilogue">Epilogue - The End </a></li>
+                            <li><a href="#graphs">The Graphs</a></li>
+                        </ul>
+                    </div>
                     <StrikeoutProgContent />
                 </article>
             </main>

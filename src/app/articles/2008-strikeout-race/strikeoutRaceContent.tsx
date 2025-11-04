@@ -6,8 +6,8 @@ import GraphSlider from "@/components/GraphSlider/GraphSlider";
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
 
-//interface to read high_so_per_season.vsc
-interface HighestSOPerSeason {
+
+interface CSVRow {
     yearID: string; //number;
     playerID: string;
     SO: string; //number;
@@ -16,62 +16,43 @@ interface HighestSOPerSeason {
     fullName: string;
 }
 
-//interface to read highest_so_per_season_record.csv
-interface HighestSOPerSeasonRecord {
+interface CSVRow2 {
     yearID: string; //number;
     playerID: string;
     SO: string; //number;
 }
 
-//interface to read league_wide_so_per_season.csv
-interface LeagueWideSOPerSeason {
-    yearID: string;
-    SO: string;
+interface Daily2008 {
+    name:string;
+    [key: number]: string; 
+    
 }
 
-interface StrikeoutPercentage {
-  yearID: string;
-  playerID: string;
-  SO_player: string;
-  nameFirst: string;
-  nameLast: string;
-  fullName: string;
-  SO_league: string;
-  SO_percentage: string;
-}
-
-const DATA_PATH = "/data/strikeout-progression"
 
 export default function StrikeoutProgContent() {
-    // Data for highest_so_per_season.csv
     const [data, setData] = useState<number[]>([]);
     const [dataLabels, setDataLabels] = useState<string[]>([]);
     const [xLabels, setXLabels] = useState<string[]>([]);
 
-    // Data for highest_so_per_season_record.csv
+    //graph 2 potentially be its own component
     const [data2, setData2] = useState<number[]>([]);
     const [dataLabels2, setDataLabels2] = useState<string[]>([]);
     const [xLabels2, setXLabels2] = useState<string[]>([]);
 
-    //League Wide strikeout totals
-    const [data3, setData3] = useState<number[]>([]);
-    const [dataLabels3, setDataLabels3] = useState<string[]>([]);
-    const [xLabels3, setXLabels3] = useState<string[]>([]);
-
-    //Player Strikeout as percentage of league totals
-    const [data4, setData4] = useState<number[]>([]);
-    const [dataLabels4, setDataLabels4] = useState<string[]>([]);
-    const [xLabels4, setXLabels4] = useState<string[]>([]);
+    //gameKKs
+    const [gameKData, setgameKData] = useState<number[][]>([[]]);
+    const [gameKDataLabels, setgameKDataLabels] = useState<string[][]>([[]]);
+    const [gameKXLabels, setgameKXLabels] = useState<string[]>([]);
 
     useEffect(() => {
-        d3.csv(DATA_PATH + "/highest_so_per_season.csv", (row: d3.DSVRowString): HighestSOPerSeason => ({
+        d3.csv("/data/highest_so_per_season.csv", (row: d3.DSVRowString): CSVRow => ({
             yearID: row.yearID,
             playerID: row.playerID,
             SO: row.SO,
             nameFirst: row.NameFirst,
             nameLast: row.NameLast,
             fullName: row.fullName,
-        })).then((csvData: HighestSOPerSeason[]) => {
+        })).then((csvData: CSVRow[]) => {
             const numbers = csvData.map(row => Number(row.SO));
             const xLabels = csvData.map(row => row.yearID);
             const playerLabels = csvData.map(row => 
@@ -87,11 +68,11 @@ export default function StrikeoutProgContent() {
 
     //Graph 2
     useEffect(() => {
-        d3.csv(DATA_PATH + "/highest_so_per_season_record.csv", (row: d3.DSVRowString): HighestSOPerSeasonRecord => ({
+        d3.csv("/data/highest_so_per_season_record.csv", (row: d3.DSVRowString): CSVRow2 => ({
             yearID: row.yearID,
             playerID: row.playerID,
             SO: row.SO,
-        })).then((csvData: HighestSOPerSeasonRecord[]) => {
+        })).then((csvData: CSVRow2[]) => {
             const numbers = csvData.map(row => Number(row.SO));
             const xLabels = csvData.map(row => row.yearID);
             const playerLabels = csvData.map(row => 
@@ -105,49 +86,47 @@ export default function StrikeoutProgContent() {
         });
     }, []);
 
-    //Graph 3
     useEffect(() => {
-        d3.csv(DATA_PATH + "/league_wide_so_per_season.csv", (row: d3.DSVRowString): LeagueWideSOPerSeason => ({
-            yearID: row.yearID,
-            SO: row.SO,
-        })).then((csvData: LeagueWideSOPerSeason[]) => {
-            const numbers = csvData.map(row => Number(row.SO));
-            const xLabels = csvData.map(row => row.yearID);
+        d3.csv("/data/game_k_2008.csv").then((csvData) => {
+        const dataArray = csvData as unknown as Daily2008[];
 
+        const data: number[][] = [];
+        const dataLabels: string[][] = [];
+        const playerNames: string[] = [];
+        const xLabels: string[] = [];
 
-            setData3(numbers);
-            // setDataLabels2(playerLabels);
-            setXLabels3(xLabels);
+        dataArray.forEach((player) => {
+            playerNames.push(player.name);
+
+            const playerValues: number[] = [];
+            const playerLabels: string[] = [];
+            
+
+            for (let i = 1; i <= 162; i++) {
+                const valStr = player[i];
+                const valNum = valStr ? Number(valStr) : 0;
+                playerValues.push(valNum);
+                playerLabels.push(valStr ?? "0");
+                xLabels.push(String(i));
+            }
+
+            data.push(playerValues);
+            dataLabels.push(playerLabels);
         });
-    }, []);
 
-    //Graph 4
-    useEffect(() => {
-        d3.csv(DATA_PATH + "/player_so_as_percent_of_season.csv", (row: d3.DSVRowString): StrikeoutPercentage => ({
-            yearID: row.yearID,
-            playerID: row.playerID,
-            SO_player: row.SO_player,
-            nameFirst: row.nameFirst,
-            nameLast: row.nameLast,
-            fullName: row.fullName,
-            SO_league: row.SO_league,
-            SO_percentage: row.SO_percentage,
-        })).then((csvData: StrikeoutPercentage[]) => {
-            // const player_so = csvData.map(row => Number(row.SO_player));
-            const player_so_pct = csvData.map(row => Number(parseFloat(row.SO_percentage).toFixed(2)));
-            const playerLabels = csvData.map(row => 
-                row.fullName
-                + " - " 
-                + String(Number(parseFloat(row.SO_percentage).toFixed(2)))
-                + " % "
-            );
-            const xLabels = csvData.map(row => row.yearID);
+        // Now you have:
+        // data = [[...player1Values], [...player2Values], ...]
+        // dataLabels = [[...player1Labels], [...player2Labels], ...]
+        // playerNames = ["Player1", "Player2", ...]
+        setgameKData(data)
+        setgameKDataLabels(dataLabels);
+        setgameKXLabels(xLabels);
 
-
-            setData4(player_so_pct);
-            setDataLabels4(playerLabels);
-            setXLabels4(xLabels);
+        console.log({ data, dataLabels, playerNames });
         });
+
+        
+
     }, []);
 
     const preModernGraphConfigs = [
@@ -235,6 +214,20 @@ export default function StrikeoutProgContent() {
             xLabels: xLabels2.slice(133),
         },
     ]
+    const gameK2008Configs = [
+        {
+            key: "gameK-2008",
+            data: gameKData,
+            dataLabels: gameKDataLabels,
+            xLabels: gameKXLabels,
+        },
+        // {
+        //     key: "K-Record-Holder-Golden-Age-ERA",
+        //     data: data2.slice(133),
+        //     dataLabels: dataLabels2.slice(133),
+        //     xLabels: xLabels2.slice(133),
+        // },
+    ]
     // return (<></>); // to hide all the data until published
     return (
         <>
@@ -304,9 +297,6 @@ export default function StrikeoutProgContent() {
                 <h2 className="text-2xl font-semibold mb-3">
                     Chapter 2 - The Deadball Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
-                    - The league circa 1900 - 1919
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     With the addition of a new rule, that is foul balls now count as strikes (1901 in NL and 1903 in AL),
                     it helped usher in a new era of baseball, The Deadball Era. An era of small ball
@@ -370,9 +360,6 @@ export default function StrikeoutProgContent() {
                 <h2 className="text-2xl font-semibold mb-3">
                     Chapter 3 - The Live Ball Era and The Golden Age
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
-                    - The league post 1919, up until the Integration Era in 1947
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     In 1920 a new rule would hit the field that would change the game as we know it. A small,
                     simple change, lead to drastic results. No lnoger would balls stick around after being defaced,
@@ -433,9 +420,6 @@ export default function StrikeoutProgContent() {
                 <h2 className="text-2xl font-semibold mb-3">
                     Chapter 4 - The Integration Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
-                    - The league from 1947 until its expansion era in 1961
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     1947 would usher in what is know as the Integration era, as the debut of Jackie Robinson on opening day with the Dodgers in the NL and 
                     Larry Doby making his debut in July in the AL with Cleveland, would set the stage for more talent to enter the league and an increasing rate.
@@ -476,9 +460,6 @@ export default function StrikeoutProgContent() {
                 <h2 className="text-2xl font-semibold mb-3">
                     Chapter 5 - The &quot;Expansion&quot; Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
-                    - The league from 1961 until 2004
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     In 1961 the league was on the rise and starting to grow. With 16 teams overall, the league want to grow and grow fast, with goals 
                     of eventually double the amount of teams in the league. 2 teams (Los Angeles Angels and Washing Senators) would initially join the American League in 1961
@@ -549,9 +530,6 @@ export default function StrikeoutProgContent() {
                 <h2 className="text-2xl font-semibold mb-3">
                     Chapter 6 - The Modern Game - Three True Outcomes
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
-                    - The league from 2004 until 2024
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     With the turn of the century and millenium, analytics and sabermetrics started to take their stranglehold on the game. Singles and contact
                     hitting started to lose value. Walks and long balls start to explode in popularity and with the change of time, velocities started rising faster
@@ -573,13 +551,58 @@ export default function StrikeoutProgContent() {
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
                     Holding the record for only 3 seasons, and trying his best, he would eventually be bested by career Phillie first basemen, Ryan Howard, who would strike out 199 times,
-                    both in 2007 and 2008 in 648 and 700 plate appearance respectively. With these massive sluggers caring more about the long ball than anything else, the race for 200 was on, and appeared that Dunn and 
-                    Howard would be the early favourites to break the once though impossible, but now obtainable barrier. But we wouldn&apos;t have to wait long as in 2008, during the great
-                    race for 200, Mark Reynolds would come out of no-where and start his career striking out at a rate unheard of. Striking out 204 times, and being the first to break that 
-                    magical barrier in 2008, he would lead the league 4 more times, but most impressively in the 2009 season he would strike out a record amount, 223 times in 662 appearances. An 
-                    incredible number, only approached once, by Adam Dunn in 2012, when he wiffed 222 times, but falling short we leave off with the true champaion of K, The current 
-                    strikeout King, Mark Reynolds. 
+                    both in 2007 in 648 plate appearance. With these massive sluggers caring more about the long ball than anything else, the race for 200 was on, and appeared that Dunn and 
+                    Howard would be the early favourites to break the once though impossible, but now obtainable barrier. Entering the final stretch to break the record, it appeared that 
+                    Ryan Howard would be the victor. With Adam Dunn cutting back on his K numbers just a touch in 2007 it appeared he would have to enter 2008 on his A game to have a chance.
+                    Long shot guys, not completely out of it, Curtis Granderson (lead the AL in 2006 with 174) and Jack Cust (lead the AL in 2007) as well as Dan Uggla, a Marlin at the time
+                    would also be throwing their hats in the ring with a change to take baseballs glorious crown. The race to 200 looked to be on.
                 </p>
+                <p className="text-lg leading-relaxed mb-6">
+                    2008 was going to be the year. With Curtis Granderson missing time at the start of the season, and limiting his strikeouts,  he pulled himself out of the race altogether,
+                    finishing with 52 at the break, and only 111 on the season. Dan Uggla came out punching strong, striking out 27, 33, and 31 times in the months of April, May and June.
+                    He would finish the first half with 96 strikeouts. Adam Dunn, started out a little slower, with 22, and 27 in April and May, but a strong June with 39 K&apos;s would
+                    lead him into the break with 99. Jack Cust, after leading the AL in 2007, came out with a bang, string out 27, 31, and 33 as well, matching Uggla&apos;s first three months, but 
+                    a very strong start of July would lead him into the break with a whopping 114 strikeouts. Ryan Howard would run away early though with a commanding lead, striking out 
+                    38, 40 and 36 strikeouts in April through June and would himself walk into the all-star break sitting at 129 strikeouts and be a clear favourite. With a weak July 
+                    leaving the break for both Uggla and Dunn, their chance on the title quickly slipped through their fingers, and would both finish the second half, much better hitters
+                    striking out only 75 and 65 times each, finishing their seasons at 171 (Uggla) and 164 (Dunn). 
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                    A third hitter was waiting in the wings though, one second year player for the Diamondback, Mark Reynolds. A man who matched Howards May and June, but had a weaker May,
+                    would cruise into the break with 111 strikeouts, giving him an outside change in the race to 200 with Jack Cust and Ryan Howard. With really strong July from Cust, and a 
+                    a stronger month from Reynolds, the gap sould shrink, and shrink drastically, with Cust, Howard and Reynolds going into august sitting at 136, 142 and 134 strikeouts respectively.
+                    With another strong showing from Reynolds and Howard in August, and slowing some slowing down from Jack Cust, the trio would enter September, with Ryan leading the way at 178, Reynolds
+                    sitting in second with 171, and Jack Cust pulling up the rear with 167 strikeouts. With Jack needed 33, and only striking out that many times during 2 months, he appeared to be fading.
+                    With needing only 22, and him topping that number every month, he appeared to be the heavy favourite, and Mark needing 29, which he had done every month except one kept him in the hunt.
+                    The race for 200 was going to be tight.
+                </p>
+                {data.length !== 0 && data2.length !== 0
+                && <GraphSlider 
+                        graphs={
+                            gameK2008Configs.map((cfg) =>
+                                <MultiLinePlot
+                                    key={cfg.key}
+                                    data={cfg.data}
+                                    showDataLabels={false}
+                                    // dataLabels={cfg.dataLabels}
+                                    // dataLabelRotation={0} // 0 or +/-90
+                                    width={1500}
+                                    // width={Math.max(640, data.length * 20)} //dynamic width
+                                    height={500}
+                                    lineColors={["blue","black","red","orange","purple"]}
+                                    dataPointCircles={false}
+                                    marginLeft={35}
+                                    marginBottom={100}
+                                    xLabels={cfg.xLabels}
+                                    // xLabelColor="black"
+                                    rotateLabels={90}
+                                />
+                            )
+
+                        }
+                    />
+                }
+                
                 {data.length !== 0 && data2.length !== 0
                 && <GraphSlider 
                         graphs={
@@ -609,186 +632,113 @@ export default function StrikeoutProgContent() {
                     Epilogue
                 </h2>
                 <p className="text-lg leading-relaxed">
-                    Obviously the game has evolved and changed in a way never one could never imagine. Even though this article is written in jest, it says a lot about
-                    how far the game has come, and still shows how good these players have to be to get the playing time required to strike out that much. Lord only knows how much worst
-                    these numbers could be if I, or some of you the readers were to step in the box for the amount of plate appearances these sluggers get. With that, I leave you 
-                    the extra graphs, and formats I played around with when researching this topic.
                 </p>
                 <p className="text-lg leading-relaxed">
                 </p>
             </section>
 
-            <section id="graphs">
-                <h2>Season Strikeout Record, Graphed against Current K Record</h2>
-                {data.length !== 0
-                &&
-                    <div className="overflow-x-auto">
-                        <MultiLinePlot
-                            data={[data, data2]}
-                            showDataLabels={false}
-                            // dataLabels={[dataLabels, dataLabels2]}
-                            dataLabelRotation={-90}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            dataPointCircles={false}
-                            marginLeft={35}
-                            lineColors={["white", "red"]}
-                            xLabels={xLabels}
-                            xLabelTickSteps={1}
-                            rotateLabels={45}
-                            marginBottom={35}
-                            
-                        />
-                    </div>
-                }
-                <h2>Single Season Strikeout Record for each Individual Season - Full Graph</h2>
-                {data.length !== 0
-                    && <GraphSlider
-                        graphs={[
-                            <LinePlot
-                                key="Single-Season-Strikeout-Record-Line-Plot"
-                                data={data}
-                                dataLabels={dataLabels}
-                                dataLabelRotation={-90}
-                                width={Math.max(640, data.length * 20)} //dynamic width
-                                // dataPointCircles={false}
-                                marginLeft={35}
-                                xLabels={xLabels}
-                                xLabelTickSteps={1}
-                                rotateLabels={45}
-                                marginBottom={35}
-                            />,
-                            <BarGraph
-                                key="Single-Season-Strikeout-Record-Bar-Graph"
-                                data={data}
-                                barLabels={dataLabels}
-                                barLabelRotation={-90} // 0 or +/-90
-                                // width={640}
-                                width={Math.max(640, data.length * 20)} //dynamic width
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={100}
-                                xLabels={xLabels}
-                                // xLabelColor="black"
-                                rotateLabels={45}
-                            />
-                        ]}
+            
+            {/* <BarChart data={[10,20,30,40,50]}/> */}
+            {data.length !== 0 
+            && <div className="overflow-x-auto">
+                    <BarGraph
+                        data={data}
+                        barLabels={dataLabels}
+                        barLabelRotation={-90} // 0 or +/-90
+                        // width={640}
+                        width={Math.max(640, data.length * 20)} //dynamic width
+                        height={500}
+                        marginLeft={35}
+                        marginBottom={100}
+                        xLabels={xLabels}
+                        // xLabelColor="black"
+                        rotateLabels={45}
                     />
-                }
-
-                <h2>Full Record progression Timeline</h2>
-                {data2.length !== 0
-                && <GraphSlider
-                    key="Full-Record-Progression-Graphs-Slider" 
-                    graphs={[
-                        <LinePlot
-                            key="Full-Record-Progression-Line-Plot"
-                            data={data2}
-                            dataLabels={dataLabels2}
-                            dataLabelRotation={-90} // 0 or +/-90
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels2}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />,
-                        <BarGraph
-                            key="Full-Record-Progression-Bar-Graph"
-                            data={data2}
-                            barLabels={dataLabels2}
-                            barLabelRotation={-90} // 0 or +/-90
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels2}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />
-
-                    ]}
-                />
-                }
-
-            <h2>League Wide Strikeout Totals</h2>
-            {data3.length !== 0 
-            &&  <GraphSlider
-                    graphs={[
-                        <LinePlot
-                            key="League-Wide-Strikeout-Totals-Line-Graph"
-                            data={data3}
-                            // dataLabels={dataLabels3}
-                            dataLabelRotation={-90} // 0 or +/-90
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={45}
-                            marginBottom={100}
-                            xLabels={xLabels3}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />,
-                        <BarGraph
-                            key="League-Wide-Strikeout-Totals-Bar-Graph"
-                            data={data3}
-                            // barLabels={dataLabels3}
-                            barLabelRotation={-90} // 0 or +/-90
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={45}
-                            marginBottom={100}
-                            xLabels={xLabels3}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />
-                    ]}
-                />
+                </div>
             }
-            <h2>Leaders Strikeout As a Percentage of League Wide Totals</h2>
-            {data4.length !== 0
-                && <GraphSlider
-                    // key="Full-Record-Progression-Graphs-Slider" 
-                    graphs={[
-                        <LinePlot
-                            key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Line-Graph"
-                            data={data4}
-                            dataLabels={dataLabels4}
-                            dataLabelRotation={-90} // 0 or +/-90
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels4}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />,
-                        <BarGraph
-                            key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Bar-Graph"
-                            data={data4}
-                            barLabels={dataLabels4}
-                            barLabelRotation={-90} // 0 or +/-90
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels4}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />
+            {/* <BarGraph data={myData}/> */}
 
-                    ]}
-                />
-                }
-            </section>
+            {/* Line Plot */}
+            {data.length !== 0
+            &&
+                <div className="overflow-x-auto">
+                    <LinePlot
+                        data={data}
+                        dataLabels={dataLabels}
+                        dataLabelRotation={-90}
+                        width={Math.max(640, data.length * 20)} //dynamic width
+                        // dataPointCircles={false}
+                        marginLeft={35}
+                        xLabels={xLabels}
+                        xLabelTickSteps={1}
+                        rotateLabels={45}
+                        marginBottom={35}
+                        
+                    />
+                </div>
+            }
+
+            {/* MultiLine Plot */}
+            {data.length !== 0
+            &&
+                <div className="overflow-x-auto">
+                    <MultiLinePlot
+                        data={[data, data2]}
+                        showDataLabels={false}
+                        // dataLabels={[dataLabels, dataLabels2]}
+                        dataLabelRotation={-90}
+                        width={Math.max(640, data.length * 20)} //dynamic width
+                        dataPointCircles={false}
+                        marginLeft={35}
+                        lineColors={["white", "red"]}
+                        xLabels={xLabels}
+                        xLabelTickSteps={1}
+                        rotateLabels={45}
+                        marginBottom={35}
+                        
+                    />
+                </div>
+            }
+
+            {/* Graph 2 */}
+            {data.length !== 0 
+            && <div className="overflow-x-auto">
+                    <BarGraph
+                        data={data2}
+                        barLabels={dataLabels2}
+                        barLabelRotation={-90} // 0 or +/-90
+                        // width={640}
+                        width={Math.max(640, data.length * 20)} //dynamic width
+                        height={500}
+                        marginLeft={35}
+                        marginBottom={100}
+                        xLabels={xLabels2}
+                        // xLabelColor="black"
+                        rotateLabels={45}
+                    />
+                </div>
+            }
+            {/* Graph 2 */}
+            {data.length !== 0 
+            && <div className="overflow-x-auto">
+                    <LinePlot
+                        data={data2}
+                        dataLabels={dataLabels2}
+                        dataLabelRotation={-90} // 0 or +/-90
+                        // width={640}
+                        width={Math.max(640, data.length * 20)} //dynamic width
+                        height={500}
+                        marginLeft={35}
+                        marginBottom={100}
+                        xLabels={xLabels2}
+                        // xLabelColor="black"
+                        rotateLabels={45}
+                    />
+                </div>
+            }
             <p className="w-full pt-8 text-center text-sm text-gray-500"
             >
-                Graphed Data courtesy of the <a href="https://sabr.org/lahman-database/">Lahman Baseball Database</a>
+                Data courtesy of the <a href="https://sabr.org/lahman-database/">Lahman Baseball Database</a>
             </p>
     </>
     );

@@ -11,12 +11,12 @@ interface ArticleListProps {
 export default function ArticleList({ articles }: ArticleListProps) {
   return (
     <section className="">
-        <div className="flex flex-col gap-2 max-w-4xl mx-auto border dark:border-white border-black">
+        <div className="flex flex-col gap-2 max-w-4xl mx-auto">
         {articles.map((article, idx) => (
             <a
                 key={idx}
                 href={article.href}
-                className="flex flex-col sm:flex-row gap-6 transition rounded-xl overflow-hidden shadow-sm"
+                className="flex flex-col sm:flex-row gap-6 transition rounded-xl overflow-hidden"
             >
 
                 <div className="flex flex-col justify-center p-6 text-left">

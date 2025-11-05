@@ -588,6 +588,7 @@ export default function StrikeoutProgContent() {
                                     data={cfg.data}
                                     dataLabels={cfg.dataLabels}
                                     dataLabelRotation={-90} // 0 or +/-90
+                                    dataLabelFontSize={14}
                                     width={780}
                                     // width={Math.max(640, data.length * 20)} //dynamic width
                                     height={500}
@@ -627,6 +628,7 @@ export default function StrikeoutProgContent() {
                             showDataLabels={false}
                             // dataLabels={[dataLabels, dataLabels2]}
                             dataLabelRotation={-90}
+                            dataLabelFontSize={14}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             dataPointCircles={false}
                             marginLeft={35}
@@ -648,6 +650,7 @@ export default function StrikeoutProgContent() {
                                 data={data}
                                 dataLabels={dataLabels}
                                 dataLabelRotation={-90}
+                                dataLabelFontSize={14}
                                 width={Math.max(640, data.length * 20)} //dynamic width
                                 // dataPointCircles={false}
                                 marginLeft={35}
@@ -661,6 +664,7 @@ export default function StrikeoutProgContent() {
                                 data={data}
                                 barLabels={dataLabels}
                                 barLabelRotation={-90} // 0 or +/-90
+                                barLabelFontSize={14}
                                 // width={640}
                                 width={Math.max(640, data.length * 20)} //dynamic width
                                 height={500}
@@ -684,6 +688,7 @@ export default function StrikeoutProgContent() {
                             data={data2}
                             dataLabels={dataLabels2}
                             dataLabelRotation={-90} // 0 or +/-90
+                            dataLabelFontSize={14}
                             // width={640}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             height={500}
@@ -698,6 +703,7 @@ export default function StrikeoutProgContent() {
                             data={data2}
                             barLabels={dataLabels2}
                             barLabelRotation={-90} // 0 or +/-90
+                            barLabelFontSize={14}
                             // width={640}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             height={500}
@@ -721,6 +727,7 @@ export default function StrikeoutProgContent() {
                             data={data3}
                             // dataLabels={dataLabels3}
                             dataLabelRotation={-90} // 0 or +/-90
+                            dataLabelFontSize={14}
                             // width={640}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             height={500}
@@ -735,6 +742,7 @@ export default function StrikeoutProgContent() {
                             data={data3}
                             // barLabels={dataLabels3}
                             barLabelRotation={-90} // 0 or +/-90
+                            barLabelFontSize={14}
                             // width={640}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             height={500}
@@ -757,6 +765,7 @@ export default function StrikeoutProgContent() {
                             data={data4}
                             dataLabels={dataLabels4}
                             dataLabelRotation={-90} // 0 or +/-90
+                            dataLabelFontSize={14}
                             // width={640}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             height={500}
@@ -771,6 +780,7 @@ export default function StrikeoutProgContent() {
                             data={data4}
                             barLabels={dataLabels4}
                             barLabelRotation={-90} // 0 or +/-90
+                            barLabelFontSize={14}
                             // width={640}
                             width={Math.max(640, data.length * 20)} //dynamic width
                             height={500}

@@ -19,5 +19,5 @@ export default function AnalyticsWrapper() {
         return null;
     }
 
-    return <GoogleAnalytics gaId='G-NJQRPRRDG2'/>
+    return <GoogleAnalytics gaId='G-QGV9XGPNN0'/>
 }

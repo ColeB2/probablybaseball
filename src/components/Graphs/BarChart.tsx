@@ -24,7 +24,7 @@ export default function BarChart({
     marginRight = 20,
     marginBottom = 30,
     marginLeft = 40,
-    barColor = "steelblue",
+    // barColor = "steelblue",
 }: BarChartProps): JSX.Element {
     const svgRef = useRef<HTMLDivElement | null>(null);
 

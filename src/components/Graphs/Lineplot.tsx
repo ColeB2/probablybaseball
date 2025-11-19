@@ -73,15 +73,16 @@ export default function LinePlot({
         <svg width={width} height={height}>
             {/* Line connecting all data points */}
             <path
+                className="line-1"
                 fill="none"
-                stroke={lineColor}
-                strokeWidth={1.0}
+                // stroke={lineColor}
+                strokeWidth={1}
                 d={line(data) ?? ""}
             />
 
             {/* Circles on the data points */}
             {dataPointCircles
-            &&  <g fill="white" stroke="currentColor" strokeWidth={1.5}>
+            &&  <g className="fill-1" strokeWidth={1.5}>
                     {data.map((d, i) => (
                         <circle key={i} cx={x(i)} cy={y(d)} r={2.5} />
                     ))}
@@ -89,7 +90,7 @@ export default function LinePlot({
             }
             {/* Labels -> number values from data */}
             { showDataLabels && (
-                <g className="bar-labels">
+                <g>
                     {data.map((d, i) => {
                         const labelText = dataLabels ? dataLabels[i] ?? d : d
                         const textWidth = (dataLabelFontSize ?? 10) * 0.6 * String(labelText).length
@@ -111,7 +112,6 @@ export default function LinePlot({
                         // Change values for above text that goes above the graph
                         const textAboveGraph = textY < textWidth;
                         const yPos = textAboveGraph ? textY + 10 : textY
-                        const fillColor = textAboveGraph ? "white" : (dataLabelColor ?? "black");
                         const textAnchor = textAboveGraph ? flipAnchor(anchor) : anchor;
 
                         
@@ -125,7 +125,7 @@ export default function LinePlot({
                                 transform={`rotate(${rotation}, ${xPos}, ${yPos})`}
                                 textAnchor={textAnchor}
                                 fontSize={dataLabelFontSize ?? 10}
-                                fill={fillColor}
+                                className="fill-current stroke-none"
                             >
                                 {labelText}
                             </text>
@@ -137,6 +137,7 @@ export default function LinePlot({
             {/* X-axis with optional labels */}
             <g
                 transform={`translate(0,${height - marginBottom})`}
+                // className="line-1"
                 ref={(node) => {
                     if (!node) return;
 
@@ -157,7 +158,10 @@ export default function LinePlot({
 
                     const axisSelection = d3.select(node).call(axis);
 
-                    axisSelection.selectAll("text").attr("fill", xLabelColor)
+                    // axisSelection.selectAll("text").attr("fill", xLabelColor)
+                    // axisSelection.selectAll("text").attr("color", "color-line-1")
+                    axisSelection.selectAll("text").classed("fill-1", true)
+                    axisSelection.selectAll("path, line").classed("line-1", true)
 
                     // Optionally rotate labels if configured
                     const angle = rotateLabels ?? 0;
@@ -189,6 +193,8 @@ export default function LinePlot({
 
             {/* Y-axis */}
             <g
+                // className="line-1"
+                // className="line-1 fill-current stroke-none"
                 transform={`translate(${marginLeft},0)`}
                 ref={(node) => {
                     if (node) {

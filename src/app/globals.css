@@ -1,26 +1,170 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #000000ff;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #262626;
-    --foreground: #ffffff;
+    /* Primitives */
+    --color-bg-page-light: #e3dfdf;
+    --color-bg-surface-light: #ffffff;
+    --color-bg-raised-light: #f4f4f4;
+    --color-text-primary-light: #1c1c1c;
+    --color-text-secondary-light: #4a4a4a;
+    --color-text-muted-light: #6b6b6b;
+    --color-border-light: #d2d2d2;
+    --color-accent-light: #3b82f6;
+    --color-accent-light-hover: #6d99f6ff;
+
+    /* Line colors for light mode */
+    --color-line-1-light: #000000; /* black */
+    --color-line-2-light: #1e40af; /* blue-800 */
+    --color-line-3-light: #b45309; /* amber-700 */
+    --color-line-4-light: #065f46; /* emerald-700 */
+    --color-line-5-light: #9f1239; /* rose-800 */
+    --color-line-6-light: #7c3aed; /* violet-700 */
+
+    /* Fill colors for light mode (lighter tints) */
+    --color-fill-1-light: #1f2937;  /* gray-800 */
+    --color-fill-2-light: #3b82f6;  /* blue-500 */
+    --color-fill-3-light: #f59e0b;  /* amber-400 */
+    --color-fill-4-light: #10b981;  /* emerald-500 */
+    --color-fill-5-light: #f43f5e;  /* rose-500 */
+    --color-fill-6-light: #8b5cf6;  /* violet-500 */
+
+    --color-bg-page-dark: #232323;
+    --color-bg-surface-dark: #2a2a2a;
+    --color-bg-raised-dark: #333333;
+    --color-text-primary-dark: #f5f5f5;
+    --color-text-secondary-dark: #cccccc;
+    --color-text-muted-dark: #a0a0a0;
+    --color-border-dark: #444444;
+    --color-accent-dark: #3b82f6;
+    --color-accent-dark-hover: #6d99f6ff;
+
+    /* Line colors for dark mode */
+    --color-line-1-dark: #ffffff; /* white */
+    --color-line-2-dark: #93c5fd; /* blue-300 */
+    --color-line-3-dark: #fbbf24; /* amber-400 */
+    --color-line-4-dark: #34d399; /* emerald-400 */
+    --color-line-5-dark: #f87171; /* rose-400 */
+    --color-line-6-dark: #c4b5fd; /* violet-300 */
+
+    /* Fill colors for dark mode (darker tints) */
+    --color-fill-1-dark: #e5e7eb;  /* gray-200 */
+    --color-fill-2-dark: #60a5fa;  /* blue-400 */
+    --color-fill-3-dark: #fcd34d;  /* amber-300 */
+    --color-fill-4-dark: #6ee7b7;  /* emerald-300 */
+    --color-fill-5-dark: #fca5a5;  /* rose-300 */
+    --color-fill-6-dark: #d8b4fe;  /* violet-300 */
+
+    /* Semantic Mapping */
+    --bg-page: var(--color-bg-page-light);
+    --bg-surface: var(--color-bg-surface-light);
+    --bg-raised: var(--color-bg-raised-light);
+
+    --text-primary: var(--color-text-primary-light);
+    --text-secondary: var(--color-text-secondary-light);
+    --text-muted: var(--color-text-muted-light);
+    
+    --border-color: var(--color-border-light);
+    --accent: var(--color-accent-light);
+    --accent-hover: var(--color-accent-light-hover);
+
+    /* Map line colors */
+    --color-line-1: var(--color-line-1-light);
+    --color-line-2: var(--color-line-2-light);
+    --color-line-3: var(--color-line-3-light);
+    --color-line-4: var(--color-line-4-light);
+    --color-line-5: var(--color-line-5-light);
+    --color-line-6: var(--color-line-6-light);
+
+    /* Map fill colors */
+    --color-fill-1: var(--color-fill-1-light);
+    --color-fill-2: var(--color-fill-2-light);
+    --color-fill-3: var(--color-fill-3-light);
+    --color-fill-4: var(--color-fill-4-light);
+    --color-fill-5: var(--color-fill-5-light);
+    --color-fill-6: var(--color-fill-6-light);
+  }
+
+  .dark {
+    --bg-page: var(--color-bg-page-dark);
+    --bg-surface: var(--color-bg-surface-dark);
+    --bg-raised: var(--color-bg-raised-dark);
+
+    --text-primary: var(--color-text-primary-dark);
+    --text-secondary: var(--color-text-secondary-dark);
+    --text-muted: var(--color-text-muted-dark);
+    
+    --border-color: var(--color-border-dark);
+    --accent: var(--color-accent-dark);
+    --accent-hover: var(--color-accent-dark-hover);
+
+    /* Override line colors for dark mode */
+    --color-line-1: var(--color-line-1-dark);
+    --color-line-2: var(--color-line-2-dark);
+    --color-line-3: var(--color-line-3-dark);
+    --color-line-4: var(--color-line-4-dark);
+    --color-line-5: var(--color-line-5-dark);
+    --color-line-6: var(--color-line-6-dark);
+
+    /* Override fill colors for dark mode */
+    --color-fill-1: var(--color-fill-1-dark);
+    --color-fill-2: var(--color-fill-2-dark);
+    --color-fill-3: var(--color-fill-3-dark);
+    --color-fill-4: var(--color-fill-4-dark);
+    --color-fill-5: var(--color-fill-5-dark);
+    --color-fill-6: var(--color-fill-6-dark);
   }
 }
 
+@theme {
+  /* Connect variables to utilities */
+  --color-page: var(--bg-page);
+  --color-surface: var(--bg-surface);
+  --color-raised: var(--bg-raised);
+
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+
+  --color-border: var(--border-color);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  /* Line colors */
+  --color-line-1: var(--color-line-1);
+  --color-line-2: var(--color-line-2);
+  --color-line-3: var(--color-line-3);
+  --color-line-4: var(--color-line-4);
+  --color-line-5: var(--color-line-5);
+  --color-line-6: var(--color-line-6);
+
+  /* Fill colors */
+  --color-fill-1: var(--color-fill-1);
+  --color-fill-2: var(--color-fill-2);
+  --color-fill-3: var(--color-fill-3);
+  --color-fill-4: var(--color-fill-4);
+  --color-fill-5: var(--color-fill-5);
+  --color-fill-6: var(--color-fill-6);
+}
+
+/* Utility classes for stroke colors */
+.line-1 { stroke: var(--color-line-1); fill: none; }
+.line-2 { stroke: var(--color-line-2); fill: none; }
+.line-3 { stroke: var(--color-line-3); fill: none; }
+.line-4 { stroke: var(--color-line-4); fill: none; }
+.line-5 { stroke: var(--color-line-5); fill: none; }
+.line-6 { stroke: var(--color-line-6); fill: none; }
+
+
+/* Utility classes for fill colors */
+.fill-1 { fill: var(--color-fill-1); }
+.fill-2 { fill: var(--color-fill-2); }
+.fill-3 { fill: var(--color-fill-3); }
+.fill-4 { fill: var(--color-fill-4); }
+.fill-5 { fill: var(--color-fill-5); }
+.fill-6 { fill: var(--color-fill-6); }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-page text-primary transition-colors duration-300;
 }

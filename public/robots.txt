@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://probablybaseball.pages.dev
+
+# Sitemaps
+Sitemap: https://probablybaseball.pages.dev/sitemap.xml

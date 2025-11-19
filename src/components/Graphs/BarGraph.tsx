@@ -63,6 +63,7 @@ export default function BarGraph({
                         y={y(d)}
                         width={x.bandwidth()}
                         height={y(0) - y(d)}
+                        // className="fill-2"
                     />
                 ))}
             </g>
@@ -88,7 +89,7 @@ export default function BarGraph({
                     // Change values for above text that goes above the graph
                     const textAboveGraph = textY < textWidth;
                     const yPos = textAboveGraph ? textY + 10 : textY
-                    const fillColor = textAboveGraph ? "white" : (barLabelColor ?? "black");
+                    // const fillColor = textAboveGraph ? "white" : (barLabelColor ?? "black");
                     const textAnchor = textAboveGraph ? flipAnchor(anchor) : anchor;
 
                     
@@ -102,7 +103,8 @@ export default function BarGraph({
                             transform={`rotate(${rotation}, ${xPos}, ${yPos})`}
                             textAnchor={textAnchor}
                             fontSize={barLabelFontSize ?? 10}
-                            fill={fillColor}
+                            className="fill-current stroke-none"
+                            // fill={fillColor}
                         >
                             {labelText}
                         </text>
@@ -124,7 +126,9 @@ export default function BarGraph({
 
                     const axisSelection = d3.select(node).call(axis);
 
-                    axisSelection.selectAll("text").attr("fill", xLabelColor)
+                    // axisSelection.selectAll("text").attr("fill", xLabelColor)
+                    axisSelection.selectAll("text").classed("fill-1", true)
+                    axisSelection.selectAll("path, line").classed("line-1", true)
 
                     // Optionally rotate labels if configured
                     const angle = rotateLabels ?? 0;

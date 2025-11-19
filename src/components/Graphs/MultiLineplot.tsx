@@ -71,9 +71,10 @@ export default function MultiLinePlot({
             <g>
                 {data.map((series, i) => (
                     <path
+                        className={i == 0 ? "line-1" : "line-5"}
                         key={i}
                         fill="none"
-                        stroke={lineColors[i] ?? "white"}
+                        // stroke={lineColors[i] ?? "white"}
                         strokeWidth={1.0}
                         d={line(series) ?? ""}
                     />
@@ -82,13 +83,15 @@ export default function MultiLinePlot({
 
             
 
-            {/* Circles on the data points */}
+            {/* Circles on the data points 
+                - note circles done seemingly show? to do fix.
+            */}
             {dataPointCircles && (
-                <g fill="white" stroke="currentColor" strokeWidth={1.5}>
+                <g className="fill-1" strokeWidth={1.5}>
                     {data.map((series, si) =>
-                    series.map((d, i) => (
-                        <circle key={`${si}-${i}`} cx={x(i)} cy={y(d)} r={2.5} />
-                    ))
+                        series.map((d, i) => (
+                            <circle key={`${si}-${i}`} cx={x(i)} cy={y(d)} r={2.5} />
+                        ))
                     )}
                 </g>
             )}
@@ -121,7 +124,7 @@ export default function MultiLinePlot({
                             // Change values for above text that goes above the graph
                             const textAboveGraph = textY < textWidth;
                             const yPos = textAboveGraph ? textY + 10 : textY
-                            const fillColor = textAboveGraph ? "white" : (dataLabelColor ?? "black");
+                            // const fillColor = textAboveGraph ? "white" : (dataLabelColor ?? "black");
                             const textAnchor = textAboveGraph ? flipAnchor(anchor) : anchor;
 
                             
@@ -135,7 +138,8 @@ export default function MultiLinePlot({
                                     transform={`rotate(${rotation}, ${xPos}, ${yPos})`}
                                     textAnchor={textAnchor}
                                     fontSize={dataLabelFontSize ?? 10}
-                                    fill={fillColor}
+                                    className="fill-current stroke-none"
+                                    // fill={fillColor}
                                 >
                                     {labelText}
                                 </text>
@@ -169,7 +173,9 @@ export default function MultiLinePlot({
 
                     const axisSelection = d3.select(node).call(axis);
 
-                    axisSelection.selectAll("text").attr("fill", xLabelColor)
+                    // axisSelection.selectAll("text").attr("fill", xLabelColor)
+                    axisSelection.selectAll("text").classed("fill-1", true)
+                    axisSelection.selectAll("path, line").classed("line-1", true)
 
                     // Optionally rotate labels if configured
                     const angle = rotateLabels ?? 0;

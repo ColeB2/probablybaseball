@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import ConsentBanner from "@/components/ConsentBanner/ConsentBanner";
-import AnalyticsWrapper from "@/components/AnalyricsWrapper/AnalyticsWrapper";
+import GoogleTag from "@/components/GoogleTag/GoogleTag";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +45,8 @@ export const metadata: Metadata = {
     },
 };
 
+const GA_ID = 'G-QGV9XGPNN0'
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -53,6 +55,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
+                <GoogleTag GA_ID={GA_ID}/>
                 <meta name="google-site-verification" content="JSzCveEuPfkysJLgd0V6wiaJhUN0VFpZFu2CUKOCdS8" />
             </head>
             <body
@@ -62,7 +65,6 @@ export default function RootLayout({
                 {children}
                 <Footer/>
                 <ConsentBanner/>
-                <AnalyticsWrapper/>
             </body>
         </html>
     );

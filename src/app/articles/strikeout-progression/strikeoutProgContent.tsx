@@ -1,244 +1,64 @@
-'use client';
 import BarGraph from "@/components/Graphs/BarGraph";
 import LinePlot from "@/components/Graphs/Lineplot";
 import MultiLinePlot from "@/components/Graphs/MultiLineplot";
 import GraphSlider from "@/components/GraphSlider/GraphSlider";
-import * as d3 from "d3";
-import { useEffect, useState } from "react";
+import strikeoutData from '@/generated/strikeout-history.json'
 
-//interface to read high_so_per_season.vsc
-interface HighestSOPerSeason {
-    yearID: string; //number;
-    playerID: string;
-    SO: string; //number;
-    nameFirst: string;
-    nameLast: string;
-    fullName: string;
+
+const preModernCfg = {
+    start: 0,
+    end: 30,
+    keys: ["Yearly-K-Leader-Pre-Modern-ERA", "K-Record-Holder-Pre-Modern-ERA"],
+    graphs: ["yearlyLeaders" as const, "records" as const]
 }
+const deadBallCfg = {
+    start: 29,
+    end: 49,
+    keys: ["Yearly-K-Leader-Dead-Ball-ERA", "K-Record-Holder-Dead-Ball-ERA"],
+    graphs: ["yearlyLeaders" as const, "records" as const]
+};
+const goldenAgeCfg = {
+    start: 49,
+    end: 76,
+    keys: ["Yearly-K-Leader-Golden-Age-ERA", "K-Record-Holder-Golden-Age-ERA"],
+    graphs: ["yearlyLeaders" as const, "records" as const]
+};
 
-//interface to read highest_so_per_season_record.csv
-interface HighestSOPerSeasonRecord {
-    yearID: string; //number;
-    playerID: string;
-    SO: string; //number;
-}
+const integrationCfg = {
+    start: 76,
+    end: 90,
+    keys: ["Yearly-K-Leader-Integration-ERA", "K-Record-Holder-Integration-ERA"],
+    graphs: ["yearlyLeaders" as const, "records" as const]
+};
 
-//interface to read league_wide_so_per_season.csv
-interface LeagueWideSOPerSeason {
-    yearID: string;
-    SO: string;
-}
+const expansionCfg = {
+    start: 90,
+    end: 133,
+    keys: ["Yearly-K-Leader-Expansion-ERA", "K-Record-Holder-Expansion-ERA"],
+    graphs: ["yearlyLeaders" as const, "records" as const]
+};
 
-interface StrikeoutPercentage {
-  yearID: string;
-  playerID: string;
-  SO_player: string;
-  nameFirst: string;
-  nameLast: string;
-  fullName: string;
-  SO_league: string;
-  SO_percentage: string;
-}
+const modernCfg = {
+    start: 133,
+    end: undefined, // Slices to the end of the array automatically
+    keys: ["Yearly-K-Leader-Modern-ERA", "K-Record-Holder-Modern-ERA"],
+    graphs: ["yearlyLeaders" as const, "records" as const]
+};
 
-const DATA_PATH = "/data/strikeout-progression"
+const ERAS = {
+    preModern: preModernCfg,
+    deadBall: deadBallCfg,
+    goldenAge: goldenAgeCfg,
+    integration: integrationCfg,
+    expansion: expansionCfg,
+    modern: modernCfg
+};
 
 export default function StrikeoutProgContent() {
-    // Data for highest_so_per_season.csv
-    const [data, setData] = useState<number[]>([]);
-    const [dataLabels, setDataLabels] = useState<string[]>([]);
-    const [xLabels, setXLabels] = useState<string[]>([]);
-
-    // Data for highest_so_per_season_record.csv
-    const [data2, setData2] = useState<number[]>([]);
-    const [dataLabels2, setDataLabels2] = useState<string[]>([]);
-    const [xLabels2, setXLabels2] = useState<string[]>([]);
-
-    //League Wide strikeout totals
-    const [data3, setData3] = useState<number[]>([]);
-    // const [dataLabels3, setDataLabels3] = useState<string[]>([]);
-    const [xLabels3, setXLabels3] = useState<string[]>([]);
-
-    //Player Strikeout as percentage of league totals
-    const [data4, setData4] = useState<number[]>([]);
-    const [dataLabels4, setDataLabels4] = useState<string[]>([]);
-    const [xLabels4, setXLabels4] = useState<string[]>([]);
-
-    useEffect(() => {
-        d3.csv(DATA_PATH + "/highest_so_per_season.csv", (row: d3.DSVRowString): HighestSOPerSeason => ({
-            yearID: row.yearID,
-            playerID: row.playerID,
-            SO: row.SO,
-            nameFirst: row.NameFirst,
-            nameLast: row.NameLast,
-            fullName: row.fullName,
-        })).then((csvData: HighestSOPerSeason[]) => {
-            const numbers = csvData.map(row => Number(row.SO));
-            const xLabels = csvData.map(row => row.yearID);
-            const playerLabels = csvData.map(row => 
-                row.fullName 
-                + " - " 
-                + row.SO.replace(".0", "") );
-
-            setData(numbers);
-            setDataLabels(playerLabels);
-            setXLabels(xLabels);
-        });
-    }, []);
-
-    //Graph 2
-    useEffect(() => {
-        d3.csv(DATA_PATH + "/highest_so_per_season_record.csv", (row: d3.DSVRowString): HighestSOPerSeasonRecord => ({
-            yearID: row.yearID,
-            playerID: row.playerID,
-            SO: row.SO,
-        })).then((csvData: HighestSOPerSeasonRecord[]) => {
-            const numbers = csvData.map(row => Number(row.SO));
-            const xLabels = csvData.map(row => row.yearID);
-            const playerLabels = csvData.map(row => 
-                row.playerID 
-                + " - " 
-                + row.SO.replace(".0", "") );
-
-            setData2(numbers);
-            setDataLabels2(playerLabels);
-            setXLabels2(xLabels);
-        });
-    }, []);
-
-    //Graph 3
-    useEffect(() => {
-        d3.csv(DATA_PATH + "/league_wide_so_per_season.csv", (row: d3.DSVRowString): LeagueWideSOPerSeason => ({
-            yearID: row.yearID,
-            SO: row.SO,
-        })).then((csvData: LeagueWideSOPerSeason[]) => {
-            const numbers = csvData.map(row => Number(row.SO));
-            const xLabels = csvData.map(row => row.yearID);
-
-
-            setData3(numbers);
-            // setDataLabels2(playerLabels);
-            setXLabels3(xLabels);
-        });
-    }, []);
-
-    //Graph 4
-    useEffect(() => {
-        d3.csv(DATA_PATH + "/player_so_as_percent_of_season.csv", (row: d3.DSVRowString): StrikeoutPercentage => ({
-            yearID: row.yearID,
-            playerID: row.playerID,
-            SO_player: row.SO_player,
-            nameFirst: row.nameFirst,
-            nameLast: row.nameLast,
-            fullName: row.fullName,
-            SO_league: row.SO_league,
-            SO_percentage: row.SO_percentage,
-        })).then((csvData: StrikeoutPercentage[]) => {
-            // const player_so = csvData.map(row => Number(row.SO_player));
-            const player_so_pct = csvData.map(row => Number(parseFloat(row.SO_percentage).toFixed(2)));
-            const playerLabels = csvData.map(row => 
-                row.fullName
-                + " - " 
-                + String(Number(parseFloat(row.SO_percentage).toFixed(2)))
-                + " % "
-            );
-            const xLabels = csvData.map(row => row.yearID);
-
-
-            setData4(player_so_pct);
-            setDataLabels4(playerLabels);
-            setXLabels4(xLabels);
-        });
-    }, []);
-
-    const preModernGraphConfigs = [
-        {
-            key: "Yearly-K-Leader-Pre-Modern-ERA",
-            data: data.slice(0, 30),
-            dataLabels: dataLabels.slice(0, 30),
-            xLabels: xLabels.slice(0, 30),
-        },
-        {
-            key: "K-Record-Holder-Pre-Modern-ERA",
-            data: data2.slice(0, 30),
-            dataLabels: dataLabels2.slice(0, 30),
-            xLabels: xLabels2.slice(0, 30),
-        },
-    ]
-    const deadBallEraGraphConfigs = [
-        {
-            key: "Yearly-K-Leader-Dead-Ball-ERA",
-            data: data.slice(29, 49),
-            dataLabels: dataLabels.slice(29, 49),
-            xLabels: xLabels.slice(29, 49),
-        },
-        {
-            key: "K-Record-Holder-Dead-Ball-ERA",
-            data: data2.slice(29, 49),
-            dataLabels: dataLabels2.slice(29, 49),
-            xLabels: xLabels2.slice(29, 49),
-        },
-    ]
-
-    const goldenAgeEraGraphConfigs = [
-        {
-            key: "Yearly-K-Leader-Golden-Age-ERA",
-            data: data.slice(49, 76),
-            dataLabels: dataLabels.slice(49, 76),
-            xLabels: xLabels.slice(49, 76),
-        },
-        {
-            key: "K-Record-Holder-Golden-Age-ERA",
-            data: data2.slice(49, 76),
-            dataLabels: dataLabels2.slice(49, 76),
-            xLabels: xLabels2.slice(49, 76),
-        },
-    ]
-    const integrationEraGraphConfigs = [
-        {
-            key: "Yearly-K-Leader-Integration-ERA",
-            data: data.slice(76, 90),
-            dataLabels: dataLabels.slice(76, 90),
-            xLabels: xLabels.slice(76, 90),
-        },
-        {
-            key: "K-Record-Holder-Integratione-ERA",
-            data: data2.slice(76, 90),
-            dataLabels: dataLabels2.slice(76, 90),
-            xLabels: xLabels2.slice(76, 90),
-        },
-    ]
-    const expansionEraGraphConfigs = [
-        {
-            key: "Yearly-K-Leader-Golden-Age-ERA",
-            data: data.slice(90, 133),
-            dataLabels: dataLabels.slice(90, 133),
-            xLabels: xLabels.slice(90, 133),
-        },
-        {
-            key: "K-Record-Holder-Golden-Age-ERA",
-            data: data2.slice(90, 133),
-            dataLabels: dataLabels2.slice(90, 133),
-            xLabels: xLabels2.slice(90, 133),
-        },
-    ]
-    const modernEraGraphConfigs = [
-        {
-            key: "Yearly-K-Leader-Modern-ERA",
-            data: data.slice(133),
-            dataLabels: dataLabels.slice(133),
-            xLabels: xLabels.slice(133),
-        },
-        {
-            key: "K-Record-Holder-Modern-ERA",
-            data: data2.slice(133),
-            dataLabels: dataLabels2.slice(133),
-            xLabels: xLabels2.slice(133),
-        },
-    ]
-    // return (<></>); // to hide all the data until published
     return (
         <>
             <section id="chapter1" className="mb-12">
+               
                 <h2 className="text-2xl font-semibold mb-2">
                     Chapter 1 - The Pre Modern Era
                 </h2>
@@ -274,30 +94,28 @@ export default function StrikeoutProgContent() {
                     to Sam Wise until the turn of the century. He truly was one of a kind, and a modern-day gladiator with the stick.
                 </p>
                 {/* Bar graphs for PreModern Era */}
-                {data.length !== 0 && data2.length !== 0
-                && <GraphSlider 
-                        graphs={
-                            preModernGraphConfigs.map((cfg) =>
-                                <LinePlot
-                                    key={cfg.key}
-                                    data={cfg.data}
-                                    dataLabels={cfg.dataLabels}
-                                    dataLabelRotation={-90} // 0 or +/-90
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    // width={Math.max(640, data.length * 20)} //dynamic width
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={100}
-                                    xLabels={cfg.xLabels}
-                                    // xLabelColor="black"
-                                    rotateLabels={45}
-                                />
-                            )
-
-                        }
+                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
+                    <GraphSlider
+                        graphs={preModernCfg.graphs.map((graphName, i) => {
+                            const rawSlice = strikeoutData[graphName].slice(preModernCfg.start, preModernCfg.end);
+                            return (
+                            <LinePlot
+                                key={preModernCfg.keys[i]}
+                                data={rawSlice.map((d) => d.y)}
+                                dataLabels={rawSlice.map((d) => d.label)}
+                                dataLabelRotation={-90}
+                                dataLabelFontSize={14}
+                                width={780}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={rawSlice.map((d) => d.x)}
+                                rotateLabels={45}
+                            />
+                            );
+                        })}
                     />
-                }
+                </div>
             </section>
             <section id="chapter2" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -339,31 +157,28 @@ export default function StrikeoutProgContent() {
                     <li>Gus Williams, a right fielder for the St. Louis Browns, who, if not for Jake Stahl, would have set the record in 1914 (120) and held it for over 20 seasons.</li>
                     <li>Babe Ruth, the legend himself, who led the league in K&apos;s in 1918 (58). It was his first full season not being purely a pitcher, and would be his first of 5 times leading the AL in strikeouts, although he never struck out more than 100 times.</li>
                 </ul>
-                {/* Bar graphs for PreModern Era */}
-                {data.length !== 0 && data2.length !== 0
-                && <GraphSlider 
-                        graphs={
-                            deadBallEraGraphConfigs.map((cfg) =>
-                                <LinePlot
-                                    key={cfg.key}
-                                    data={cfg.data}
-                                    dataLabels={cfg.dataLabels}
-                                    dataLabelRotation={-90} // 0 or +/-90
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    // width={Math.max(640, data.length * 20)} //dynamic width
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={100}
-                                    xLabels={cfg.xLabels}
-                                    // xLabelColor="black"
-                                    rotateLabels={45}
-                                />
-                            )
-
-                        }
+                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
+                    <GraphSlider
+                        graphs={deadBallCfg.graphs.map((graphName, i) => {
+                            const rawSlice = strikeoutData[graphName].slice(deadBallCfg.start, deadBallCfg.end);
+                            return (
+                            <LinePlot
+                                key={deadBallCfg.keys[i]}
+                                data={rawSlice.map((d) => d.y)}
+                                dataLabels={rawSlice.map((d) => d.label)}
+                                dataLabelRotation={-90}
+                                dataLabelFontSize={14}
+                                width={780}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={rawSlice.map((d) => d.x)}
+                                rotateLabels={45}
+                            />
+                            );
+                        })}
                     />
-                }
+                </div>
             </section>
             <section id="chapter3" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -403,30 +218,28 @@ export default function StrikeoutProgContent() {
                     <li>Hack Wilson - 3-time MLB leader, 5-time NL leader, and notable power-hitting center fielder for the Cubs. Most notable for his single-season RBI record of 191.</li>
                     <li>Sluggers: Babe Ruth returns 3 times, Jimmie Foxx finds his way on the board a couple, and Ralph Kiner takes a run for the title before integration.</li>
                 </ul>
-                {data.length !== 0 && data2.length !== 0
-                && <GraphSlider 
-                        graphs={
-                            goldenAgeEraGraphConfigs.map((cfg) =>
-                                <LinePlot
-                                    key={cfg.key}
-                                    data={cfg.data}
-                                    dataLabels={cfg.dataLabels}
-                                    dataLabelRotation={-90} // 0 or +/-90
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    // width={Math.max(640, data.length * 20)} //dynamic width
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={100}
-                                    xLabels={cfg.xLabels}
-                                    // xLabelColor="black"
-                                    rotateLabels={45}
-                                />
-                            )
-
-                        }
+                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
+                    <GraphSlider
+                        graphs={goldenAgeCfg.graphs.map((graphName, i) => {
+                            const rawSlice = strikeoutData[graphName].slice(goldenAgeCfg.start, goldenAgeCfg.end);
+                            return (
+                            <LinePlot
+                                key={goldenAgeCfg.keys[i]}
+                                data={rawSlice.map((d) => d.y)}
+                                dataLabels={rawSlice.map((d) => d.label)}
+                                dataLabelRotation={-90}
+                                dataLabelFontSize={14}
+                                width={780}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={rawSlice.map((d) => d.x)}
+                                rotateLabels={45}
+                            />
+                            );
+                        })}
                     />
-                }
+                </div>
             </section>
             <section id="chapter4" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -446,30 +259,28 @@ export default function StrikeoutProgContent() {
                     From 1960 until the 2000&apos;s baseball was looking to expand in grow in multiple ways. From expanding the league to many more teams, to the players taking 
                     supplements to expand themselves to new sizes, the strikeout record was ready to take on new life, and lead, eventually getting us back on track to new heights.
                 </p>
-                {data.length !== 0 && data2.length !== 0
-                && <GraphSlider 
-                        graphs={
-                            integrationEraGraphConfigs.map((cfg) =>
-                                <LinePlot
-                                    key={cfg.key}
-                                    data={cfg.data}
-                                    dataLabels={cfg.dataLabels}
-                                    dataLabelRotation={-90} // 0 or +/-90
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    // width={Math.max(640, data.length * 20)} //dynamic width
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={100}
-                                    xLabels={cfg.xLabels}
-                                    // xLabelColor="black"
-                                    rotateLabels={45}
-                                />
-                            )
-
-                        }
+                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
+                    <GraphSlider
+                        graphs={integrationCfg.graphs.map((graphName, i) => {
+                            const rawSlice = strikeoutData[graphName].slice(integrationCfg.start, integrationCfg.end);
+                            return (
+                            <LinePlot
+                                key={integrationCfg.keys[i]}
+                                data={rawSlice.map((d) => d.y)}
+                                dataLabels={rawSlice.map((d) => d.label)}
+                                dataLabelRotation={-90}
+                                dataLabelFontSize={14}
+                                width={780}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={rawSlice.map((d) => d.x)}
+                                rotateLabels={45}
+                            />
+                            );
+                        })}
                     />
-                }
+                </div>
             </section>
             <section id="chapter5" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -518,31 +329,28 @@ export default function StrikeoutProgContent() {
                     <li>José Hernández, a Cub and journeyman infielder, who had many great attempts, from 2001 to 2003, striking out 185, 188 and 177 times respectively.</li>
                     <li>Other Notable Sluggers:  Reggie Jackson, who made the leaderboard a few times, 2 sport athlete Bo Jackson and Jim Thome.</li>
                 </ul>
-                
-                {data.length !== 0 && data2.length !== 0
-                && <GraphSlider 
-                        graphs={
-                            expansionEraGraphConfigs.map((cfg) =>
-                                <LinePlot
-                                    key={cfg.key}
-                                    data={cfg.data}
-                                    dataLabels={cfg.dataLabels}
-                                    dataLabelRotation={-90} // 0 or +/-90
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    // width={Math.max(640, data.length * 20)} //dynamic width
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={100}
-                                    xLabels={cfg.xLabels}
-                                    // xLabelColor="black"
-                                    rotateLabels={45}
-                                />
-                            )
-
-                        }
+                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
+                    <GraphSlider
+                        graphs={expansionCfg.graphs.map((graphName, i) => {
+                            const rawSlice = strikeoutData[graphName].slice(expansionCfg.start, expansionCfg.end);
+                            return (
+                            <LinePlot
+                                key={expansionCfg.keys[i]}
+                                data={rawSlice.map((d) => d.y)}
+                                dataLabels={rawSlice.map((d) => d.label)}
+                                dataLabelRotation={-90}
+                                dataLabelFontSize={14}
+                                width={780}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={rawSlice.map((d) => d.x)}
+                                rotateLabels={45}
+                            />
+                            );
+                        })}
                     />
-                }
+                </div>
             </section>
             <section id="chapter6" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -579,30 +387,28 @@ export default function StrikeoutProgContent() {
                     incredible number, only approached once, by Adam Dunn in 2012, when he wiffed 222 times, but falling short, we leave off with the true champion of K, the current 
                     strikeout King, Mark Reynolds. 
                 </p>
-                {data.length !== 0 && data2.length !== 0
-                && <GraphSlider 
-                        graphs={
-                            modernEraGraphConfigs.map((cfg) =>
-                                <LinePlot
-                                    key={cfg.key}
-                                    data={cfg.data}
-                                    dataLabels={cfg.dataLabels}
-                                    dataLabelRotation={-90} // 0 or +/-90
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    // width={Math.max(640, data.length * 20)} //dynamic width
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={100}
-                                    xLabels={cfg.xLabels}
-                                    // xLabelColor="black"
-                                    rotateLabels={45}
-                                />
-                            )
-
-                        }
+                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
+                    <GraphSlider
+                        graphs={modernCfg.graphs.map((graphName, i) => {
+                            const rawSlice = strikeoutData[graphName].slice(modernCfg.start, modernCfg.end);
+                            return (
+                            <LinePlot
+                                key={modernCfg.keys[i]}
+                                data={rawSlice.map((d) => d.y)}
+                                dataLabels={rawSlice.map((d) => d.label)}
+                                dataLabelRotation={-90}
+                                dataLabelFontSize={14}
+                                width={780}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={rawSlice.map((d) => d.x)}
+                                rotateLabels={45}
+                            />
+                            );
+                        })}
                     />
-                }
+                </div>
             </section>
             <section id="epilogue" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -620,180 +426,211 @@ export default function StrikeoutProgContent() {
 
             <section id="graphs">
                 <h2>Season Strikeout Record, Graphed against Current K Record</h2>
-                {data.length !== 0
-                &&
-                    <div className="overflow-x-auto">
-                        <MultiLinePlot
-                            data={[data, data2]}
-                            showDataLabels={false}
-                            // dataLabels={[dataLabels, dataLabels2]}
-                            dataLabelRotation={-90}
-                            dataLabelFontSize={14}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            dataPointCircles={false}
-                            marginLeft={35}
-                            lineColors={["white", "red"]}
-                            xLabels={xLabels}
-                            xLabelTickSteps={1}
-                            rotateLabels={45}
-                            marginBottom={35}
-                            
-                        />
-                    </div>
-                }
+                <div 
+                    className="overflow-x-auto"
+                    style={{
+                        minHeight: '400px',
+                        width: '100%',
+                        maxWidth: `${Math.max(640, strikeoutData.yearlyLeaders.length * 20)}px`
+                    }}
+                >
+                    <MultiLinePlot
+                        data={[
+                            strikeoutData.yearlyLeaders.map(d => d.y),
+                            strikeoutData.records.map(d => d.y)
+                        ]}
+                        showDataLabels={false}
+                        // dataLabels={[dataLabels, dataLabels2]}
+                        dataLabelRotation={-90}
+                        dataLabelFontSize={14}
+                        width={Math.max(640, strikeoutData.yearlyLeaders.length * 20)}//dynamic width
+                        dataPointCircles={false}
+                        marginLeft={35}
+                        lineColors={["white", "red"]}
+                        xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
+                        xLabelTickSteps={1}
+                        rotateLabels={45}
+                        marginBottom={35}
+                        
+                    />
+                </div>
                 <h2>Single Season Strikeout Record for each Individual Season - Full Graph</h2>
-                {data.length !== 0
-                    && <GraphSlider
+                <div 
+                    className="overflow-x-auto"
+                    style={{
+                        minHeight: '500px',
+                        width: '100%',
+                        maxWidth: `${Math.max(640, strikeoutData.yearlyLeaders.length * 20)}px`
+                    }}
+                >
+                    <GraphSlider
                         graphs={[
                             <LinePlot
                                 key="Single-Season-Strikeout-Record-Line-Plot"
-                                data={data}
-                                dataLabels={dataLabels}
+                                data={strikeoutData.yearlyLeaders.map(d => d.y)}
+                                dataLabels={strikeoutData.yearlyLeaders.map(d => d.label)}
                                 dataLabelRotation={-90}
                                 dataLabelFontSize={14}
-                                width={Math.max(640, data.length * 20)} //dynamic width
+                                height={500}
+                                width={Math.max(640, strikeoutData.yearlyLeaders.length * 20)} //dynamic width
                                 // dataPointCircles={false}
                                 marginLeft={35}
-                                xLabels={xLabels}
+                                marginBottom={35}
+                                xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                                 xLabelTickSteps={1}
                                 rotateLabels={45}
-                                marginBottom={35}
                             />,
                             <BarGraph
                                 key="Single-Season-Strikeout-Record-Bar-Graph"
-                                data={data}
-                                barLabels={dataLabels}
+                                data={strikeoutData.yearlyLeaders.map(d => d.y)}
+                                barLabels={strikeoutData.yearlyLeaders.map(d => d.label)}
                                 barLabelRotation={-90} // 0 or +/-90
                                 barLabelFontSize={14}
                                 // width={640}
-                                width={Math.max(640, data.length * 20)} //dynamic width
+                                width={Math.max(640, strikeoutData.yearlyLeaders.length * 20)} //dynamic width
                                 height={500}
                                 marginLeft={35}
-                                marginBottom={100}
-                                xLabels={xLabels}
+                                marginBottom={35}
+                                xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
                             />
                         ]}
                     />
-                }
-
+                </div>
                 <h2>Full Record progression Timeline</h2>
-                {data2.length !== 0
-                && <GraphSlider
-                    key="Full-Record-Progression-Graphs-Slider" 
-                    graphs={[
-                        <LinePlot
-                            key="Full-Record-Progression-Line-Plot"
-                            data={data2}
-                            dataLabels={dataLabels2}
-                            dataLabelRotation={-90} // 0 or +/-90
-                            dataLabelFontSize={14}
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels2}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />,
-                        <BarGraph
-                            key="Full-Record-Progression-Bar-Graph"
-                            data={data2}
-                            barLabels={dataLabels2}
-                            barLabelRotation={-90} // 0 or +/-90
-                            barLabelFontSize={14}
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels2}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />
+                <div 
+                    className="overflow-x-auto"
+                    style={{
+                        minHeight: '500px',
+                        width: '100%',
+                        maxWidth: `${Math.max(640, strikeoutData.records.length * 20)}px`
+                    }}
+                >
+                    <GraphSlider
+                        key="Full-Record-Progression-Graphs-Slider" 
+                        graphs={[
+                            <LinePlot
+                                key="Full-Record-Progression-Line-Plot"
+                                data={strikeoutData.records.map(d => d.y)}
+                                dataLabels={strikeoutData.records.map(d => d.label)}
+                                dataLabelRotation={-90} // 0 or +/-90
+                                dataLabelFontSize={14}
+                                // width={640}
+                                width={Math.max(640, strikeoutData.records.length * 20)}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={strikeoutData.records.map(d => d.x)}
+                                // xLabelColor="black"
+                                rotateLabels={45}
+                            />,
+                            <BarGraph
+                                key="Full-Record-Progression-Bar-Graph"
+                                data={strikeoutData.records.map(d => d.y)}
+                                barLabels={strikeoutData.records.map(d => d.label)}
+                                barLabelRotation={-90} // 0 or +/-90
+                                barLabelFontSize={14}
+                                // width={640}
+                                width={Math.max(640, strikeoutData.records.length * 20)}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={strikeoutData.records.map(d => d.x)}
+                                // xLabelColor="black"
+                                rotateLabels={45}
+                            />
 
-                    ]}
-                />
-                }
+                        ]}
+                    />
+                </div>
 
-            <h2>League Wide Strikeout Totals</h2>
-            {data3.length !== 0 
-            &&  <GraphSlider
-                    graphs={[
-                        <LinePlot
-                            key="League-Wide-Strikeout-Totals-Line-Graph"
-                            data={data3}
-                            // dataLabels={dataLabels3}
-                            dataLabelRotation={-90} // 0 or +/-90
-                            dataLabelFontSize={14}
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={45}
-                            marginBottom={100}
-                            xLabels={xLabels3}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />,
-                        <BarGraph
-                            key="League-Wide-Strikeout-Totals-Bar-Graph"
-                            data={data3}
-                            // barLabels={dataLabels3}
-                            barLabelRotation={-90} // 0 or +/-90
-                            barLabelFontSize={14}
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={45}
-                            marginBottom={100}
-                            xLabels={xLabels3}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />
-                    ]}
-                />
-            }
-            <h2>Leaders Strikeout As a Percentage of League Wide Totals</h2>
-            {data4.length !== 0
-                && <GraphSlider
-                    // key="Full-Record-Progression-Graphs-Slider" 
-                    graphs={[
-                        <LinePlot
-                            key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Line-Graph"
-                            data={data4}
-                            dataLabels={dataLabels4}
-                            dataLabelRotation={-90} // 0 or +/-90
-                            dataLabelFontSize={14}
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels4}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />,
-                        <BarGraph
-                            key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Bar-Graph"
-                            data={data4}
-                            barLabels={dataLabels4}
-                            barLabelRotation={-90} // 0 or +/-90
-                            barLabelFontSize={14}
-                            // width={640}
-                            width={Math.max(640, data.length * 20)} //dynamic width
-                            height={500}
-                            marginLeft={35}
-                            marginBottom={100}
-                            xLabels={xLabels4}
-                            // xLabelColor="black"
-                            rotateLabels={45}
-                        />
+                <h2>League Wide Strikeout Totals</h2>
+                <div 
+                    className="overflow-x-auto"
+                    style={{
+                        minHeight: '500px',
+                        width: '100%',
+                        maxWidth: `${Math.max(640, strikeoutData.leagueWide.length * 20)}px`
+                    }}
+                >
+                    <GraphSlider
+                        graphs={[
+                            <LinePlot
+                                key="League-Wide-Strikeout-Totals-Line-Graph"
+                                data={strikeoutData.leagueWide.map(d => d.y)}
+                                // dataLabels={dataLabels3}
+                                dataLabelRotation={-90} // 0 or +/-90
+                                dataLabelFontSize={14}
+                                // width={640}
+                                width={Math.max(640, strikeoutData.leagueWide.length * 20)} //dynamic width
+                                height={500}
+                                marginLeft={45}
+                                marginBottom={35}
+                                xLabels={strikeoutData.leagueWide.map(d => d.x)}
+                                // xLabelColor="black"
+                                rotateLabels={45}
+                            />,
+                            <BarGraph
+                                key="League-Wide-Strikeout-Totals-Bar-Graph"
+                                data={strikeoutData.leagueWide.map(d => d.y)}
+                                // barLabels={dataLabels3}
+                                barLabelRotation={-90} // 0 or +/-90
+                                barLabelFontSize={14}
+                                // width={640}
+                                width={Math.max(640, strikeoutData.leagueWide.length * 20)} //dynamic width
+                                height={500}
+                                marginLeft={45}
+                                marginBottom={35}
+                                xLabels={strikeoutData.leagueWide.map(d => d.x)}
+                                // xLabelColor="black"
+                                rotateLabels={45}
+                            />
+                        ]}
+                    />
+                </div>
+                <h2>Leaders Strikeout As a Percentage of League Wide Totals</h2>
+                <div 
+                    className="overflow-x-auto"
+                    style={{
+                        minHeight: '500px',
+                        width: '100%',
+                        maxWidth: `${Math.max(640, strikeoutData.percentages.length * 20)}px`
+                    }}
+                >
+                    <GraphSlider
+                        // key="Full-Record-Progression-Graphs-Slider" 
+                        graphs={[
+                            <LinePlot
+                                key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Line-Graph"
+                                data={strikeoutData.percentages.map(d => d.y)}
+                                dataLabels={strikeoutData.percentages.map(d => d.label)}
+                                dataLabelRotation={-90} // 0 or +/-90
+                                dataLabelFontSize={14}
+                                width={Math.max(640, strikeoutData.percentages.length * 20)}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={strikeoutData.percentages.map(d => d.x)}
+                                rotateLabels={45}
+                            />,
+                            <BarGraph
+                                key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Bar-Graph"
+                                data={strikeoutData.percentages.map(d => d.y)}
+                                barLabels={strikeoutData.percentages.map(d => d.label)}
+                                barLabelRotation={-90} // 0 or +/-90
+                                barLabelFontSize={14}
+                                width={Math.max(640, strikeoutData.percentages.length * 20)}
+                                height={500}
+                                marginLeft={35}
+                                marginBottom={35}
+                                xLabels={strikeoutData.percentages.map(d => d.x)}
+                                rotateLabels={45}
+                            />
 
-                    ]}
-                />
-                }
+                        ]}
+                    />
+                </div>
             </section>
             <p className="w-full pt-8 text-center text-sm text-gray-500"
             >

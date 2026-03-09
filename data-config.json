@@ -1,0 +1,38 @@
+{
+  "articles": [
+    {
+      "id": "strikeout-history",
+      "folder": "strikeout-progression",
+      "charts": [
+        {
+          "slug": "yearlyLeaders",
+          "file": "highest_so_per_season.csv",
+          "map": { "x": "yearID", "y": "SO", "label": "{fullName} - {SO}" }
+        },
+        {
+          "slug": "records",
+          "file": "highest_so_per_season_record.csv",
+          "map": { "x": "yearID", "y": "SO", "label": "{playerID} - {SO}" }
+        },
+        {
+          "slug": "leagueWide",
+          "file": "league_wide_so_per_season.csv",
+          "map": { "x": "yearID", "y": "SO", "label": "Total: {SO}" }
+        },
+        {
+          "slug": "percentages",
+          "file": "player_so_as_percent_of_season.csv",
+          "map": { "x": "yearID", "y": "SO_percentage", "label": "{fullName} - {SO_percentage}%" }
+        }
+      ],
+      "eras": [
+        { "name": "Pre-Modern", "start": 0, "end": 30 },
+        { "name": "Dead-Ball", "start": 29, "end": 49 },
+        { "name": "Golden-Age", "start": 49, "end": 76 },
+        { "name": "Integration", "start": 76, "end": 90 },
+        { "name": "Expansion", "start": 90, "end": 133 },
+        { "name": "Modern", "start": 133, "end": null }
+      ]
+    }
+  ]
+}

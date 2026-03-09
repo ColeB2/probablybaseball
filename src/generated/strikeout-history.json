@@ -1,0 +1,3085 @@
+{
+  "yearlyLeaders": [
+    {
+      "x": "1871",
+      "y": 8,
+      "label": "Rynie Wolters - 8"
+    },
+    {
+      "x": "1872",
+      "y": 14,
+      "label": "Candy Cummings - 14"
+    },
+    {
+      "x": "1873",
+      "y": 14,
+      "label": "Jim Britt - 14"
+    },
+    {
+      "x": "1874",
+      "y": 13,
+      "label": "Billy Barnie - 13"
+    },
+    {
+      "x": "1875",
+      "y": 21,
+      "label": "Herman Dehlman - 21"
+    },
+    {
+      "x": "1876",
+      "y": 23,
+      "label": "Johnny Ryan - 23"
+    },
+    {
+      "x": "1877",
+      "y": 33,
+      "label": "Lew Brown - 33"
+    },
+    {
+      "x": "1878",
+      "y": 41,
+      "label": "Will White - 41"
+    },
+    {
+      "x": "1879",
+      "y": 56,
+      "label": "Pud Galvin - 56"
+    },
+    {
+      "x": "1880",
+      "y": 57,
+      "label": "Pud Galvin - 57"
+    },
+    {
+      "x": "1881",
+      "y": 70,
+      "label": "Pud Galvin - 70"
+    },
+    {
+      "x": "1882",
+      "y": 50,
+      "label": "Silver Flint - 50"
+    },
+    {
+      "x": "1883",
+      "y": 79,
+      "label": "Pud Galvin - 79"
+    },
+    {
+      "x": "1884",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1885",
+      "y": 82,
+      "label": "Charlie Bastian - 82"
+    },
+    {
+      "x": "1886",
+      "y": 82,
+      "label": "Emmett Seery - 82"
+    },
+    {
+      "x": "1887",
+      "y": 86,
+      "label": "John Morrill - 86"
+    },
+    {
+      "x": "1888",
+      "y": 79,
+      "label": "Jerry Denny - 79"
+    },
+    {
+      "x": "1889",
+      "y": 81,
+      "label": "Charlie Duffee - 81"
+    },
+    {
+      "x": "1890",
+      "y": 87,
+      "label": "Tom Brown - 87"
+    },
+    {
+      "x": "1891",
+      "y": 96,
+      "label": "Tom Brown - 96"
+    },
+    {
+      "x": "1892",
+      "y": 94,
+      "label": "Tom Brown - 94"
+    },
+    {
+      "x": "1893",
+      "y": 65,
+      "label": "Tom Daly - 65"
+    },
+    {
+      "x": "1894",
+      "y": 74,
+      "label": "Tom Brown - 74"
+    },
+    {
+      "x": "1895",
+      "y": 56,
+      "label": "Bill Joyce - 56"
+    },
+    {
+      "x": "1896",
+      "y": 58,
+      "label": "Tom McCreery - 58"
+    },
+    {
+      "x": "1897",
+      "y": 63,
+      "label": "Tom Brown - 63"
+    },
+    {
+      "x": "1898",
+      "y": 60,
+      "label": "Billy Clingman - 60"
+    },
+    {
+      "x": "1899",
+      "y": 58,
+      "label": "Ducky Holmes - 58"
+    },
+    {
+      "x": "1900",
+      "y": 63,
+      "label": "Jimmy Barrett - 63"
+    },
+    {
+      "x": "1901",
+      "y": 91,
+      "label": "Monte Cross - 91"
+    },
+    {
+      "x": "1902",
+      "y": 70,
+      "label": "Tim Flood - 70"
+    },
+    {
+      "x": "1903",
+      "y": 75,
+      "label": "Ollie Pickering - 75"
+    },
+    {
+      "x": "1904",
+      "y": 106,
+      "label": "Harry Lumley - 106"
+    },
+    {
+      "x": "1905",
+      "y": 105,
+      "label": "Danny Hoffman - 105"
+    },
+    {
+      "x": "1906",
+      "y": 116,
+      "label": "Billy Maloney - 116"
+    },
+    {
+      "x": "1907",
+      "y": 103,
+      "label": "Danny Hoffman - 103"
+    },
+    {
+      "x": "1908",
+      "y": 91,
+      "label": "Neal Ball - 91"
+    },
+    {
+      "x": "1909",
+      "y": 94,
+      "label": "Jake Stahl - 94"
+    },
+    {
+      "x": "1910",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1911",
+      "y": 78,
+      "label": "Bob Bescher - 78"
+    },
+    {
+      "x": "1912",
+      "y": 91,
+      "label": "Ed McDonald - 91"
+    },
+    {
+      "x": "1913",
+      "y": 103,
+      "label": "Danny Moeller - 103"
+    },
+    {
+      "x": "1914",
+      "y": 120,
+      "label": "Gus Williams - 120"
+    },
+    {
+      "x": "1915",
+      "y": 99,
+      "label": "Jack McCandless - 99"
+    },
+    {
+      "x": "1916",
+      "y": 89,
+      "label": "Gavvy Cravath - 89"
+    },
+    {
+      "x": "1917",
+      "y": 78,
+      "label": "Cy Williams - 78"
+    },
+    {
+      "x": "1918",
+      "y": 58,
+      "label": "Babe Ruth - 58"
+    },
+    {
+      "x": "1919",
+      "y": 79,
+      "label": "Ray Powell - 79"
+    },
+    {
+      "x": "1920",
+      "y": 92,
+      "label": "George Kelly - 92"
+    },
+    {
+      "x": "1921",
+      "y": 88,
+      "label": "Bob Meusel - 88"
+    },
+    {
+      "x": "1922",
+      "y": 98,
+      "label": "Jimmy Dykes - 98"
+    },
+    {
+      "x": "1923",
+      "y": 93,
+      "label": "Babe Ruth - 93"
+    },
+    {
+      "x": "1924",
+      "y": 81,
+      "label": "Babe Ruth - 81"
+    },
+    {
+      "x": "1925",
+      "y": 77,
+      "label": "Gabby Hartnett - 77"
+    },
+    {
+      "x": "1926",
+      "y": 96,
+      "label": "Tony Lazzeri - 96"
+    },
+    {
+      "x": "1927",
+      "y": 89,
+      "label": "Babe Ruth - 89"
+    },
+    {
+      "x": "1928",
+      "y": 94,
+      "label": "Hack Wilson - 94"
+    },
+    {
+      "x": "1929",
+      "y": 83,
+      "label": "Hack Wilson - 83"
+    },
+    {
+      "x": "1930",
+      "y": 84,
+      "label": "Hack Wilson - 84"
+    },
+    {
+      "x": "1931",
+      "y": 86,
+      "label": "Nick Cullop - 86"
+    },
+    {
+      "x": "1932",
+      "y": 102,
+      "label": "Bruce Campbell - 102"
+    },
+    {
+      "x": "1933",
+      "y": 93,
+      "label": "Jimmie Foxx - 93"
+    },
+    {
+      "x": "1934",
+      "y": 100,
+      "label": "Harlond Clift - 100"
+    },
+    {
+      "x": "1935",
+      "y": 113,
+      "label": "Dolph Camilli - 113"
+    },
+    {
+      "x": "1936",
+      "y": 119,
+      "label": "Jimmie Foxx - 119"
+    },
+    {
+      "x": "1937",
+      "y": 111,
+      "label": "Vince DiMaggio - 111"
+    },
+    {
+      "x": "1938",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1939",
+      "y": 107,
+      "label": "Dolph Camilli - 107"
+    },
+    {
+      "x": "1940",
+      "y": 127,
+      "label": "Chet Ross - 127"
+    },
+    {
+      "x": "1941",
+      "y": 115,
+      "label": "Dolph Camilli - 115"
+    },
+    {
+      "x": "1942",
+      "y": 95,
+      "label": "Joe Gordon - 95"
+    },
+    {
+      "x": "1943",
+      "y": 126,
+      "label": "Vince DiMaggio - 126"
+    },
+    {
+      "x": "1944",
+      "y": 99,
+      "label": "Pat Seerey - 99"
+    },
+    {
+      "x": "1945",
+      "y": 97,
+      "label": "Pat Seerey - 97"
+    },
+    {
+      "x": "1946",
+      "y": 109,
+      "label": "Ralph Kiner - 109"
+    },
+    {
+      "x": "1947",
+      "y": 110,
+      "label": "Eddie Joost - 110"
+    },
+    {
+      "x": "1948",
+      "y": 94,
+      "label": "Pat Seerey - 94"
+    },
+    {
+      "x": "1949",
+      "y": 92,
+      "label": "Duke Snider - 92"
+    },
+    {
+      "x": "1950",
+      "y": 114,
+      "label": "Roy Smalley - 114"
+    },
+    {
+      "x": "1951",
+      "y": 99,
+      "label": "Gil Hodges - 99"
+    },
+    {
+      "x": "1952",
+      "y": 115,
+      "label": "Eddie Mathews - 115"
+    },
+    {
+      "x": "1953",
+      "y": 125,
+      "label": "Steve Bilko - 125"
+    },
+    {
+      "x": "1954",
+      "y": 107,
+      "label": "Mickey Mantle - 107"
+    },
+    {
+      "x": "1955",
+      "y": 105,
+      "label": "Norm Zauchin - 105"
+    },
+    {
+      "x": "1956",
+      "y": 138,
+      "label": "Jim Lemon - 138"
+    },
+    {
+      "x": "1957",
+      "y": 104,
+      "label": "Duke Snider - 104"
+    },
+    {
+      "x": "1958",
+      "y": 120,
+      "label": "Jim Lemon - 120"
+    },
+    {
+      "x": "1959",
+      "y": 126,
+      "label": "Mickey Mantle - 126"
+    },
+    {
+      "x": "1960",
+      "y": 136,
+      "label": "Pancho Herrera - 136"
+    },
+    {
+      "x": "1961",
+      "y": 141,
+      "label": "Jake Wood - 141"
+    },
+    {
+      "x": "1962",
+      "y": 142,
+      "label": "Harmon Killebrew - 142"
+    },
+    {
+      "x": "1963",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1964",
+      "y": 143,
+      "label": "Nelson Mathews - 143"
+    },
+    {
+      "x": "1965",
+      "y": 150,
+      "label": "Dick Allen - 150"
+    },
+    {
+      "x": "1966",
+      "y": 152,
+      "label": "George Scott - 152"
+    },
+    {
+      "x": "1967",
+      "y": 155,
+      "label": "Frank Howard - 155"
+    },
+    {
+      "x": "1968",
+      "y": 171,
+      "label": "Reggie Jackson - 171"
+    },
+    {
+      "x": "1969",
+      "y": 187,
+      "label": "Bobby Bonds - 187"
+    },
+    {
+      "x": "1970",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1971",
+      "y": 161,
+      "label": "Reggie Jackson - 161"
+    },
+    {
+      "x": "1972",
+      "y": 145,
+      "label": "Bobby Darwin - 145"
+    },
+    {
+      "x": "1973",
+      "y": 148,
+      "label": "Bobby Bonds - 148"
+    },
+    {
+      "x": "1974",
+      "y": 138,
+      "label": "Mike Schmidt - 138"
+    },
+    {
+      "x": "1975",
+      "y": 180,
+      "label": "Mike Schmidt - 180"
+    },
+    {
+      "x": "1976",
+      "y": 149,
+      "label": "Mike Schmidt - 149"
+    },
+    {
+      "x": "1977",
+      "y": 162,
+      "label": "Butch Hobson - 162"
+    },
+    {
+      "x": "1978",
+      "y": 145,
+      "label": "Dale Murphy - 145"
+    },
+    {
+      "x": "1979",
+      "y": 175,
+      "label": "Gorman Thomas - 175"
+    },
+    {
+      "x": "1980",
+      "y": 170,
+      "label": "Gorman Thomas - 170"
+    },
+    {
+      "x": "1981",
+      "y": 115,
+      "label": "Tony Armas - 115"
+    },
+    {
+      "x": "1982",
+      "y": 156,
+      "label": "Reggie Jackson - 156"
+    },
+    {
+      "x": "1983",
+      "y": 150,
+      "label": "Ron Kittle - 150"
+    },
+    {
+      "x": "1984",
+      "y": 168,
+      "label": "Juan Samuel - 168"
+    },
+    {
+      "x": "1985",
+      "y": 166,
+      "label": "Steve Balboni - 166"
+    },
+    {
+      "x": "1986",
+      "y": 185,
+      "label": "Pete Incaviglia - 185"
+    },
+    {
+      "x": "1987",
+      "y": 186,
+      "label": "Rob Deer - 186"
+    },
+    {
+      "x": "1988",
+      "y": 153,
+      "label": "Rob Deer - 153"
+    },
+    {
+      "x": "1989",
+      "y": 172,
+      "label": "Bo Jackson - 172"
+    },
+    {
+      "x": "1990",
+      "y": 182,
+      "label": "Cecil Fielder - 182"
+    },
+    {
+      "x": "1991",
+      "y": 175,
+      "label": "Rob Deer - 175"
+    },
+    {
+      "x": "1992",
+      "y": 154,
+      "label": "Dean Palmer - 154"
+    },
+    {
+      "x": "1993",
+      "y": 156,
+      "label": "Danny Tartabull - 156"
+    },
+    {
+      "x": "1994",
+      "y": 128,
+      "label": "Travis Fryman - 128"
+    },
+    {
+      "x": "1995",
+      "y": 150,
+      "label": "Mo Vaughn - 150"
+    },
+    {
+      "x": "1996",
+      "y": 160,
+      "label": "Henry Rodriguez - 160"
+    },
+    {
+      "x": "1997",
+      "y": 175,
+      "label": "Jay Buhner - 175"
+    },
+    {
+      "x": "1998",
+      "y": 171,
+      "label": "Sammy Sosa - 171"
+    },
+    {
+      "x": "1999",
+      "y": 171,
+      "label": "Sammy Sosa - 171"
+    },
+    {
+      "x": "2000",
+      "y": 187,
+      "label": "Preston Wilson - 187"
+    },
+    {
+      "x": "2001",
+      "y": 185,
+      "label": "Jose Hernandez - 185"
+    },
+    {
+      "x": "2002",
+      "y": 188,
+      "label": "Jose Hernandez - 188"
+    },
+    {
+      "x": "2003",
+      "y": 182,
+      "label": "Jim Thome - 182"
+    },
+    {
+      "x": "2004",
+      "y": 195,
+      "label": "Adam Dunn - 195"
+    },
+    {
+      "x": "2005",
+      "y": 168,
+      "label": "Adam Dunn - 168"
+    },
+    {
+      "x": "2006",
+      "y": 194,
+      "label": "Adam Dunn - 194"
+    },
+    {
+      "x": "2007",
+      "y": 199,
+      "label": "Ryan Howard - 199"
+    },
+    {
+      "x": "2008",
+      "y": 204,
+      "label": "Mark Reynolds - 204"
+    },
+    {
+      "x": "2009",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2010",
+      "y": 211,
+      "label": "Mark Reynolds - 211"
+    },
+    {
+      "x": "2011",
+      "y": 205,
+      "label": "Drew Stubbs - 205"
+    },
+    {
+      "x": "2012",
+      "y": 222,
+      "label": "Adam Dunn - 222"
+    },
+    {
+      "x": "2013",
+      "y": 212,
+      "label": "Chris Carter - 212"
+    },
+    {
+      "x": "2014",
+      "y": 190,
+      "label": "Ryan Howard - 190"
+    },
+    {
+      "x": "2015",
+      "y": 208,
+      "label": "Chris Davis - 208"
+    },
+    {
+      "x": "2016",
+      "y": 219,
+      "label": "Chris Davis - 219"
+    },
+    {
+      "x": "2017",
+      "y": 208,
+      "label": "Aaron Judge - 208"
+    },
+    {
+      "x": "2018",
+      "y": 217,
+      "label": "Yoan Moncada - 217"
+    },
+    {
+      "x": "2019",
+      "y": 189,
+      "label": "Eugenio Suarez - 189"
+    },
+    {
+      "x": "2020",
+      "y": 90,
+      "label": "Miguel Sano - 90"
+    },
+    {
+      "x": "2021",
+      "y": 202,
+      "label": "Matt Chapman - 202"
+    },
+    {
+      "x": "2022",
+      "y": 200,
+      "label": "Kyle Schwarber - 200"
+    },
+    {
+      "x": "2023",
+      "y": 215,
+      "label": "Kyle Schwarber - 215"
+    },
+    {
+      "x": "2024",
+      "y": 218,
+      "label": "Elly De La Cruz - 218"
+    }
+  ],
+  "records": [
+    {
+      "x": "1871",
+      "y": 8,
+      "label": "Rynie Wolters - 8"
+    },
+    {
+      "x": "1872",
+      "y": 14,
+      "label": "Candy Cummings - 14"
+    },
+    {
+      "x": "1873",
+      "y": 14,
+      "label": "Candy Cummings - 14"
+    },
+    {
+      "x": "1874",
+      "y": 14,
+      "label": "Candy Cummings - 14"
+    },
+    {
+      "x": "1875",
+      "y": 21,
+      "label": "Herman Dehlman - 21"
+    },
+    {
+      "x": "1876",
+      "y": 23,
+      "label": "Johnny Ryan - 23"
+    },
+    {
+      "x": "1877",
+      "y": 33,
+      "label": "Lew Brown - 33"
+    },
+    {
+      "x": "1878",
+      "y": 41,
+      "label": "Will White - 41"
+    },
+    {
+      "x": "1879",
+      "y": 56,
+      "label": "Pud Galvin - 56"
+    },
+    {
+      "x": "1880",
+      "y": 57,
+      "label": "Pud Galvin - 57"
+    },
+    {
+      "x": "1881",
+      "y": 70,
+      "label": "Pud Galvin - 70"
+    },
+    {
+      "x": "1882",
+      "y": 70,
+      "label": "Pud Galvin - 70"
+    },
+    {
+      "x": "1883",
+      "y": 79,
+      "label": "Pud Galvin - 79"
+    },
+    {
+      "x": "1884",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1885",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1886",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1887",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1888",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1889",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1890",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1891",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1892",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1893",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1894",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1895",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1896",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1897",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1898",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1899",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1900",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1901",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1902",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1903",
+      "y": 104,
+      "label": "Sam Wise - 104"
+    },
+    {
+      "x": "1904",
+      "y": 106,
+      "label": "Harry Lumley - 106"
+    },
+    {
+      "x": "1905",
+      "y": 106,
+      "label": "Harry Lumley - 106"
+    },
+    {
+      "x": "1906",
+      "y": 116,
+      "label": "Billy Maloney - 116"
+    },
+    {
+      "x": "1907",
+      "y": 116,
+      "label": "Billy Maloney - 116"
+    },
+    {
+      "x": "1908",
+      "y": 116,
+      "label": "Billy Maloney - 116"
+    },
+    {
+      "x": "1909",
+      "y": 116,
+      "label": "Billy Maloney - 116"
+    },
+    {
+      "x": "1910",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1911",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1912",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1913",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1914",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1915",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1916",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1917",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1918",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1919",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1920",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1921",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1922",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1923",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1924",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1925",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1926",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1927",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1928",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1929",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1930",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1931",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1932",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1933",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1934",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1935",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1936",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1937",
+      "y": 128,
+      "label": "Jake Stahl - 128"
+    },
+    {
+      "x": "1938",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1939",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1940",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1941",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1942",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1943",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1944",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1945",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1946",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1947",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1948",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1949",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1950",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1951",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1952",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1953",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1954",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1955",
+      "y": 134,
+      "label": "Vince DiMaggio - 134"
+    },
+    {
+      "x": "1956",
+      "y": 138,
+      "label": "Jim Lemon - 138"
+    },
+    {
+      "x": "1957",
+      "y": 138,
+      "label": "Jim Lemon - 138"
+    },
+    {
+      "x": "1958",
+      "y": 138,
+      "label": "Jim Lemon - 138"
+    },
+    {
+      "x": "1959",
+      "y": 138,
+      "label": "Jim Lemon - 138"
+    },
+    {
+      "x": "1960",
+      "y": 138,
+      "label": "Jim Lemon - 138"
+    },
+    {
+      "x": "1961",
+      "y": 141,
+      "label": "Jake Wood - 141"
+    },
+    {
+      "x": "1962",
+      "y": 142,
+      "label": "Harmon Killebrew - 142"
+    },
+    {
+      "x": "1963",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1964",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1965",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1966",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1967",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1968",
+      "y": 175,
+      "label": "Dave Nicholson - 175"
+    },
+    {
+      "x": "1969",
+      "y": 187,
+      "label": "Bobby Bonds - 187"
+    },
+    {
+      "x": "1970",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1971",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1972",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1973",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1974",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1975",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1976",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1977",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1978",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1979",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1980",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1981",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1982",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1983",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1984",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1985",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1986",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1987",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1988",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1989",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1990",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1991",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1992",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1993",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1994",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1995",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1996",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1997",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1998",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "1999",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "2000",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "2001",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "2002",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "2003",
+      "y": 189,
+      "label": "Bobby Bonds - 189"
+    },
+    {
+      "x": "2004",
+      "y": 195,
+      "label": "Adam Dunn - 195"
+    },
+    {
+      "x": "2005",
+      "y": 195,
+      "label": "Adam Dunn - 195"
+    },
+    {
+      "x": "2006",
+      "y": 195,
+      "label": "Adam Dunn - 195"
+    },
+    {
+      "x": "2007",
+      "y": 199,
+      "label": "Ryan Howard - 199"
+    },
+    {
+      "x": "2008",
+      "y": 204,
+      "label": "Mark Reynolds - 204"
+    },
+    {
+      "x": "2009",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2010",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2011",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2012",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2013",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2014",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2015",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2016",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2017",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2018",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2019",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2020",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2021",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2022",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2023",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    },
+    {
+      "x": "2024",
+      "y": 223,
+      "label": "Mark Reynolds - 223"
+    }
+  ],
+  "leagueWide": [
+    {
+      "x": "1871",
+      "y": 175,
+      "label": "Total: 175"
+    },
+    {
+      "x": "1872",
+      "y": 265,
+      "label": "Total: 265"
+    },
+    {
+      "x": "1873",
+      "y": 278,
+      "label": "Total: 278"
+    },
+    {
+      "x": "1874",
+      "y": 357,
+      "label": "Total: 357"
+    },
+    {
+      "x": "1875",
+      "y": 675,
+      "label": "Total: 675"
+    },
+    {
+      "x": "1876",
+      "y": 589,
+      "label": "Total: 589"
+    },
+    {
+      "x": "1877",
+      "y": 726,
+      "label": "Total: 726"
+    },
+    {
+      "x": "1878",
+      "y": 1081,
+      "label": "Total: 1081"
+    },
+    {
+      "x": "1879",
+      "y": 1843,
+      "label": "Total: 1843"
+    },
+    {
+      "x": "1880",
+      "y": 1993,
+      "label": "Total: 1993"
+    },
+    {
+      "x": "1881",
+      "y": 1784,
+      "label": "Total: 1784"
+    },
+    {
+      "x": "1882",
+      "y": 2159,
+      "label": "Total: 2159"
+    },
+    {
+      "x": "1883",
+      "y": 2877,
+      "label": "Total: 2877"
+    },
+    {
+      "x": "1884",
+      "y": 4335,
+      "label": "Total: 4335"
+    },
+    {
+      "x": "1885",
+      "y": 3337,
+      "label": "Total: 3337"
+    },
+    {
+      "x": "1886",
+      "y": 4248,
+      "label": "Total: 4248"
+    },
+    {
+      "x": "1887",
+      "y": 5924,
+      "label": "Total: 5924"
+    },
+    {
+      "x": "1888",
+      "y": 8213,
+      "label": "Total: 8213"
+    },
+    {
+      "x": "1889",
+      "y": 7669,
+      "label": "Total: 7669"
+    },
+    {
+      "x": "1890",
+      "y": 6587,
+      "label": "Total: 6587"
+    },
+    {
+      "x": "1891",
+      "y": 7656,
+      "label": "Total: 7656"
+    },
+    {
+      "x": "1892",
+      "y": 5972,
+      "label": "Total: 5972"
+    },
+    {
+      "x": "1893",
+      "y": 3341,
+      "label": "Total: 3341"
+    },
+    {
+      "x": "1894",
+      "y": 3333,
+      "label": "Total: 3333"
+    },
+    {
+      "x": "1895",
+      "y": 3621,
+      "label": "Total: 3621"
+    },
+    {
+      "x": "1896",
+      "y": 3523,
+      "label": "Total: 3523"
+    },
+    {
+      "x": "1897",
+      "y": 3729,
+      "label": "Total: 3729"
+    },
+    {
+      "x": "1898",
+      "y": 4223,
+      "label": "Total: 4223"
+    },
+    {
+      "x": "1899",
+      "y": 3849,
+      "label": "Total: 3849"
+    },
+    {
+      "x": "1900",
+      "y": 2681,
+      "label": "Total: 2681"
+    },
+    {
+      "x": "1901",
+      "y": 6976,
+      "label": "Total: 6976"
+    },
+    {
+      "x": "1902",
+      "y": 6630,
+      "label": "Total: 6630"
+    },
+    {
+      "x": "1903",
+      "y": 7899,
+      "label": "Total: 7899"
+    },
+    {
+      "x": "1904",
+      "y": 9299,
+      "label": "Total: 9299"
+    },
+    {
+      "x": "1905",
+      "y": 9523,
+      "label": "Total: 9523"
+    },
+    {
+      "x": "1906",
+      "y": 9110,
+      "label": "Total: 9110"
+    },
+    {
+      "x": "1907",
+      "y": 8836,
+      "label": "Total: 8836"
+    },
+    {
+      "x": "1908",
+      "y": 9078,
+      "label": "Total: 9078"
+    },
+    {
+      "x": "1909",
+      "y": 9377,
+      "label": "Total: 9377"
+    },
+    {
+      "x": "1910",
+      "y": 9677,
+      "label": "Total: 9677"
+    },
+    {
+      "x": "1911",
+      "y": 4798,
+      "label": "Total: 4798"
+    },
+    {
+      "x": "1912",
+      "y": 4627,
+      "label": "Total: 4627"
+    },
+    {
+      "x": "1913",
+      "y": 9283,
+      "label": "Total: 9283"
+    },
+    {
+      "x": "1914",
+      "y": 14757,
+      "label": "Total: 14757"
+    },
+    {
+      "x": "1915",
+      "y": 14020,
+      "label": "Total: 14020"
+    },
+    {
+      "x": "1916",
+      "y": 9534,
+      "label": "Total: 9534"
+    },
+    {
+      "x": "1917",
+      "y": 8680,
+      "label": "Total: 8680"
+    },
+    {
+      "x": "1918",
+      "y": 5925,
+      "label": "Total: 5925"
+    },
+    {
+      "x": "1919",
+      "y": 6849,
+      "label": "Total: 6849"
+    },
+    {
+      "x": "1920",
+      "y": 7247,
+      "label": "Total: 7247"
+    },
+    {
+      "x": "1921",
+      "y": 6959,
+      "label": "Total: 6959"
+    },
+    {
+      "x": "1922",
+      "y": 6950,
+      "label": "Total: 6950"
+    },
+    {
+      "x": "1923",
+      "y": 7021,
+      "label": "Total: 7021"
+    },
+    {
+      "x": "1924",
+      "y": 6637,
+      "label": "Total: 6637"
+    },
+    {
+      "x": "1925",
+      "y": 6665,
+      "label": "Total: 6665"
+    },
+    {
+      "x": "1926",
+      "y": 6777,
+      "label": "Total: 6777"
+    },
+    {
+      "x": "1927",
+      "y": 6889,
+      "label": "Total: 6889"
+    },
+    {
+      "x": "1928",
+      "y": 7099,
+      "label": "Total: 7099"
+    },
+    {
+      "x": "1929",
+      "y": 6982,
+      "label": "Total: 6982"
+    },
+    {
+      "x": "1930",
+      "y": 7934,
+      "label": "Total: 7934"
+    },
+    {
+      "x": "1931",
+      "y": 7894,
+      "label": "Total: 7894"
+    },
+    {
+      "x": "1932",
+      "y": 7878,
+      "label": "Total: 7878"
+    },
+    {
+      "x": "1933",
+      "y": 7444,
+      "label": "Total: 7444"
+    },
+    {
+      "x": "1934",
+      "y": 8432,
+      "label": "Total: 8432"
+    },
+    {
+      "x": "1935",
+      "y": 8004,
+      "label": "Total: 8004"
+    },
+    {
+      "x": "1936",
+      "y": 8235,
+      "label": "Total: 8235"
+    },
+    {
+      "x": "1937",
+      "y": 9001,
+      "label": "Total: 9001"
+    },
+    {
+      "x": "1938",
+      "y": 8335,
+      "label": "Total: 8335"
+    },
+    {
+      "x": "1939",
+      "y": 8501,
+      "label": "Total: 8501"
+    },
+    {
+      "x": "1940",
+      "y": 9049,
+      "label": "Total: 9049"
+    },
+    {
+      "x": "1941",
+      "y": 8826,
+      "label": "Total: 8826"
+    },
+    {
+      "x": "1942",
+      "y": 8325,
+      "label": "Total: 8325"
+    },
+    {
+      "x": "1943",
+      "y": 8546,
+      "label": "Total: 8546"
+    },
+    {
+      "x": "1944",
+      "y": 8185,
+      "label": "Total: 8185"
+    },
+    {
+      "x": "1945",
+      "y": 8045,
+      "label": "Total: 8045"
+    },
+    {
+      "x": "1946",
+      "y": 9696,
+      "label": "Total: 9696"
+    },
+    {
+      "x": "1947",
+      "y": 9157,
+      "label": "Total: 9157"
+    },
+    {
+      "x": "1948",
+      "y": 9016,
+      "label": "Total: 9016"
+    },
+    {
+      "x": "1949",
+      "y": 8951,
+      "label": "Total: 8951"
+    },
+    {
+      "x": "1950",
+      "y": 9554,
+      "label": "Total: 9554"
+    },
+    {
+      "x": "1951",
+      "y": 9335,
+      "label": "Total: 9335"
+    },
+    {
+      "x": "1952",
+      "y": 10380,
+      "label": "Total: 10380"
+    },
+    {
+      "x": "1953",
+      "y": 10213,
+      "label": "Total: 10213"
+    },
+    {
+      "x": "1954",
+      "y": 10215,
+      "label": "Total: 10215"
+    },
+    {
+      "x": "1955",
+      "y": 10803,
+      "label": "Total: 10803"
+    },
+    {
+      "x": "1956",
+      "y": 11505,
+      "label": "Total: 11505"
+    },
+    {
+      "x": "1957",
+      "y": 11948,
+      "label": "Total: 11948"
+    },
+    {
+      "x": "1958",
+      "y": 12225,
+      "label": "Total: 12225"
+    },
+    {
+      "x": "1959",
+      "y": 12604,
+      "label": "Total: 12604"
+    },
+    {
+      "x": "1960",
+      "y": 12815,
+      "label": "Total: 12815"
+    },
+    {
+      "x": "1961",
+      "y": 14947,
+      "label": "Total: 14947"
+    },
+    {
+      "x": "1962",
+      "y": 17567,
+      "label": "Total: 17567"
+    },
+    {
+      "x": "1963",
+      "y": 18773,
+      "label": "Total: 18773"
+    },
+    {
+      "x": "1964",
+      "y": 19212,
+      "label": "Total: 19212"
+    },
+    {
+      "x": "1965",
+      "y": 19283,
+      "label": "Total: 19283"
+    },
+    {
+      "x": "1966",
+      "y": 18805,
+      "label": "Total: 18805"
+    },
+    {
+      "x": "1967",
+      "y": 19413,
+      "label": "Total: 19413"
+    },
+    {
+      "x": "1968",
+      "y": 19143,
+      "label": "Total: 19143"
+    },
+    {
+      "x": "1969",
+      "y": 22473,
+      "label": "Total: 22473"
+    },
+    {
+      "x": "1970",
+      "y": 22374,
+      "label": "Total: 22374"
+    },
+    {
+      "x": "1971",
+      "y": 20956,
+      "label": "Total: 20956"
+    },
+    {
+      "x": "1972",
+      "y": 20718,
+      "label": "Total: 20718"
+    },
+    {
+      "x": "1973",
+      "y": 20358,
+      "label": "Total: 20358"
+    },
+    {
+      "x": "1974",
+      "y": 19495,
+      "label": "Total: 19495"
+    },
+    {
+      "x": "1975",
+      "y": 19280,
+      "label": "Total: 19280"
+    },
+    {
+      "x": "1976",
+      "y": 18745,
+      "label": "Total: 18745"
+    },
+    {
+      "x": "1977",
+      "y": 21722,
+      "label": "Total: 21722"
+    },
+    {
+      "x": "1978",
+      "y": 20058,
+      "label": "Total: 20058"
+    },
+    {
+      "x": "1979",
+      "y": 20035,
+      "label": "Total: 20035"
+    },
+    {
+      "x": "1980",
+      "y": 20212,
+      "label": "Total: 20212"
+    },
+    {
+      "x": "1981",
+      "y": 13237,
+      "label": "Total: 13237"
+    },
+    {
+      "x": "1982",
+      "y": 21221,
+      "label": "Total: 21221"
+    },
+    {
+      "x": "1983",
+      "y": 21716,
+      "label": "Total: 21716"
+    },
+    {
+      "x": "1984",
+      "y": 22500,
+      "label": "Total: 22500"
+    },
+    {
+      "x": "1985",
+      "y": 22451,
+      "label": "Total: 22451"
+    },
+    {
+      "x": "1986",
+      "y": 24706,
+      "label": "Total: 24706"
+    },
+    {
+      "x": "1987",
+      "y": 25099,
+      "label": "Total: 25099"
+    },
+    {
+      "x": "1988",
+      "y": 23355,
+      "label": "Total: 23355"
+    },
+    {
+      "x": "1989",
+      "y": 23650,
+      "label": "Total: 23650"
+    },
+    {
+      "x": "1990",
+      "y": 23853,
+      "label": "Total: 23853"
+    },
+    {
+      "x": "1991",
+      "y": 24390,
+      "label": "Total: 24390"
+    },
+    {
+      "x": "1992",
+      "y": 23538,
+      "label": "Total: 23538"
+    },
+    {
+      "x": "1993",
+      "y": 26310,
+      "label": "Total: 26310"
+    },
+    {
+      "x": "1994",
+      "y": 19766,
+      "label": "Total: 19766"
+    },
+    {
+      "x": "1995",
+      "y": 25425,
+      "label": "Total: 25425"
+    },
+    {
+      "x": "1996",
+      "y": 29308,
+      "label": "Total: 29308"
+    },
+    {
+      "x": "1997",
+      "y": 29937,
+      "label": "Total: 29937"
+    },
+    {
+      "x": "1998",
+      "y": 31893,
+      "label": "Total: 31893"
+    },
+    {
+      "x": "1999",
+      "y": 31119,
+      "label": "Total: 31119"
+    },
+    {
+      "x": "2000",
+      "y": 31356,
+      "label": "Total: 31356"
+    },
+    {
+      "x": "2001",
+      "y": 32404,
+      "label": "Total: 32404"
+    },
+    {
+      "x": "2002",
+      "y": 31394,
+      "label": "Total: 31394"
+    },
+    {
+      "x": "2003",
+      "y": 30801,
+      "label": "Total: 30801"
+    },
+    {
+      "x": "2004",
+      "y": 31828,
+      "label": "Total: 31828"
+    },
+    {
+      "x": "2005",
+      "y": 30644,
+      "label": "Total: 30644"
+    },
+    {
+      "x": "2006",
+      "y": 31655,
+      "label": "Total: 31655"
+    },
+    {
+      "x": "2007",
+      "y": 32189,
+      "label": "Total: 32189"
+    },
+    {
+      "x": "2008",
+      "y": 32884,
+      "label": "Total: 32884"
+    },
+    {
+      "x": "2009",
+      "y": 33591,
+      "label": "Total: 33591"
+    },
+    {
+      "x": "2010",
+      "y": 34306,
+      "label": "Total: 34306"
+    },
+    {
+      "x": "2011",
+      "y": 34488,
+      "label": "Total: 34488"
+    },
+    {
+      "x": "2012",
+      "y": 36426,
+      "label": "Total: 36426"
+    },
+    {
+      "x": "2013",
+      "y": 36710,
+      "label": "Total: 36710"
+    },
+    {
+      "x": "2014",
+      "y": 37441,
+      "label": "Total: 37441"
+    },
+    {
+      "x": "2015",
+      "y": 37446,
+      "label": "Total: 37446"
+    },
+    {
+      "x": "2016",
+      "y": 38982,
+      "label": "Total: 38982"
+    },
+    {
+      "x": "2017",
+      "y": 40104,
+      "label": "Total: 40104"
+    },
+    {
+      "x": "2018",
+      "y": 41207,
+      "label": "Total: 41207"
+    },
+    {
+      "x": "2019",
+      "y": 42823,
+      "label": "Total: 42823"
+    },
+    {
+      "x": "2020",
+      "y": 15586,
+      "label": "Total: 15586"
+    },
+    {
+      "x": "2021",
+      "y": 42145,
+      "label": "Total: 42145"
+    },
+    {
+      "x": "2022",
+      "y": 40812,
+      "label": "Total: 40812"
+    },
+    {
+      "x": "2023",
+      "y": 41843,
+      "label": "Total: 41843"
+    }
+  ],
+  "percentages": [
+    {
+      "x": "1871",
+      "y": 4.57,
+      "label": "Rynie Wolters - 4.57%"
+    },
+    {
+      "x": "1872",
+      "y": 5.28,
+      "label": "Candy Cummings - 5.28%"
+    },
+    {
+      "x": "1873",
+      "y": 5.04,
+      "label": "Jim Britt - 54%"
+    },
+    {
+      "x": "1874",
+      "y": 3.64,
+      "label": "Billy Barnie - 3.64%"
+    },
+    {
+      "x": "1875",
+      "y": 3.11,
+      "label": "Herman Dehlman - 3.11%"
+    },
+    {
+      "x": "1876",
+      "y": 3.9,
+      "label": "Johnny Ryan - 3.9%"
+    },
+    {
+      "x": "1877",
+      "y": 4.55,
+      "label": "Lew Brown - 4.55%"
+    },
+    {
+      "x": "1878",
+      "y": 3.79,
+      "label": "Will White - 3.79%"
+    },
+    {
+      "x": "1879",
+      "y": 3.04,
+      "label": "Pud Galvin - 34%"
+    },
+    {
+      "x": "1880",
+      "y": 2.86,
+      "label": "Pud Galvin - 2.86%"
+    },
+    {
+      "x": "1881",
+      "y": 3.92,
+      "label": "Pud Galvin - 3.92%"
+    },
+    {
+      "x": "1882",
+      "y": 2.32,
+      "label": "Silver Flint - 2.32%"
+    },
+    {
+      "x": "1883",
+      "y": 2.75,
+      "label": "Pud Galvin - 2.75%"
+    },
+    {
+      "x": "1884",
+      "y": 2.4,
+      "label": "Sam Wise - 2.4%"
+    },
+    {
+      "x": "1885",
+      "y": 2.46,
+      "label": "Charlie Bastian - 2.46%"
+    },
+    {
+      "x": "1886",
+      "y": 1.93,
+      "label": "Emmett Seery - 1.93%"
+    },
+    {
+      "x": "1887",
+      "y": 1.45,
+      "label": "John Morrill - 1.45%"
+    },
+    {
+      "x": "1888",
+      "y": 0.96,
+      "label": "Jerry Denny - 0.96%"
+    },
+    {
+      "x": "1889",
+      "y": 1.06,
+      "label": "Charlie Duffee - 16%"
+    },
+    {
+      "x": "1890",
+      "y": 1.32,
+      "label": "Tom Brown - 1.32%"
+    },
+    {
+      "x": "1891",
+      "y": 1.24,
+      "label": "Tom Brown - 1.24%"
+    },
+    {
+      "x": "1892",
+      "y": 1.57,
+      "label": "Tom Brown - 1.57%"
+    },
+    {
+      "x": "1893",
+      "y": 1.95,
+      "label": "Tom Daly - 1.95%"
+    },
+    {
+      "x": "1894",
+      "y": 2.22,
+      "label": "Tom Brown - 2.22%"
+    },
+    {
+      "x": "1895",
+      "y": 1.55,
+      "label": "Bill Joyce - 1.55%"
+    },
+    {
+      "x": "1896",
+      "y": 1.65,
+      "label": "Tom McCreery - 1.65%"
+    },
+    {
+      "x": "1897",
+      "y": 1.69,
+      "label": "Tom Brown - 1.69%"
+    },
+    {
+      "x": "1898",
+      "y": 1.42,
+      "label": "Billy Clingman - 1.42%"
+    },
+    {
+      "x": "1899",
+      "y": 1.51,
+      "label": "Ducky Holmes - 1.51%"
+    },
+    {
+      "x": "1900",
+      "y": 2.35,
+      "label": "Jimmy Barrett - 2.35%"
+    },
+    {
+      "x": "1901",
+      "y": 1.3,
+      "label": "Monte Cross - 1.3%"
+    },
+    {
+      "x": "1902",
+      "y": 1.06,
+      "label": "Tim Flood - 16%"
+    },
+    {
+      "x": "1903",
+      "y": 0.95,
+      "label": "Ollie Pickering - 0.95%"
+    },
+    {
+      "x": "1904",
+      "y": 1.14,
+      "label": "Harry Lumley - 1.14%"
+    },
+    {
+      "x": "1905",
+      "y": 1.1,
+      "label": "Danny Hoffman - 1.1%"
+    },
+    {
+      "x": "1906",
+      "y": 1.27,
+      "label": "Billy Maloney - 1.27%"
+    },
+    {
+      "x": "1907",
+      "y": 1.17,
+      "label": "Danny Hoffman - 1.17%"
+    },
+    {
+      "x": "1908",
+      "y": 1,
+      "label": "Neal Ball - 1%"
+    },
+    {
+      "x": "1909",
+      "y": 1,
+      "label": "Jake Stahl - 1%"
+    },
+    {
+      "x": "1910",
+      "y": 1.32,
+      "label": "Jake Stahl - 1.32%"
+    },
+    {
+      "x": "1911",
+      "y": 1.63,
+      "label": "Bob Bescher - 1.63%"
+    },
+    {
+      "x": "1912",
+      "y": 1.97,
+      "label": "Ed McDonald - 1.97%"
+    },
+    {
+      "x": "1913",
+      "y": 1.11,
+      "label": "Danny Moeller - 1.11%"
+    },
+    {
+      "x": "1914",
+      "y": 0.81,
+      "label": "Gus Williams - 0.81%"
+    },
+    {
+      "x": "1915",
+      "y": 0.71,
+      "label": "Jack McCandless - 0.71%"
+    },
+    {
+      "x": "1916",
+      "y": 0.93,
+      "label": "Gavvy Cravath - 0.93%"
+    },
+    {
+      "x": "1917",
+      "y": 0.9,
+      "label": "Cy Williams - 0.9%"
+    },
+    {
+      "x": "1918",
+      "y": 0.98,
+      "label": "Babe Ruth - 0.98%"
+    },
+    {
+      "x": "1919",
+      "y": 1.15,
+      "label": "Ray Powell - 1.15%"
+    },
+    {
+      "x": "1920",
+      "y": 1.26,
+      "label": "George Kelly - 1.26%"
+    },
+    {
+      "x": "1921",
+      "y": 1.23,
+      "label": "Bob Meusel - 1.23%"
+    },
+    {
+      "x": "1922",
+      "y": 1.37,
+      "label": "Jimmy Dykes - 1.37%"
+    },
+    {
+      "x": "1923",
+      "y": 1.31,
+      "label": "Babe Ruth - 1.31%"
+    },
+    {
+      "x": "1924",
+      "y": 1.17,
+      "label": "Babe Ruth - 1.17%"
+    },
+    {
+      "x": "1925",
+      "y": 1.16,
+      "label": "Gabby Hartnett - 1.16%"
+    },
+    {
+      "x": "1926",
+      "y": 1.31,
+      "label": "Tony Lazzeri - 1.31%"
+    },
+    {
+      "x": "1927",
+      "y": 1.29,
+      "label": "Babe Ruth - 1.29%"
+    },
+    {
+      "x": "1928",
+      "y": 1.29,
+      "label": "Hack Wilson - 1.29%"
+    },
+    {
+      "x": "1929",
+      "y": 1.17,
+      "label": "Hack Wilson - 1.17%"
+    },
+    {
+      "x": "1930",
+      "y": 1.04,
+      "label": "Hack Wilson - 14%"
+    },
+    {
+      "x": "1931",
+      "y": 1.07,
+      "label": "Nick Cullop - 17%"
+    },
+    {
+      "x": "1932",
+      "y": 1.28,
+      "label": "Bruce Campbell - 1.28%"
+    },
+    {
+      "x": "1933",
+      "y": 1.25,
+      "label": "Jimmie Foxx - 1.25%"
+    },
+    {
+      "x": "1934",
+      "y": 1.18,
+      "label": "Harlond Clift - 1.18%"
+    },
+    {
+      "x": "1935",
+      "y": 1.39,
+      "label": "Dolph Camilli - 1.39%"
+    },
+    {
+      "x": "1936",
+      "y": 1.44,
+      "label": "Jimmie Foxx - 1.44%"
+    },
+    {
+      "x": "1937",
+      "y": 1.22,
+      "label": "Vince DiMaggio - 1.22%"
+    },
+    {
+      "x": "1938",
+      "y": 1.57,
+      "label": "Vince DiMaggio - 1.57%"
+    },
+    {
+      "x": "1939",
+      "y": 1.24,
+      "label": "Dolph Camilli - 1.24%"
+    },
+    {
+      "x": "1940",
+      "y": 1.38,
+      "label": "Chet Ross - 1.38%"
+    },
+    {
+      "x": "1941",
+      "y": 1.27,
+      "label": "Dolph Camilli - 1.27%"
+    },
+    {
+      "x": "1942",
+      "y": 1.11,
+      "label": "Joe Gordon - 1.11%"
+    },
+    {
+      "x": "1943",
+      "y": 1.46,
+      "label": "Vince DiMaggio - 1.46%"
+    },
+    {
+      "x": "1944",
+      "y": 1.2,
+      "label": "Pat Seerey - 1.2%"
+    },
+    {
+      "x": "1945",
+      "y": 1.19,
+      "label": "Pat Seerey - 1.19%"
+    },
+    {
+      "x": "1946",
+      "y": 1.12,
+      "label": "Ralph Kiner - 1.12%"
+    },
+    {
+      "x": "1947",
+      "y": 1.2,
+      "label": "Eddie Joost - 1.2%"
+    },
+    {
+      "x": "1948",
+      "y": 1.04,
+      "label": "Pat Seerey - 14%"
+    },
+    {
+      "x": "1949",
+      "y": 1.03,
+      "label": "Duke Snider - 13%"
+    },
+    {
+      "x": "1950",
+      "y": 1.19,
+      "label": "Roy Smalley - 1.19%"
+    },
+    {
+      "x": "1951",
+      "y": 1.06,
+      "label": "Gil Hodges - 16%"
+    },
+    {
+      "x": "1952",
+      "y": 1.11,
+      "label": "Eddie Mathews - 1.11%"
+    },
+    {
+      "x": "1953",
+      "y": 1.22,
+      "label": "Steve Bilko - 1.22%"
+    },
+    {
+      "x": "1954",
+      "y": 1.05,
+      "label": "Mickey Mantle - 15%"
+    },
+    {
+      "x": "1955",
+      "y": 0.97,
+      "label": "Norm Zauchin - 0.97%"
+    },
+    {
+      "x": "1956",
+      "y": 1.2,
+      "label": "Jim Lemon - 1.2%"
+    },
+    {
+      "x": "1957",
+      "y": 0.87,
+      "label": "Duke Snider - 0.87%"
+    },
+    {
+      "x": "1958",
+      "y": 0.98,
+      "label": "Jim Lemon - 0.98%"
+    },
+    {
+      "x": "1959",
+      "y": 1,
+      "label": "Mickey Mantle - 1%"
+    },
+    {
+      "x": "1960",
+      "y": 1.06,
+      "label": "Pancho Herrera - 16%"
+    },
+    {
+      "x": "1961",
+      "y": 0.94,
+      "label": "Jake Wood - 0.94%"
+    },
+    {
+      "x": "1962",
+      "y": 0.81,
+      "label": "Harmon Killebrew - 0.81%"
+    },
+    {
+      "x": "1963",
+      "y": 0.93,
+      "label": "Dave Nicholson - 0.93%"
+    },
+    {
+      "x": "1964",
+      "y": 0.74,
+      "label": "Nelson Mathews - 0.74%"
+    },
+    {
+      "x": "1965",
+      "y": 0.78,
+      "label": "Dick Allen - 0.78%"
+    },
+    {
+      "x": "1966",
+      "y": 0.81,
+      "label": "George Scott - 0.81%"
+    },
+    {
+      "x": "1967",
+      "y": 0.8,
+      "label": "Frank Howard - 0.8%"
+    },
+    {
+      "x": "1968",
+      "y": 0.89,
+      "label": "Reggie Jackson - 0.89%"
+    },
+    {
+      "x": "1969",
+      "y": 0.83,
+      "label": "Bobby Bonds - 0.83%"
+    },
+    {
+      "x": "1970",
+      "y": 0.84,
+      "label": "Bobby Bonds - 0.84%"
+    },
+    {
+      "x": "1971",
+      "y": 0.77,
+      "label": "Reggie Jackson - 0.77%"
+    },
+    {
+      "x": "1972",
+      "y": 0.7,
+      "label": "Bobby Darwin - 0.7%"
+    },
+    {
+      "x": "1973",
+      "y": 0.73,
+      "label": "Bobby Bonds - 0.73%"
+    },
+    {
+      "x": "1974",
+      "y": 0.71,
+      "label": "Mike Schmidt - 0.71%"
+    },
+    {
+      "x": "1975",
+      "y": 0.93,
+      "label": "Mike Schmidt - 0.93%"
+    },
+    {
+      "x": "1976",
+      "y": 0.79,
+      "label": "Mike Schmidt - 0.79%"
+    },
+    {
+      "x": "1977",
+      "y": 0.75,
+      "label": "Butch Hobson - 0.75%"
+    },
+    {
+      "x": "1978",
+      "y": 0.72,
+      "label": "Dale Murphy - 0.72%"
+    },
+    {
+      "x": "1979",
+      "y": 0.87,
+      "label": "Gorman Thomas - 0.87%"
+    },
+    {
+      "x": "1980",
+      "y": 0.84,
+      "label": "Gorman Thomas - 0.84%"
+    },
+    {
+      "x": "1981",
+      "y": 0.87,
+      "label": "Tony Armas - 0.87%"
+    },
+    {
+      "x": "1982",
+      "y": 0.74,
+      "label": "Reggie Jackson - 0.74%"
+    },
+    {
+      "x": "1983",
+      "y": 0.69,
+      "label": "Ron Kittle - 0.69%"
+    },
+    {
+      "x": "1984",
+      "y": 0.75,
+      "label": "Juan Samuel - 0.75%"
+    },
+    {
+      "x": "1985",
+      "y": 0.74,
+      "label": "Steve Balboni - 0.74%"
+    },
+    {
+      "x": "1986",
+      "y": 0.75,
+      "label": "Pete Incaviglia - 0.75%"
+    },
+    {
+      "x": "1987",
+      "y": 0.74,
+      "label": "Rob Deer - 0.74%"
+    },
+    {
+      "x": "1988",
+      "y": 0.66,
+      "label": "Rob Deer - 0.66%"
+    },
+    {
+      "x": "1989",
+      "y": 0.73,
+      "label": "Bo Jackson - 0.73%"
+    },
+    {
+      "x": "1990",
+      "y": 0.76,
+      "label": "Cecil Fielder - 0.76%"
+    },
+    {
+      "x": "1991",
+      "y": 0.72,
+      "label": "Rob Deer - 0.72%"
+    },
+    {
+      "x": "1992",
+      "y": 0.65,
+      "label": "Dean Palmer - 0.65%"
+    },
+    {
+      "x": "1993",
+      "y": 0.59,
+      "label": "Danny Tartabull - 0.59%"
+    },
+    {
+      "x": "1994",
+      "y": 0.65,
+      "label": "Travis Fryman - 0.65%"
+    },
+    {
+      "x": "1995",
+      "y": 0.59,
+      "label": "Mo Vaughn - 0.59%"
+    },
+    {
+      "x": "1996",
+      "y": 0.55,
+      "label": "Henry Rodriguez - 0.55%"
+    },
+    {
+      "x": "1997",
+      "y": 0.58,
+      "label": "Jay Buhner - 0.58%"
+    },
+    {
+      "x": "1998",
+      "y": 0.54,
+      "label": "Sammy Sosa - 0.54%"
+    },
+    {
+      "x": "1999",
+      "y": 0.55,
+      "label": "Sammy Sosa - 0.55%"
+    },
+    {
+      "x": "2000",
+      "y": 0.6,
+      "label": "Preston Wilson - 0.6%"
+    },
+    {
+      "x": "2001",
+      "y": 0.57,
+      "label": "Jose Hernandez - 0.57%"
+    },
+    {
+      "x": "2002",
+      "y": 0.6,
+      "label": "Jose Hernandez - 0.6%"
+    },
+    {
+      "x": "2003",
+      "y": 0.59,
+      "label": "Jim Thome - 0.59%"
+    },
+    {
+      "x": "2004",
+      "y": 0.61,
+      "label": "Adam Dunn - 0.61%"
+    },
+    {
+      "x": "2005",
+      "y": 0.55,
+      "label": "Adam Dunn - 0.55%"
+    },
+    {
+      "x": "2006",
+      "y": 0.61,
+      "label": "Adam Dunn - 0.61%"
+    },
+    {
+      "x": "2007",
+      "y": 0.62,
+      "label": "Ryan Howard - 0.62%"
+    },
+    {
+      "x": "2008",
+      "y": 0.62,
+      "label": "Mark Reynolds - 0.62%"
+    },
+    {
+      "x": "2009",
+      "y": 0.66,
+      "label": "Mark Reynolds - 0.66%"
+    },
+    {
+      "x": "2010",
+      "y": 0.62,
+      "label": "Mark Reynolds - 0.62%"
+    },
+    {
+      "x": "2011",
+      "y": 0.59,
+      "label": "Drew Stubbs - 0.59%"
+    },
+    {
+      "x": "2012",
+      "y": 0.61,
+      "label": "Adam Dunn - 0.61%"
+    },
+    {
+      "x": "2013",
+      "y": 0.58,
+      "label": "Chris Carter - 0.58%"
+    },
+    {
+      "x": "2014",
+      "y": 0.51,
+      "label": "Ryan Howard - 0.51%"
+    },
+    {
+      "x": "2015",
+      "y": 0.56,
+      "label": "Chris Davis - 0.56%"
+    },
+    {
+      "x": "2016",
+      "y": 0.56,
+      "label": "Chris Davis - 0.56%"
+    },
+    {
+      "x": "2017",
+      "y": 0.52,
+      "label": "Aaron Judge - 0.52%"
+    },
+    {
+      "x": "2018",
+      "y": 0.53,
+      "label": "Yoan Moncada - 0.53%"
+    },
+    {
+      "x": "2019",
+      "y": 0.44,
+      "label": "Eugenio Suarez - 0.44%"
+    },
+    {
+      "x": "2020",
+      "y": 0.58,
+      "label": "Miguel Sano - 0.58%"
+    },
+    {
+      "x": "2021",
+      "y": 0.48,
+      "label": "Matt Chapman - 0.48%"
+    },
+    {
+      "x": "2022",
+      "y": 0.49,
+      "label": "Kyle Schwarber - 0.49%"
+    },
+    {
+      "x": "2023",
+      "y": 0.51,
+      "label": "Kyle Schwarber - 0.51%"
+    },
+    {
+      "x": "2024",
+      "y": 0.53,
+      "label": "Elly De La Cruz - 0.53%"
+    }
+  ]
+}

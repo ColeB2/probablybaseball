@@ -33,6 +33,46 @@ export const metadata: Metadata = {
 
 
 export default function ArticlePage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article", // Or "Article" / "ScholarlyArticle"
+        "headline": "Strikeouts: Baseball's Century-Long Chase for Ineptitude",
+        "description": "A deep dive into the evolution of the strikeout in baseball history, from the Dead Ball era to the modern age of Three True Outcomes.",
+        "author": {
+            "@type": "Person",
+            "alternateName": "ProbablyBaseball",
+            "name": "Probably Baseball", // Your name here
+            "url": "https://probablybaseball.pages.dev/about",
+            "jobTitle": "Baseball Data Analyst & Developer"
+        },
+        "datePublished": "2025-11-11",
+        "image": "https://yourbaseballsited.com/images/og-strikeout-history.jpg",
+        "publisher": {
+        "@type": "Organization",
+        "name": "Probably Baseball",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://probablybaseball.pages.dev/favicon.ico"
+        }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://probablybaseball.pages.dev/articles/strikeout-progression"
+        },
+        // This part is huge for your Table of Contents
+        "hasPart": [
+            {
+                "@type": "WebPageElement",
+                "name": "The Pre-Modern Era (1871–1900)",
+                "url": "https://probablybaseball.pages.dev/articles/strikeout-progression#pre-modern"
+            },
+            {
+                "@type": "WebPageElement",
+                "name": "The Deadball Era (1900–1919)",
+                "url": "probablybaseball.pages.dev/articles/strikeout-progression#deadball"
+            }
+        ]
+    };
     return (
         <div className="font-sans flex flex-col min-w-0 overflow-x-hidden w-full">
             <main className="flex-growx px-6 sm:px-20 py-8 max-w-4xl mx-auto w-full">
@@ -49,7 +89,7 @@ export default function ArticlePage() {
                             Introduction
                         </span>
                         <h2 className="text-3xl font-semibold mb-3">
-                            The Strikeout King
+                            Becoming The Strikeout King: A History of the K
                         </h2>
                         <p className="text-lg leading-relaxed text-wrap">
                             The year is 1871. The player, Reinder &quot;Rynie&quot; Albertus Wolters, a 27 year-old Dutch standout

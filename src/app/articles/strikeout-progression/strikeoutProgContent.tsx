@@ -63,10 +63,10 @@ export default function StrikeoutProgContent() {
                 </span>
                 <h2 className="text-3xl font-semibold mb-2">
                     The Pre Modern Era
+                    <span className="block text-lg italic font-normal text-primary/70 mt-2 ml-4">
+                        (1871&ndash;1900)
+                    </span>
                 </h2>
-                <p className="text-sm italic text-primary mb-6 ml-6">
-                    - The league pre 1900&apos;s
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     The game as we know it was not the same one Rynie used to play. Before the start of the modern era, a walk would
                     require as many as 8 balls, foul balls would not be considered strikes, balls would have to be pitched underhand,
@@ -125,10 +125,10 @@ export default function StrikeoutProgContent() {
                 </span>
                 <h2 className="text-3xl font-semibold mb-3">
                     The Deadball Era
+                    <span className="block text-lg italic font-normal text-primary/70 mt-2 ml-4">
+                        (1900&ndash;1919)
+                    </span>
                 </h2>
-                <p className="text-sm italic text-primary mb-6 ml-6">
-                    - The league circa 1900 - 1919
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     With the addition of a new rule, that is, foul balls now count as strikes (1901 in NL and 1903 in AL),
                     it helped usher in a new era of baseball, the Deadball Era. An era of small ball
@@ -191,6 +191,9 @@ export default function StrikeoutProgContent() {
                 </span>
                 <h2 className="text-3xl font-semibold mb-3">
                     The Live Ball Era and The Golden Age
+                    <span className="block text-lg italic font-normal text-primary/70 mt-2 ml-4">
+                        (1920&ndash;1947)
+                    </span>
                 </h2>
                 <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league post 1919, up until the Integration Era in 1947
@@ -255,10 +258,10 @@ export default function StrikeoutProgContent() {
                 </span>
                 <h2 className="text-3xl font-semibold mb-3">
                     The Integration Era
+                    <span className="block text-lg italic font-normal text-primary/70 mt-2 ml-4">
+                        (1947&ndash;1960)
+                    </span>
                 </h2>
-                <p className="text-sm italic text-primary mb-6 ml-6">
-                    - The league from 1947 until its expansion era in 1961
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     1947 would usher in what is known as the Integration era, as the debut of Jackie Robinson on opening day with the Dodgers in the NL, and 
                     Larry Doby, making his debut in July in the AL with Cleveland, would set the stage for more talent to enter the league at an increasing rate.
@@ -299,10 +302,10 @@ export default function StrikeoutProgContent() {
                 </span>
                 <h2 className="text-3xl font-semibold mb-3">
                     The &quot;Expansion&quot; Era
+                    <span className="block text-lg italic font-normal text-primary/70 mt-2 ml-4">
+                        (1961&ndash;2003)
+                    </span>
                 </h2>
-                <p className="text-sm italic text-primary mb-6 ml-6">
-                    - The league from 1961 until 2004
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     In 1961, the league was on the rise and starting to grow. With 16 teams overall, the league want to grow and grow fast, with goals 
                     of eventually doubling the number of teams in the league. 2 teams (the Los Angeles Angels and Washington Senators) would initially join the American League in 1961
@@ -372,10 +375,10 @@ export default function StrikeoutProgContent() {
                 </span>
                 <h2 className="text-3xl font-semibold mb-3">
                     The Modern Game - Three True Outcomes
+                    <span className="block text-lg italic font-normal text-primary/70 mt-2 ml-4">
+                        (2004&ndash;2024)
+                    </span>
                 </h2>
-                <p className="text-sm italic text-primary mb-6 ml-6">
-                    - The league from 2004 until 2024
-                </p>
                 <p className="text-lg leading-relaxed mb-6">
                     With the turn of the century and millennium, analytics and sabermetrics started to take their stranglehold on the game. Singles and contact
                     hitting started to lose value. Walks and long balls began to explode in popularity, and with the change of time, velocities started rising faster

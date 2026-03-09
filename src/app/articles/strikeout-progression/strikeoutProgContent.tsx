@@ -57,12 +57,14 @@ const ERAS = {
 export default function StrikeoutProgContent() {
     return (
         <>
-            <section id="chapter1" className="mb-12">
-               
-                <h2 className="text-2xl font-semibold mb-2">
-                    Chapter 1 - The Pre Modern Era
+            <section id="pre-modern" className="mb-12">
+                <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                    Chapter 1
+                </span>
+                <h2 className="text-3xl font-semibold mb-2">
+                    The Pre Modern Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
+                <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league pre 1900&apos;s
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
@@ -117,11 +119,14 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             </section>
-            <section id="chapter2" className="mb-12">
-                <h2 className="text-2xl font-semibold mb-3">
-                    Chapter 2 - The Deadball Era
+            <section id="deadball" className="mb-12">
+                <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                    Chapter 2
+                </span>
+                <h2 className="text-3xl font-semibold mb-3">
+                    The Deadball Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
+                <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league circa 1900 - 1919
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
@@ -180,11 +185,14 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             </section>
-            <section id="chapter3" className="mb-12">
-                <h2 className="text-2xl font-semibold mb-3">
-                    Chapter 3 - The Live Ball Era and The Golden Age
+            <section id="live-ball-golden-age" className="mb-12">
+                <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                    Chapter 3
+                </span>
+                <h2 className="text-3xl font-semibold mb-3">
+                    The Live Ball Era and The Golden Age
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
+                <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league post 1919, up until the Integration Era in 1947
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
@@ -241,11 +249,14 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             </section>
-            <section id="chapter4" className="mb-12">
-                <h2 className="text-2xl font-semibold mb-3">
-                    Chapter 4 - The Integration Era
+            <section id="integration" className="mb-12">
+                <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                    Chapter 4
+                </span>
+                <h2 className="text-3xl font-semibold mb-3">
+                    The Integration Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
+                <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league from 1947 until its expansion era in 1961
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
@@ -282,11 +293,14 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             </section>
-            <section id="chapter5" className="mb-12">
-                <h2 className="text-2xl font-semibold mb-3">
-                    Chapter 5 - The &quot;Expansion&quot; Era
+            <section id="expansion" className="mb-12">
+                <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                    Chapter 5
+                </span>
+                <h2 className="text-3xl font-semibold mb-3">
+                    The &quot;Expansion&quot; Era
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
+                <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league from 1961 until 2004
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
@@ -352,11 +366,14 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             </section>
-            <section id="chapter6" className="mb-12">
-                <h2 className="text-2xl font-semibold mb-3">
-                    Chapter 6 - The Modern Game - Three True Outcomes
+            <section id="modern-game" className="mb-12">
+                <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                    Chapter 6
+                </span>
+                <h2 className="text-3xl font-semibold mb-3">
+                    The Modern Game - Three True Outcomes
                 </h2>
-                <p className="text-sm italic text-gray-200 mb-6 ml-6">
+                <p className="text-sm italic text-primary mb-6 ml-6">
                     - The league from 2004 until 2024
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
@@ -632,7 +649,7 @@ export default function StrikeoutProgContent() {
                     />
                 </div>
             </section>
-            <p className="w-full pt-8 text-center text-sm text-gray-500"
+            <p className="w-full pt-8 text-center text-sm text-primary"
             >
                 Graphed Data courtesy of the <a href="https://sabr.org/lahman-database/">Lahman Baseball Database</a>
             </p>

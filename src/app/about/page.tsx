@@ -11,7 +11,7 @@ export default function AboutPage() {
             className="
                 font-sans flex flex-col items-center 
                 px-6 sm:px-10 py-12 max-w-3xl mx-auto
-                text-text-primary
+                text-text-primary text-primary
             "
         >
         {/* Page Title */}
@@ -20,7 +20,7 @@ export default function AboutPage() {
         </h1>
 
         {/* Subtitle */}
-        <p className="italic text-gray-400 mb-10 text-center">
+        <p className="italic text-primary mb-10 text-center">
             A data-driven look at the strange beauty of baseball statistics.
         </p>
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <hr className="my-12 border-gray-700 w-full" />
 
         {/* Credits Section */}
-        <section className="text-sm text-gray-400 space-y-3 text-center">
+        <section className="text-sm text-primary space-y-3 text-center">
             <h2 className="text-lg font-semibold text-gray-200">Credits</h2>
 
             {/* <p>
@@ -60,11 +60,11 @@ export default function AboutPage() {
 
             <p>
             Page Icon from: 
-            <a href="https://www.flaticon.com/free-icons/baseball" title="baseball icons">Baseball icons created by IconKanan - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/baseball" title="baseball icons">Baseball icons created by IconKanan - Flaticon</a>
             </p>
 
 
-            <p className="pt-4 text-gray-500 text-xs">
+            <p className="pt-4 text-primary text-xs">
             © {new Date().getFullYear()} Probably Baseball. All rights reserved.
             </p>
         </section>

@@ -45,8 +45,11 @@ export default function ArticlePage() {
                     <p className="mb-8">Published on November 11, 2025</p>
 
                     <section className="mb-12 text-wrap">
-                        <h2 className="text-2xl font-semibold mb-3">
-                            Introduction - The Strikeout King
+                        <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
+                            Introduction
+                        </span>
+                        <h2 className="text-3xl font-semibold mb-3">
+                            The Strikeout King
                         </h2>
                         <p className="text-lg leading-relaxed text-wrap">
                             The year is 1871. The player, Reinder &quot;Rynie&quot; Albertus Wolters, a 27 year-old Dutch standout
@@ -57,19 +60,33 @@ export default function ArticlePage() {
                             feat would set the stage for baseball&apos;s biggest, glorious and most prestigious title, The strikeout king.
                         </p>
                     </section>
-                    <div id="toc">
-                    <h2 className='text-lg'>Table of Contents</h2>
-                        <ul className='mx-6 text-md mb-12'>
-                            <li><a href="#chapter1">Chapter 1 - The Pre Modern Era</a></li>
-                            <li><a href="#chapter2">Chapter 2 - The Deadball Era </a></li>
-                            <li><a href="#chapter3">Chapter 3 - The Live Ball Era and The Golden Age</a></li>
-                            <li><a href="#chapter4">Chapter 4 - The Integration Era</a></li>
-                            <li><a href="#chapter5">Chapter 5 - The &quot;Expansion&quot; Era</a></li>
-                            <li><a href="#chapter6">Chapter 6 - The Modern Game - Three True Outcomes</a></li>
-                            <li><a href="#epilogue">Epilogue - The End </a></li>
-                            <li><a href="#graphs">The Graphs</a></li>
+                    <nav aria-label="Table of Contents" className="bg-raised p-6 rounded-xl border border-zinc-800 my-8">
+                        <h2 className='text-xl font-bold mb-4 text-primary'>Table of Contents</h2>
+                        <ul className='space-y-2'>
+                            {[
+                                { id: "pre-modern", title: "The Pre-Modern Era" },
+                                { id: "deadball", title: "The Deadball Era" },
+                                { id: "live-ball-golden-age", title: "The Live Ball Era & The Golden Age" },
+                                { id: "integration", title: "The Integration Era" },
+                                { id: "expansion", title: "The Expansion Era" },
+                                { id: "modern-game", title: "The Modern Game" },
+                                { id: "epilogue", title: "Epilogue" },
+                                { id: "graphs", title: "Statistical Deep Dive" },
+                            ].map((item, index) => (
+                                <li key={item.id} className="group flex items-baseline gap-3">
+                                    <span className="text-xs font-mono text-primary group-hover:text-red-500 transition-colors">
+                                        0{index + 1}
+                                    </span>
+                                    <a 
+                                        href={`#${item.id}`} 
+                                        className='text-primary hover:text-secondary hover:underline decoration-red-500/50 underline-offset-4 transition-all'
+                                    >
+                                        {item.title}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
-                    </div>
+                    </nav>
                     <StrikeoutProgContent />
                 </article>
             </main>

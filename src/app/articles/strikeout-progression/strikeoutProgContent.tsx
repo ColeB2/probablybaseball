@@ -424,6 +424,8 @@ export default function StrikeoutProgContent() {
                                 xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                                 xLabelTickSteps={1}
                                 rotateLabels={45}
+                                alt={"Single Season Strikeout Record line graph (1871-2024)"}
+                                desc={"A line graph showing the single season strikeout record for each individual MLB season from 1871-2024"}
                                 yAxisLabel="Strikeouts (K)"
                                 xAxisLabel="Year"
                             />,
@@ -441,6 +443,10 @@ export default function StrikeoutProgContent() {
                                 xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                alt={"MLB Single Season Strikeout Record Bar graph (1871-2024)"}
+                                desc={"A bar graph showing the single season strikeout record for each individual MLB season from 1871-2024"}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />
                         ]}
                     />
@@ -471,6 +477,8 @@ export default function StrikeoutProgContent() {
                                 xLabels={strikeoutData.records.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                alt={"MLB Strikeout Record Progression line graph (1871-2024)"}
+                                desc={"A line graph showing the MLB strikeout record progression for each season from 1871-2024"}
                                 yAxisLabel="Strikeouts (K)"
                                 xAxisLabel="Year"
                             />,
@@ -488,6 +496,10 @@ export default function StrikeoutProgContent() {
                                 xLabels={strikeoutData.records.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                alt={"MLB Strikeout Record Progression bar graph (1871-2024)"}
+                                desc={"A bar graph showing the MLB strikeout record progression for each season from 1871-2024"}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />
 
                         ]}
@@ -519,6 +531,8 @@ export default function StrikeoutProgContent() {
                                 xLabels={strikeoutData.leagueWide.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                alt={"MLB League Wide Strikeout Totals for all Teams line graph (1871-2024)"}
+                                desc={"A line graph showing the MLB league wide strikeout records for each season from 1871-2024"}
                                 yAxisLabel="Strikeouts (K)"
                                 xAxisLabel="Year"
                             />,
@@ -536,6 +550,10 @@ export default function StrikeoutProgContent() {
                                 xLabels={strikeoutData.leagueWide.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                alt={"MLB League Wide Strikeout Totals for all Teams bar graph (1871-2024)"}
+                                desc={"A bar graph showing the MLB league wide strikeout records for each season from 1871-2024"}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />
                         ]}
                     />
@@ -564,6 +582,8 @@ export default function StrikeoutProgContent() {
                                 marginBottom={50}
                                 xLabels={strikeoutData.percentages.map(d => d.x)}
                                 rotateLabels={45}
+                                alt={"MLB Single Season Strikeout Leaders as percentage of League Wide line graph (1871-2024)"}
+                                desc={"A line graph showing the MLB single season strikeout leaders as a percentage of league wide total strikeouts for each season from 1871-2024"}
                                 yAxisLabel="Strikeouts (K)"
                                 xAxisLabel="Year"
                             />,
@@ -579,6 +599,10 @@ export default function StrikeoutProgContent() {
                                 marginBottom={50}
                                 xLabels={strikeoutData.percentages.map(d => d.x)}
                                 rotateLabels={45}
+                                alt={"MLB Single Season Strikeout Leaders as percentage of League Wide bar graph (1871-2024)"}
+                                desc={"A bar graph showing the MLB single season strikeout leaders as a percentage of league wide total strikeouts for each season from 1871-2024"}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />
 
                         ]}

@@ -392,6 +392,10 @@ export default function StrikeoutProgContent() {
                         xLabelTickSteps={1}
                         rotateLabels={45}
                         marginBottom={50}
+                        alt={"MLB History of League Strikeout Leaders and Single Season Records"}
+                        desc={"A multi line graph showing strikeout leadesr and record holders from 1871-2024"}
+                        yAxisLabel="Strikeouts (K)"
+                        xAxisLabel="Year"
                         
                     />
                 </div>

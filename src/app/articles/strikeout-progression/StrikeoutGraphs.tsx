@@ -6,6 +6,7 @@ interface ConfigType {
     start: number;
     end: number | undefined;
     era: string;
+    years: string;
     ariaLabel: string;
     keys: string[];
     graphs: ("yearlyLeaders" | "records")[];
@@ -30,14 +31,16 @@ export default function StrikeoutGraphs({ cfg, strikeoutData }: { cfg: ConfigTyp
             ariaLabel={cfg.ariaLabel}
             graphs={cfg.graphs.map((graphName, i) => {
                 const rawSlice = strikeoutData[graphName].slice(cfg.start, cfg.end);
+                const dynamicAlt = `${cfg.era}: ${cfg.alt[i]}`;
+                const dynamicDesc = `${cfg.desc[i]} during the ${cfg.era} (${cfg.years}).`;
                 return (
                     <LinePlot
                         key={cfg.keys[i]}
                         data={rawSlice.map((d) => d.y)}
                         dataLabels={rawSlice.map((d) => d.label)}
                         xLabels={rawSlice.map((d) => d.x)}
-                        alt={cfg.alt[i]}
-                        desc={cfg.desc[i]}
+                        alt={dynamicAlt}
+                        desc={dynamicDesc}
                         yAxisLabel={cfg.yAxisLabels[i]}
                         xAxisLabel={cfg.xAxisLabels[i]}
                         // ... set your defaults here once

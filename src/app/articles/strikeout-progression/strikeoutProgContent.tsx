@@ -45,6 +45,7 @@ const modernCfg = {
     graphs: ["yearlyLeaders" as const, "records" as const]
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ERAS = {
     preModern: preModernCfg,
     deadBall: deadBallCfg,
@@ -89,8 +90,8 @@ export default function StrikeoutProgContent() {
                     <li>Pud Galvin - A Pitching Hall of Famer who would break the record in 1879, and break it 3 more times, while holding it for 5 years</li>
                 </ul>
                 <p className="text-lg leading-relaxed mb-6">
-                    Finally, we round out the era with Sam Wise, a middle infielder from Akron, who would set the record for most strikeouts in 1884,
-                    by striking out 104 times in 451 plate appearances, being the first player to break the 100 barrier. He would continue to hold the record of
+                    Finally, we round out the era with <strong>Sam Wise</strong>, a middle infielder from Akron, who would set the record for most strikeouts in 1884,
+                    by striking out <strong>104</strong> times in 451 plate appearances, being the first player to break the 100 barrier. He would continue to hold the record of
                     strikeout king for the remainder of the pre-modern era, as well as hold that record for a few years into the modern era. Holding 
                     it for 20 seasons, as well as being the only person to strikeout 100 times until it would be broken again, no one could really hold a light
                     to Sam Wise until the turn of the century. He truly was one of a kind, and a modern-day gladiator with the stick.
@@ -139,20 +140,20 @@ export default function StrikeoutProgContent() {
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
                     With eyes more on contact and bunting, we don&apos;t see broken nearly as often as the previous era.
-                    Sam Wise&apos;s dominance of holding the record for 20 seasons would come to an end as it was broken by 
-                    Harry Lumley. A left-handed right fielder from Pennsylvania. Spending his whole career with the Brooklyn Superbas,
-                    Harry started his career out strong, striking out 106 times in 633 plate appearances. A career 134 OPS+ hitter,
-                    he would cut back on those strikeouts, but would still hold onto the record for 2 full seasons, before his teammate,
-                    Billy Maloney, a once catcher, who spent most of his time in the outfield, would take it from him, striking out
-                    116 times in 637 plate appearances. He would lead the NL in strikeouts for 3 consecutive years, from 1905-1907 and 
-                    held the record for over a year after he retired in 1908.
+                    Sam Wise&apos;s dominance of holding the record for 20 seasons would come to an end as it was broken
+                    by <strong>Harry Lumley</strong>. A left-handed right fielder from Pennsylvania. Spending his whole career with the Brooklyn Superbas,
+                    Harry started his career out strong, striking out <strong>106</strong> times in 633 plate appearances. A career 134 OPS+ hitter,
+                    he would cut back on those strikeouts, but would still hold onto the record for 2 full seasons, before his
+                    teammate, <strong>Billy Maloney</strong>, a once catcher, who spent most of his time in the outfield, would take it from him,
+                    striking out <strong>116</strong> times in 637 plate appearances. He would lead the NL in strikeouts for 3 consecutive
+                    years, from 1905-1907 and held the record for over a year after he retired in 1908.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
                     With teammates holding the record for 6 seasons, baseball was ready for a change. A new 
                     King of K, a man who would lead the AL in K&apos;s 2 times before he&apos;d finally take the record,
                     and a man who would go on to hold that record for an astonishing 28 seasons! A true champion of the
-                    swing and miss, his name was Jake Stahl. A first basemen/outfielder who played for 3 teams, but most 
-                    notably, the Boston Americans for six seasons. His dominance was so large that he not only held the record
+                    swing and miss, his name was <strong>Jake Stahl</strong>. A first basemen/outfielder who played for 3 teams, but most 
+                    notably, the Boston Americans for six seasons would smash the record with <strong>128</strong> K&apos;s. His dominance was so large that he not only held the record
                     for the remainder of the deadball era, but also would hold it for most of the golden age as well. A truly legendary 
                     run for the record book.
                 </p>
@@ -212,13 +213,14 @@ export default function StrikeoutProgContent() {
                     It was these rules that allowed Jake Stahl to shine for so many seasons. A record held 
                     for 28 seasons, there was no way anyone would surely break it again. From 1920 to 1934, only 2 hitters
                     would strike out 100 or more times: Bruce Campbell (102) and Harlond Clift(100). It wouldn&apos;t be until
-                    the rise of the DiMaggio brothers and more specifically, Vince DiMaggio, that we would see a new record holder.
+                    the rise of the DiMaggio brothers and more specifically, <strong>Vince DiMaggio</strong>, that we would see a new record holder.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                    One of 3 big league center fielders in the family, Vince started his career swinging. He would take a run at the 
+                    One of 3 big league center fielders in the family, Vince Dimaggio started his career swinging. He would take a run at the 
                     title in 1937, but fell short, leading the league in strikeouts with only 111. But it didn&apos;t take long for Vince 
                     to do what no other man had done in 28 seasons, when he finally broke the record in only his second season, striking 
-                    out 134 times in 611 plate appearances in 1938, someone finally toppled the great Jake Stahl. Vince would go on to make many attempts again at breaking the record over his career,
+                    out <strong>134</strong> times in 611 plate appearances in 1938, someone finally toppled the great Jake Stahl.
+                    Vince would go on to make many attempts again at breaking the record over his career,
                     but always falling short, but he led the league in K&apos;s 6 times in his career, and in 1943 had his best chance to further
                     the record but could only muster 126 swing and misses, falling short of extending his run, but his 1938 record would go on
                     to hold for 18 seasons, and wouldn&apos;t be broken again until 1956, truly displaying his dominance through the 40&apos;s.
@@ -265,8 +267,8 @@ export default function StrikeoutProgContent() {
                 <p className="text-lg leading-relaxed mb-6">
                     1947 would usher in what is known as the Integration era, as the debut of Jackie Robinson on opening day with the Dodgers in the NL, and 
                     Larry Doby, making his debut in July in the AL with Cleveland, would set the stage for more talent to enter the league at an increasing rate.
-                    The addition of talent did not help push the record much further along. In 1956, Jim Lemon, an outfielder for the Washington Nationals, would strike out
-                    4 more times than Vince DiMaggio, breaking his record. A quiet era for sure though, saw notable slugger/Hall of Famers, Mickey Mantle and Eddie Mathews, take 
+                    The addition of talent did not help push the record much further along. In 1956, <strong>Jim Lemon</strong>, an outfielder for the Washington Nationals, would strike out
+                    <strong>138</strong> times, 4 more than Vince DiMaggio, breaking his record. A quiet era for sure though, saw notable slugger/Hall of Famers, Mickey Mantle and Eddie Mathews, take 
                     some runs at the record, but the only real attempt for the record came in the form of Pancho Herrera (136). A Cuban infielder for the Phillies, whose career in the 
                     minor leagues was extended by his career in the big leagues. With the record being broken in such small margins (128 in 1910 to 138 in 1956), it seemed like the 
                     race for 200 would never take hold. Well, that was not until the league was ready to grow.
@@ -320,19 +322,21 @@ export default function StrikeoutProgContent() {
                     reaching new height&apos;s in strikeouts a popular endeavour to reach for the game&apos;s biggest, brightest stars.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                    Starting off with Jake Wood striking out for the Tigers 141 times in 731 player appearances in 1941, and Twins Power legend, Harmon Killebrew besting him a year later,
-                    with 142 in 666 plate appearances, the growth of the game was ready to show off it&apos;s best, and it would not take long. After seeing the record broken twice in 
+                    Starting off with <strong>Jake Wood</strong> striking out for the Tigers <strong>141</strong> times in 731 player appearances in 1941,
+                    and Twins Power legend, <strong>Harmon Killebrew</strong> besting him a year later, with <strong>142</strong> in 666 plate appearances, the growth of the game was ready
+                    to show off it&apos;s best, and it would not take long. After seeing the record broken twice in 
                     as many years, outfielder Dave Nicholson decided he was done playing around and showed off dominance not seen in many, many, many years. In 1963, in only 520 plate appearances
-                    for the Chicago White Sox, Dave Nicholson would swing and miss enough times to rack up an impressive 175 strikeouts. On August 27, he would strike out 4 times, breaking the record
+                    for the Chicago White Sox, <strong>Dave Nicholson</strong> would swing and miss enough times to rack up an impressive <strong>175</strong> strikeouts.
+                    On August 27, he would strike out 4 times, breaking the record
                     with 145 strikeouts. He would then cruise on striking out 30 more times after that, smashing a record that wouldn&apos;t be beaten by more than 10 since 1910. A run so insane that many 
                     probably didn&apos;t think the record could ever be broken again. He would hold that record for only 6 seasons, until the longest holder in the history of the game would step in. 
                     A man whose name is known by many, and will be remembered forever for his other contributions to the game.
 
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                    In 1969, Bobby Bonds would play his first full season for the San Francison Giants. Maybe best known for being the father of Giant&apos;s legend, Barry Bonds, Bobby was 
-                    ready to set records of his own. In 1969, he would go on to strike out 187 times in 720 plate appearances. A number that wouldn&apos;t be matched by another human again until the 
-                    turn of the millennium. The only person who had a change was himself, who repeated the feat in 1970, 2 upping himself, striking out 189 times in 745 plate appearances. Bonds had many 
+                    In 1969, <strong>Bobby Bonds</strong> would play his first full season for the San Francison Giants. Maybe best known for being the father of Giant&apos;s legend, Barry Bonds, Bobby was 
+                    ready to set records of his own. In 1969, he would go on to strike out <strong>187</strong> times in 720 plate appearances. A number that wouldn&apos;t be matched by another human again until the 
+                    turn of the millennium. The only person who had a chance was himself, who repeated the feat in 1970, 2 upping himself, striking out <strong>189</strong> times in 745 plate appearances. Bonds had many 
                     people try to break his record, many getting close, but ultimately coming up short, a truly great run that would culminate in him holding the record for 35 seasons, a truly remarkable feat.
                     
                 </p>
@@ -394,16 +398,16 @@ export default function StrikeoutProgContent() {
                     of players and trainers at all levels has exploded the talent to new heights. The game is not the same game Rhynie Wolters played, and it will not look like the game he played again. 
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                    This new era quickly begins. Adam Dunn, a long-time Cincinnati Reds left fielder, began the trend of swing-and-miss sluggers. He would break the long-standing
-                    Bonds&apos; record, with 195 strikeouts in 681 plate appearances in 2004, and continues striving for swing and miss excellence, making many runs at the record over his 14-year career
+                    This new era quickly begins. <strong>Adam Dunn</strong>, a long-time Cincinnati Reds left fielder, began the trend of swing-and-miss sluggers. He would break the long-standing
+                    Bonds&apos; record, with <strong>195</strong> strikeouts in 681 plate appearances in 2004, and continues striving for swing and miss excellence, making many runs at the record over his 14-year career
                     and throwing his hat in the ring as a man who could potentially be the first to 200.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                    Holding the record for only 3 seasons, and trying his best, he would eventually be bested by career Phillie first basemen, Ryan Howard, who would strike out 199 times,
+                    Holding the record for only 3 seasons, and trying his best, he would eventually be bested by career Phillie first basemen, <strong>Ryan Howard</strong>, who would strike out <strong>199</strong> times,
                     both in 2007 and 2008, in 648 and 700 plate appearances, respectively. With these massive sluggers caring more about the long ball than anything else, the race for 200 was on, and it appeared that Dunn and 
                     Howard would be the early favourite to break the once-thought-impossible, but now obtainable barrier. But we wouldn&apos;t have to wait long, as in 2008, during the great
-                    race for 200, Mark Reynolds would come out of nowhere and start his career striking out at a rate unheard of. Striking out 204 times and being the first to break that 
-                    magical barrier in 2008, he would lead the league 4 more times, but most impressively in the 2009 season, he would strike out a record amount, 223 times in 662 appearances. An 
+                    race for 200, <strong>Mark Reynolds</strong> would come out of nowhere and start his career striking out at a rate unheard of. Striking out <strong>204</strong> times and being the first to break that 
+                    magical barrier in 2008, he would lead the league 4 more times, but most impressively in the 2009 season, he would strike out a record amount, <strong>223</strong> times in 662 appearances. An 
                     incredible number, only approached once, by Adam Dunn in 2012, when he wiffed 222 times, but falling short, we leave off with the true champion of K, the current 
                     strikeout King, Mark Reynolds. 
                 </p>

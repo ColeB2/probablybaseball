@@ -23,6 +23,10 @@ interface LinePlotProps extends Margins {
     rotateLabels?: RotationAngle;
     minValue?: number;
     maxValue?: number;
+    alt?: string;
+    desc?: string;
+    xAxisLabel?: string;
+    yAxisLabel?: string;
 }
 
 export default function LinePlot({
@@ -31,6 +35,7 @@ export default function LinePlot({
     dataLabels = [],
     dataLabelRotation = 0,
     dataLabelFontSize = 10,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     dataLabelColor = 'white',
     width = 640,
     height = 400,
@@ -38,14 +43,20 @@ export default function LinePlot({
     marginRight = 20,
     marginBottom = 20,
     marginLeft = 20,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     lineColor = "white",
     dataPointCircles = true,
     xLabels = [],
     xLabelTickSteps = 1, // defaults to every year
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     xLabelColor = "white",
     rotateLabels = 0,
     minValue,
     maxValue, 
+    alt="Line Plot",
+    desc="A Line Plot",
+    xAxisLabel="",
+    yAxisLabel="",
 }: LinePlotProps): JSX.Element {
     const padding = 0;
     // domain -1, to give space off the y axis/x=0
@@ -70,7 +81,18 @@ export default function LinePlot({
         .y((d) => y(d));
 
     return (
-        <svg width={width} height={height}>
+        <svg 
+            width={width}
+            height={height}
+            role="img"
+            aria-labelledby={`title-${alt.replace(/\s+/g, '-').toLowerCase()}`}
+        >
+            <title id={`title-${alt.replace(/\s+/g, '-').toLowerCase()}`}>
+                {alt}
+            </title>
+            <desc>
+                {desc}
+            </desc>
             {/* Line connecting all data points */}
             <path
                 className="line-1"
@@ -82,9 +104,21 @@ export default function LinePlot({
 
             {/* Circles on the data points */}
             {dataPointCircles
-            &&  <g className="fill-1" strokeWidth={1.5}>
+            &&  <g 
+                    className="fill-1"
+                    strokeWidth={1.5}
+                    role="group" 
+                    aria-label="Individual data points"
+                >
                     {data.map((d, i) => (
-                        <circle key={i} cx={x(i)} cy={y(d)} r={2.5} />
+                        <circle 
+                            key={i}
+                            cx={x(i)}
+                            cy={y(d)}
+                            r={2.5} 
+                            role="graphics-symbol"
+                            aria-label={`Year: ${xLabels[i]}, Value: ${d}`}
+                        />
                     ))}
                 </g>
             }
@@ -203,6 +237,52 @@ export default function LinePlot({
                     }
                 }}
             />
+            {/* X-Axis Label */}
+            {xAxisLabel &&
+            <text
+                x={(width - marginLeft - marginRight) / 2 + marginLeft}
+                y={height - 5} // Adjust this based on your marginBottom
+                textAnchor="middle"
+                fontSize={14}
+                className="fill-current font-medium"
+                aria-hidden="true"
+            >
+                {xAxisLabel}
+            </text>
+            }
+
+            {/* Y-Axis Label */}
+            {yAxisLabel &&
+            <text
+                transform={`rotate(-90)`}
+                x={-(height - marginTop - marginBottom) / 2 - marginTop}
+                y={marginLeft / 4} // Positions it to the left of the Y-axis ticks
+                textAnchor="middle"
+                fontSize={14}
+                className="fill-current font-medium"
+                aria-hidden="true"
+            >
+                {yAxisLabel}
+            </text>
+            }
+            {/* Screen Reader Table: Hidden from sight, visible to search engines and assistive tech */}
+            <table className="sr-only">
+                <caption>{alt}</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">{xAxisLabel || "Year"}</th>
+                        <th scope="col">{yAxisLabel || "Value"}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((d, i) => (
+                        <tr key={i}>
+                            <td>{xLabels[i] || i}</td>
+                            <td>{d}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </svg>
     );
 }

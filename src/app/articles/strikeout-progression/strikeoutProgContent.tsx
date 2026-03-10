@@ -3,46 +3,83 @@ import LinePlot from "@/components/Graphs/Lineplot";
 import MultiLinePlot from "@/components/Graphs/MultiLineplot";
 import GraphSlider from "@/components/GraphSlider/GraphSlider";
 import strikeoutData from '@/generated/strikeout-history.json'
+import StrikeoutGraphs from "./StrikeoutGraphs";
 
 
 const preModernCfg = {
     start: 0,
     end: 30,
+    era: "Pre Modern Era",
+    ariaLabel: "Pre Modern Era (1871-1900) Strikeout Graphs",
     keys: ["Yearly-K-Leader-Pre-Modern-ERA", "K-Record-Holder-Pre-Modern-ERA"],
-    graphs: ["yearlyLeaders" as const, "records" as const]
+    graphs: ["yearlyLeaders" as const, "records" as const],
+    yAxisLabels: ["Strikeouts (K)", "Strikeouts (K)"],
+    xAxisLabels: ["Year", "Year"],
+    alt: ["League Strikeout Leaders", "Single Season Strikeout Records"],
+    desc: ["A line graph showing strikeout leaders", "A line graph showing strikeout record"]
 }
 const deadBallCfg = {
     start: 29,
     end: 49,
+    era: "Dead Ball Era",
+    ariaLabel: "Deadball Era (1900-1919) Strikeout Graphs",
     keys: ["Yearly-K-Leader-Dead-Ball-ERA", "K-Record-Holder-Dead-Ball-ERA"],
-    graphs: ["yearlyLeaders" as const, "records" as const]
+    graphs: ["yearlyLeaders" as const, "records" as const],
+    yAxisLabels: ["Strikeouts (K)", "Strikeouts (K)"],
+    xAxisLabels: ["Year", "Year"],
+    alt: ["League Strikeout Leaders", "Single Season Strikeout Records"],
+    desc: ["A line graph showing strikeout leaders", "A line graph showing strikeout record"]
 };
 const goldenAgeCfg = {
     start: 49,
     end: 76,
+    era: "Liveball Era and Golden Age",
+    ariaLabel: "Liveball Era and Golden Age (1920-1947) Strikeout Graphs",
     keys: ["Yearly-K-Leader-Golden-Age-ERA", "K-Record-Holder-Golden-Age-ERA"],
-    graphs: ["yearlyLeaders" as const, "records" as const]
+    graphs: ["yearlyLeaders" as const, "records" as const],
+    yAxisLabels: ["Strikeouts (K)", "Strikeouts (K)"],
+    xAxisLabels: ["Year", "Year"],
+    alt: ["League Strikeout Leaders", "Single Season Strikeout Records"],
+    desc: ["A line graph showing strikeout leaders", "A line graph showing strikeout record"]
 };
 
 const integrationCfg = {
     start: 76,
     end: 90,
+    era: "Integration Era",
+    ariaLabel: "Integration Era (1947-1960) Strikeout Graphs",
     keys: ["Yearly-K-Leader-Integration-ERA", "K-Record-Holder-Integration-ERA"],
-    graphs: ["yearlyLeaders" as const, "records" as const]
+    graphs: ["yearlyLeaders" as const, "records" as const],
+    yAxisLabels: ["Strikeouts (K)", "Strikeouts (K)"],
+    xAxisLabels: ["Year", "Year"],
+    alt: ["League Strikeout Leaders", "Single Season Strikeout Records"],
+    desc: ["A line graph showing strikeout leaders", "A line graph showing strikeout record"]
 };
 
 const expansionCfg = {
     start: 90,
     end: 133,
+    era: "Expansion Era",
+    ariaLabel: "Expansion Era (1961-2003) Strikeout Graphs",
     keys: ["Yearly-K-Leader-Expansion-ERA", "K-Record-Holder-Expansion-ERA"],
-    graphs: ["yearlyLeaders" as const, "records" as const]
+    graphs: ["yearlyLeaders" as const, "records" as const],
+    yAxisLabels: ["Strikeouts (K)", "Strikeouts (K)"],
+    xAxisLabels: ["Year", "Year"],
+    alt: ["League Strikeout Leaders", "Single Season Strikeout Records"],
+    desc: ["A line graph showing strikeout leaders", "A line graph showing strikeout record"]
 };
 
 const modernCfg = {
     start: 133,
     end: undefined, // Slices to the end of the array automatically
+    era: "Modern Game Era",
+    ariaLabel: "Modern Game Era (2004-2024) Strikeout Graphs",
     keys: ["Yearly-K-Leader-Modern-ERA", "K-Record-Holder-Modern-ERA"],
-    graphs: ["yearlyLeaders" as const, "records" as const]
+    graphs: ["yearlyLeaders" as const, "records" as const],
+    yAxisLabels: ["Strikeouts (K)", "Strikeouts (K)"],
+    xAxisLabels: ["Year", "Year"],
+    alt: ["League Strikeout Leaders", "Single Season Strikeout Records"],
+    desc: ["A line graph showing strikeout leaders", "A line graph showing strikeout record"]
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -97,29 +134,7 @@ export default function StrikeoutProgContent() {
                     to Sam Wise until the turn of the century. He truly was one of a kind, and a modern-day gladiator with the stick.
                 </p>
                 {/* Bar graphs for PreModern Era */}
-                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
-                    <GraphSlider
-                        ariaLabel="Pre Modern Era (1871-1900) Strikeout Graphs"
-                        graphs={preModernCfg.graphs.map((graphName, i) => {
-                            const rawSlice = strikeoutData[graphName].slice(preModernCfg.start, preModernCfg.end);
-                            return (
-                                <LinePlot
-                                    key={preModernCfg.keys[i]}
-                                    data={rawSlice.map((d) => d.y)}
-                                    dataLabels={rawSlice.map((d) => d.label)}
-                                    dataLabelRotation={-90}
-                                    dataLabelFontSize={14}
-                                    width={780}
-                                    height={500}
-                                    marginLeft={35}
-                                    marginBottom={35}
-                                    xLabels={rawSlice.map((d) => d.x)}
-                                    rotateLabels={45}
-                                />
-                            );
-                        })}
-                    />
-                </div>
+                <StrikeoutGraphs cfg={preModernCfg} strikeoutData={strikeoutData}/>
             </section>
             <section id="deadball" className="mb-12">
                 <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
@@ -164,29 +179,7 @@ export default function StrikeoutProgContent() {
                     <li>Gus Williams, a right fielder for the St. Louis Browns, who, if not for Jake Stahl, would have set the record in 1914 (120) and held it for over 20 seasons.</li>
                     <li>Babe Ruth, the legend himself, who led the league in K&apos;s in 1918 (58). It was his first full season not being purely a pitcher, and would be his first of 5 times leading the AL in strikeouts, although he never struck out more than 100 times.</li>
                 </ul>
-                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
-                    <GraphSlider
-                        ariaLabel="Deadball Era (1900-1919) Strikeout Graphs"
-                        graphs={deadBallCfg.graphs.map((graphName, i) => {
-                            const rawSlice = strikeoutData[graphName].slice(deadBallCfg.start, deadBallCfg.end);
-                            return (
-                            <LinePlot
-                                key={deadBallCfg.keys[i]}
-                                data={rawSlice.map((d) => d.y)}
-                                dataLabels={rawSlice.map((d) => d.label)}
-                                dataLabelRotation={-90}
-                                dataLabelFontSize={14}
-                                width={780}
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={35}
-                                xLabels={rawSlice.map((d) => d.x)}
-                                rotateLabels={45}
-                            />
-                            );
-                        })}
-                    />
-                </div>
+                <StrikeoutGraphs cfg={deadBallCfg} strikeoutData={strikeoutData}/>
             </section>
             <section id="live-ball-golden-age" className="mb-12">
                 <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
@@ -233,29 +226,7 @@ export default function StrikeoutProgContent() {
                     <li>Hack Wilson - 3-time MLB leader, 5-time NL leader, and notable power-hitting center fielder for the Cubs. Most notable for his single-season RBI record of 191.</li>
                     <li>Sluggers: Babe Ruth returns 3 times, Jimmie Foxx finds his way on the board a couple, and Ralph Kiner takes a run for the title before integration.</li>
                 </ul>
-                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
-                    <GraphSlider
-                        ariaLabel="Liveball Era and Golden Age (1920-1947) Strikeout Graphs"
-                        graphs={goldenAgeCfg.graphs.map((graphName, i) => {
-                            const rawSlice = strikeoutData[graphName].slice(goldenAgeCfg.start, goldenAgeCfg.end);
-                            return (
-                            <LinePlot
-                                key={goldenAgeCfg.keys[i]}
-                                data={rawSlice.map((d) => d.y)}
-                                dataLabels={rawSlice.map((d) => d.label)}
-                                dataLabelRotation={-90}
-                                dataLabelFontSize={14}
-                                width={780}
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={35}
-                                xLabels={rawSlice.map((d) => d.x)}
-                                rotateLabels={45}
-                            />
-                            );
-                        })}
-                    />
-                </div>
+                <StrikeoutGraphs cfg={goldenAgeCfg} strikeoutData={strikeoutData}/>
             </section>
             <section id="integration" className="mb-12">
                 <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
@@ -278,29 +249,7 @@ export default function StrikeoutProgContent() {
                     From 1960 until the 2000&apos;s baseball was looking to expand in grow in multiple ways. From expanding the league to many more teams, to the players taking 
                     supplements to expand themselves to new sizes, the strikeout record was ready to take on new life, and lead, eventually getting us back on track to new heights.
                 </p>
-                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
-                    <GraphSlider
-                        ariaLabel="Integration Era (1947-1960) Strikeout Graphs"
-                        graphs={integrationCfg.graphs.map((graphName, i) => {
-                            const rawSlice = strikeoutData[graphName].slice(integrationCfg.start, integrationCfg.end);
-                            return (
-                            <LinePlot
-                                key={integrationCfg.keys[i]}
-                                data={rawSlice.map((d) => d.y)}
-                                dataLabels={rawSlice.map((d) => d.label)}
-                                dataLabelRotation={-90}
-                                dataLabelFontSize={14}
-                                width={780}
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={35}
-                                xLabels={rawSlice.map((d) => d.x)}
-                                rotateLabels={45}
-                            />
-                            );
-                        })}
-                    />
-                </div>
+                <StrikeoutGraphs cfg={integrationCfg} strikeoutData={strikeoutData}/>
             </section>
             <section id="expansion" className="mb-12">
                 <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
@@ -354,29 +303,7 @@ export default function StrikeoutProgContent() {
                     <li>José Hernández, a Cub and journeyman infielder, who had many great attempts, from 2001 to 2003, striking out 185, 188 and 177 times respectively.</li>
                     <li>Other Notable Sluggers:  Reggie Jackson, who made the leaderboard a few times, 2 sport athlete Bo Jackson and Jim Thome.</li>
                 </ul>
-                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
-                    <GraphSlider
-                        ariaLabel="Expansion Era (1961-2003) Strikeout Graphs"
-                        graphs={expansionCfg.graphs.map((graphName, i) => {
-                            const rawSlice = strikeoutData[graphName].slice(expansionCfg.start, expansionCfg.end);
-                            return (
-                            <LinePlot
-                                key={expansionCfg.keys[i]}
-                                data={rawSlice.map((d) => d.y)}
-                                dataLabels={rawSlice.map((d) => d.label)}
-                                dataLabelRotation={-90}
-                                dataLabelFontSize={14}
-                                width={780}
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={35}
-                                xLabels={rawSlice.map((d) => d.x)}
-                                rotateLabels={45}
-                            />
-                            );
-                        })}
-                    />
-                </div>
+                <StrikeoutGraphs cfg={expansionCfg} strikeoutData={strikeoutData}/>
             </section>
             <section id="modern-game" className="mb-12">
                 <span className="block text-2xl font-mono uppercase tracking-widest text-primary mb-1">
@@ -416,29 +343,7 @@ export default function StrikeoutProgContent() {
                     incredible number, only approached once, by Adam Dunn in 2012, when he wiffed 222 times, but falling short, we leave off with the true champion of K, the current 
                     strikeout King, Mark Reynolds. 
                 </p>
-                <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
-                    <GraphSlider
-                        ariaLabel="Modern Game Era (2004-2024) Strikeout Graphs"
-                        graphs={modernCfg.graphs.map((graphName, i) => {
-                            const rawSlice = strikeoutData[graphName].slice(modernCfg.start, modernCfg.end);
-                            return (
-                            <LinePlot
-                                key={modernCfg.keys[i]}
-                                data={rawSlice.map((d) => d.y)}
-                                dataLabels={rawSlice.map((d) => d.label)}
-                                dataLabelRotation={-90}
-                                dataLabelFontSize={14}
-                                width={780}
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={35}
-                                xLabels={rawSlice.map((d) => d.x)}
-                                rotateLabels={45}
-                            />
-                            );
-                        })}
-                    />
-                </div>
+                <StrikeoutGraphs cfg={modernCfg} strikeoutData={strikeoutData}/>
             </section>
             <section id="epilogue" className="mb-12">
                 <h2 className="text-2xl font-semibold mb-3">
@@ -475,12 +380,12 @@ export default function StrikeoutProgContent() {
                         dataLabelFontSize={14}
                         width={Math.max(640, strikeoutData.yearlyLeaders.length * 20)}//dynamic width
                         dataPointCircles={false}
-                        marginLeft={35}
+                        marginLeft={50}
                         lineColors={["white", "red"]}
                         xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                         xLabelTickSteps={1}
                         rotateLabels={45}
-                        marginBottom={35}
+                        marginBottom={50}
                         
                     />
                 </div>
@@ -504,11 +409,13 @@ export default function StrikeoutProgContent() {
                                 height={500}
                                 width={Math.max(640, strikeoutData.yearlyLeaders.length * 20)} //dynamic width
                                 // dataPointCircles={false}
-                                marginLeft={35}
-                                marginBottom={35}
+                                marginLeft={50}
+                                marginBottom={50}
                                 xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                                 xLabelTickSteps={1}
                                 rotateLabels={45}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />,
                             <BarGraph
                                 key="Single-Season-Strikeout-Record-Bar-Graph"
@@ -519,8 +426,8 @@ export default function StrikeoutProgContent() {
                                 // width={640}
                                 width={Math.max(640, strikeoutData.yearlyLeaders.length * 20)} //dynamic width
                                 height={500}
-                                marginLeft={35}
-                                marginBottom={35}
+                                marginLeft={50}
+                                marginBottom={50}
                                 xLabels={strikeoutData.yearlyLeaders.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
@@ -549,11 +456,13 @@ export default function StrikeoutProgContent() {
                                 // width={640}
                                 width={Math.max(640, strikeoutData.records.length * 20)}
                                 height={500}
-                                marginLeft={35}
-                                marginBottom={35}
+                                marginLeft={50}
+                                marginBottom={50}
                                 xLabels={strikeoutData.records.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />,
                             <BarGraph
                                 key="Full-Record-Progression-Bar-Graph"
@@ -564,8 +473,8 @@ export default function StrikeoutProgContent() {
                                 // width={640}
                                 width={Math.max(640, strikeoutData.records.length * 20)}
                                 height={500}
-                                marginLeft={35}
-                                marginBottom={35}
+                                marginLeft={50}
+                                marginBottom={50}
                                 xLabels={strikeoutData.records.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
@@ -596,10 +505,12 @@ export default function StrikeoutProgContent() {
                                 width={Math.max(640, strikeoutData.leagueWide.length * 20)} //dynamic width
                                 height={500}
                                 marginLeft={45}
-                                marginBottom={35}
+                                marginBottom={50}
                                 xLabels={strikeoutData.leagueWide.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />,
                             <BarGraph
                                 key="League-Wide-Strikeout-Totals-Bar-Graph"
@@ -611,7 +522,7 @@ export default function StrikeoutProgContent() {
                                 width={Math.max(640, strikeoutData.leagueWide.length * 20)} //dynamic width
                                 height={500}
                                 marginLeft={45}
-                                marginBottom={35}
+                                marginBottom={50}
                                 xLabels={strikeoutData.leagueWide.map(d => d.x)}
                                 // xLabelColor="black"
                                 rotateLabels={45}
@@ -639,10 +550,12 @@ export default function StrikeoutProgContent() {
                                 dataLabelFontSize={14}
                                 width={Math.max(640, strikeoutData.percentages.length * 20)}
                                 height={500}
-                                marginLeft={35}
-                                marginBottom={35}
+                                marginLeft={50}
+                                marginBottom={50}
                                 xLabels={strikeoutData.percentages.map(d => d.x)}
                                 rotateLabels={45}
+                                yAxisLabel="Strikeouts (K)"
+                                xAxisLabel="Year"
                             />,
                             <BarGraph
                                 key="Leaders-Strikeout-As-a-Percentage-of-League-Wide-Totals-Bar-Graph"
@@ -652,8 +565,8 @@ export default function StrikeoutProgContent() {
                                 barLabelFontSize={14}
                                 width={Math.max(640, strikeoutData.percentages.length * 20)}
                                 height={500}
-                                marginLeft={35}
-                                marginBottom={35}
+                                marginLeft={50}
+                                marginBottom={50}
                                 xLabels={strikeoutData.percentages.map(d => d.x)}
                                 rotateLabels={45}
                             />

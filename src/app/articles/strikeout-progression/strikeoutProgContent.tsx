@@ -99,22 +99,23 @@ export default function StrikeoutProgContent() {
                 {/* Bar graphs for PreModern Era */}
                 <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
                     <GraphSlider
+                        ariaLabel="Pre Modern Era (1871-1900) Strikeout Graphs"
                         graphs={preModernCfg.graphs.map((graphName, i) => {
                             const rawSlice = strikeoutData[graphName].slice(preModernCfg.start, preModernCfg.end);
                             return (
-                            <LinePlot
-                                key={preModernCfg.keys[i]}
-                                data={rawSlice.map((d) => d.y)}
-                                dataLabels={rawSlice.map((d) => d.label)}
-                                dataLabelRotation={-90}
-                                dataLabelFontSize={14}
-                                width={780}
-                                height={500}
-                                marginLeft={35}
-                                marginBottom={35}
-                                xLabels={rawSlice.map((d) => d.x)}
-                                rotateLabels={45}
-                            />
+                                <LinePlot
+                                    key={preModernCfg.keys[i]}
+                                    data={rawSlice.map((d) => d.y)}
+                                    dataLabels={rawSlice.map((d) => d.label)}
+                                    dataLabelRotation={-90}
+                                    dataLabelFontSize={14}
+                                    width={780}
+                                    height={500}
+                                    marginLeft={35}
+                                    marginBottom={35}
+                                    xLabels={rawSlice.map((d) => d.x)}
+                                    rotateLabels={45}
+                                />
                             );
                         })}
                     />
@@ -165,6 +166,7 @@ export default function StrikeoutProgContent() {
                 </ul>
                 <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
                     <GraphSlider
+                        ariaLabel="Deadball Era (1900-1919) Strikeout Graphs"
                         graphs={deadBallCfg.graphs.map((graphName, i) => {
                             const rawSlice = strikeoutData[graphName].slice(deadBallCfg.start, deadBallCfg.end);
                             return (
@@ -233,6 +235,7 @@ export default function StrikeoutProgContent() {
                 </ul>
                 <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
                     <GraphSlider
+                        ariaLabel="Liveball Era and Golden Age (1920-1947) Strikeout Graphs"
                         graphs={goldenAgeCfg.graphs.map((graphName, i) => {
                             const rawSlice = strikeoutData[graphName].slice(goldenAgeCfg.start, goldenAgeCfg.end);
                             return (
@@ -277,6 +280,7 @@ export default function StrikeoutProgContent() {
                 </p>
                 <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
                     <GraphSlider
+                        ariaLabel="Integration Era (1947-1960) Strikeout Graphs"
                         graphs={integrationCfg.graphs.map((graphName, i) => {
                             const rawSlice = strikeoutData[graphName].slice(integrationCfg.start, integrationCfg.end);
                             return (
@@ -352,6 +356,7 @@ export default function StrikeoutProgContent() {
                 </ul>
                 <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
                     <GraphSlider
+                        ariaLabel="Expansion Era (1961-2003) Strikeout Graphs"
                         graphs={expansionCfg.graphs.map((graphName, i) => {
                             const rawSlice = strikeoutData[graphName].slice(expansionCfg.start, expansionCfg.end);
                             return (
@@ -413,6 +418,7 @@ export default function StrikeoutProgContent() {
                 </p>
                 <div style={{minHeight: '500px', width: '100%', maxWidth: '780px'}}>
                     <GraphSlider
+                        ariaLabel="Modern Game Era (2004-2024) Strikeout Graphs"
                         graphs={modernCfg.graphs.map((graphName, i) => {
                             const rawSlice = strikeoutData[graphName].slice(modernCfg.start, modernCfg.end);
                             return (

@@ -20,7 +20,7 @@ export default function ArticleList({ articles }: ArticleListProps) {
             >
 
                 <div className="flex flex-col justify-center p-6 text-left">
-                    <h3 className="text-2xl font-semibold mb-2">{article.title}</h3>
+                    <h2 className="text-2xl font-semibold mb-2">{article.title}</h2>
                     <p className="mb-4">{article.desc}</p>
                     <span className="text-blue-600 dark:text-blue-300 font-medium hover:underline">
                         Read more →

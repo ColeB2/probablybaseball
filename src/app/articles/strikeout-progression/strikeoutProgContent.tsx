@@ -114,11 +114,11 @@ export default function StrikeoutProgContent() {
                 <p className="text-lg leading-relaxed mb-6">
                     The game as we know it was not the same one Rynie used to play. Before the start of the modern era, a walk would
                     require as many as 8 balls, foul balls would not be considered strikes, balls would have to be pitched underhand,
-                    not thrown overhand like the missile-throwing chuckers of today, outs could be caught off the bounce, and many different rule oddities
-                    which could make for an article of its own, can be read
-                    about <a className="text-blue-300 hover:text-blue-500" href="https://www.baseball-almanac.com/rule11.shtml">here</a>.
-                    Beyond that will be left as an exercise to the reader, but knowing that it is still, 1, 2, 3 strikes you are out.
-                    This is all that we really need to know about for now.
+                    not thrown overhand like the missile-throwing chuckers of today, outs could be caught off the bounce, and many 
+                    different <a className="text-primary hover:text-secondary border-b border-color hover:border-blue-500 transition-colors" href="https://www.baseball-almanac.com/rule11.shtml">
+                    fascinating rule oddities of the early game</a> which could make for an article of its own.
+                    Learning more beyond that will be left as an exercise to the reader,
+                    but knowing that it is still, 1, 2, 3 strikes you are out. This is all that we really need to know about for now.
                 </p>
                 <p className="text-lg leading-relaxed  mb-6">
                     Although it was a wild-wild west of a game, and not the near-uniform game of professionalism we have today.

@@ -57,6 +57,17 @@ export default function RootLayout({
             <head>
                 <GoogleTag GA_ID={GA_ID}/>
                 <meta name="google-site-verification" content="JSzCveEuPfkysJLgd0V6wiaJhUN0VFpZFu2CUKOCdS8" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "WebSite",
+                            "name": "Probably Baseball",
+                            "url": "https://probablybaseball.pages.dev"
+                        })
+                    }}
+                />
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
